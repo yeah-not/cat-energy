@@ -1,7 +1,6 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
-* Студент: [Леонид Смирнов](https://up.htmlacademy.ru/adaptive/14/user/445713).
-* Наставник: `Неизвестно`.
+* Студент: [Александр Горелых].
 
 ---
 
