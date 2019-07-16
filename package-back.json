@@ -4,16 +4,16 @@
   "private": true,
   "description": "Личный проект «Кэт энерджи» от HTML Academy",
   "devDependencies": {
-    "@htmlacademy/editorconfig-cli": "^1.0.0",
-    "autoprefixer": "^9.6.1",
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2",
-    "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^8.0.0",
+    "@htmlacademy/editorconfig-cli": "1.x",
+    "autoprefixer": "8.3.x",
+    "browser-sync": "2.23.x",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "1.2.x",
+    "gulp-postcss": "7.0.x",
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.12.0",
-    "stylelint": "^10.1.0",
-    "stylelint-config-htmlacademy": "^0.1.4"
+    "stylelint": "9.2.x",
+    "stylelint-config-htmlacademy": "0.1.x"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
@@ -35,14 +35,7 @@
     "source/img/**/*.svg",
     "source/sass/**/*.{sass,scss}"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yeah-not/cat-energy.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yeah-not/cat-energy/issues"
-  },
-  "homepage": "https://github.com/yeah-not/cat-energy#readme"
+  "engines": {
+    "node": "8.11"
+  }
 }
