@@ -9,4 +9,5 @@ design/
 node_modules/
 npm-debug.*
 source/css/*.css
+source/img/preview/
 Thumbs.db

@@ -12,4 +12,53 @@
   color: $text-color;
 
   background: $body-bg;
+
+  /* TODO: Сетка */
+  min-height: 1000px;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+
+  &--index {
+    // background-image: url("../img/preview/1 cat-energy-index-mobile.jpg");
+    background-image: url("../img/preview/1 cat-energy-index-mobile-2.jpg");
+  }
+
+  &--catalog {
+    // background-image: url("../img/preview/cat-energy-catalog-1-mobile.jpg");
+    background-image: url("../img/preview/cat-energy-catalog-1-mobile-2.jpg");
+  }
+
+  &--program {
+    // background-image: url("../img/preview/cat-energy-form-1-mobile.jpg");
+    background-image: url("../img/preview/cat-energy-form-1-mobile-2.jpg");
+  }
+
+  @media (min-width: $screen-md) {
+    &--index {
+      background-image: url("../img/preview/2 cat-energy-index-tablet.jpg");
+    }
+
+    &--catalog {
+      background-image: url("../img/preview/cat-energy-catalog-2-tablet.jpg");
+    }
+
+    &--program {
+      background-image: url("../img/preview/cat-energy-form-2-tablet.jpg");
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    &--index {
+      background-image: url("../img/preview/3 cat-energy-index-desktop.jpg");
+    }
+
+    &--catalog {
+      background-image: url("../img/preview/cat-energy-catalog-3-desktop.jpg");
+    }
+
+    &--program {
+      background-image: url("../img/preview/cat-energy-form-3-desktop.jpg");
+    }
+  }
+  /* EO TODO: Сетка */
 }
