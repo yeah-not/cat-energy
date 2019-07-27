@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: $link-color--hover;
+  }
+}
+
+h1 {
+  font-family: $font-family--custom;
+}
