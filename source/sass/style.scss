@@ -1,3 +1,10 @@
-body {
-  background: green;
-}
+// Базовые
+@import "base/mixins.scss";
+@import "base/variables.scss";
+@import "base/normalize.scss";
+@import "base/fonts.scss";
+@import "base/base.scss";
+
+// Базовые блоки
+@import "blocks/visually-hidden.scss";
+@import "blocks/page.scss";

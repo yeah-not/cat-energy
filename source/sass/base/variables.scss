@@ -1,0 +1,92 @@
+// Базовые цвета https://colorscheme.ru/color-converter.html
+
+$black:                       hsl(0, 0%, 0%);
+$gray--ultra-dark:            hsl(0, 0%, 1%);
+$gray--darkest:               #111111; // hsl(0, 0%, 7%);
+$gray--darkest-2:             #222222; // hsl(0, 0%, 13%);
+$gray--darker:                hsl(0, 0%, 20%);
+$gray--darken:                #444444; // hsl(0, 0%, 27%);
+$gray--dark:                  #666666; // hsl(0, 0%, 40%);
+$gray:                        hsl(0, 0%, 50%);
+$gray--light:                 hsl(0, 0%, 60%);
+$gray--lighten:               hsl(0, 0%, 70%);
+$gray--lighter:               #cdcdcd; // hsl(0, 0%, 80%);
+$gray--lightest:              #dcdcdc; // hsl(0, 0%, 86%);
+$gray--lightest-2:            #eaeaea; // hsl(0, 0%, 92%);
+$gray--lightest-3:            #ebebeb; // hsl(0, 0%, 92%);
+$gray--ultra-light:           #f2f2f2; // hsl(0, 0%, 95%);
+$white:                       hsl(0, 0%, 100%);
+
+$color-main:                  #68b738; // hsl(97, 53%, 47%);
+$color-main--dark:            #5eaa2f; // hsl(97, 57%, 43%);
+$color-danger:                #ff8282;
+// $color-success:               hsl(120, 39%, 54%);
+// $color-warning:               hsl(35, 84%, 62%);
+
+// $color-vk:                    #4a76a8;
+// $color-fb:                    #4267b2;
+// $color-tw:                    #40A2F5;
+// $color-gh:                    #24292e;
+
+
+// Семантические цвета
+
+$text-color:                  $gray--darken;
+// $text-color-muted:            $gray;
+$body-bg:                     $white;
+
+$link-color:                  $color-main;
+$link-color--hover:           darken($color-main, 15%);
+$link-color--visited:         lighten($color-main, 15%);
+
+$border-color:                $gray--lighter;
+
+
+// Базовая типографика
+
+$font-size--xxlarge:          20px;
+// $font-size--xlarge:           18px;
+$font-size--large:            16px;
+$font-size:                   14px;
+$font-size--small:            12px;
+// $font-size--xsmall:           10px;
+
+$font-size--page-h1:          36px;
+$font-size--page-h1-md:       60px;
+$font-size--page-h2:          24px;
+$font-size--page-h2-md:       36px;
+
+$font-size--md:               $font-size--large;
+$line-height:                 1.29;
+$line-height--md:             1.5;
+$line-height--headings:       1;
+
+$font-family:                 "Arial", sans-serif;
+$font-family--custom:         "Oswald", "Arial", sans-serif;
+$font-family--headings:       $font-family--custom;
+
+
+// Сетка
+
+// $screen-xs:                   0;
+$screen-sm:                   320px;
+$screen-md:                   768px;
+// $screen-lg:                   992px;
+$screen-xl:                   1360px;
+// $screen-xxl:                  1800px;
+
+$container-gap-sm:            30px;
+$container-gap-md:            30px;
+$container-gap-xl:            70px;
+
+$container-sm:                $screen-sm;
+$container-md:                $screen-md;
+$container-xl:                $screen-xl;
+
+$grid-gutter:                 30px;
+$grid-gutter-2:               40px;
+
+
+// Разное
+$border-radius:               3px;
+$z-index-modal:               100;
