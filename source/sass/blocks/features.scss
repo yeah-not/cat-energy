@@ -1,0 +1,73 @@
+.features {
+  $block: &;
+  @include container;
+  @include outline; /* TODO: Сетка */
+  overflow: hidden; /* TODO: Сетка */
+
+  margin-bottom: 42px;
+
+  &__title {
+    @include outline(2, 1); /* TODO: Сетка */
+
+    min-height: 60px; /* TODO: Сетка */
+    margin: 0 0 23px;
+  }
+
+  &__list {
+    @include reset-list;
+    @include outline(2); /* TODO: Сетка */
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: -20px;
+  }
+
+  &__item {
+    @include outline(3, 1); /* TODO: Сетка */
+
+    min-height: 60px; /* TODO: Сетка */
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 58px;
+
+    &__title {
+      margin: 0 0 64px;
+    }
+
+    &__list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      margin-bottom: -89px;
+    }
+
+    &__item {
+      width: 284px;
+      min-height: 228px; /* TODO: Сетка */
+      margin-right: $grid-gutter-2;
+      margin-bottom: 89px;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 24px;
+
+    &__title {
+    }
+
+    &__list {
+      flex-wrap: nowrap;
+      margin-bottom: 0;
+    }
+
+    &__item {
+      width: 245px;
+      min-height: 228px; /* TODO: Сетка */
+      margin: 0;
+    }
+  }
+}
