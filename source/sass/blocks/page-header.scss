@@ -1,0 +1,30 @@
+.page-header {
+  $block: &;
+  @include container;
+  @include outline; /* TODO: Сетка */
+
+  &__logo {
+    @include outline(2, 1); /* TODO: Сетка */
+    min-height: 66px; /* TODO: Сетка */
+  }
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 15px;
+
+    &__logo {
+      width: 182px;
+      min-height: 58px; /* TODO: Сетка */
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-top: 58px;
+
+    &__logo {
+      width: 245px;
+    }
+  }
+}

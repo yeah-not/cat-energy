@@ -1,0 +1,14 @@
+.main-nav {
+  $block: &;
+  @include outline(2, 1); /* TODO: Сетка */
+  min-height: 198px; /* TODO: Сетка */
+
+  @media (min-width: $screen-md) {
+    width: 506px;
+    min-height: 58px; /* TODO: Сетка */
+  }
+
+  @media (min-width: $screen-xl) {
+    width: 600px;
+  }
+}
