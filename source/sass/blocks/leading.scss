@@ -1,0 +1,109 @@
+.leading {
+  $block: &;
+  margin: 0 0 22px;
+
+  &__wrapper {
+    @include container;
+    @include outline; /* TODO: Сетка */
+
+    padding-top: 31px;
+  }
+
+  &__content {
+    @include outline(2, 1); /* TODO: Сетка */
+
+    min-height: 104px; /* TODO: Сетка */
+    margin: 0 0 30px;
+  }
+
+  &__picture {
+    @include outline(2, 1); /* TODO: Сетка */
+
+    min-height: 270px; /* TODO: Сетка */
+    margin: 0 0 5px;
+  }
+
+  &__link {
+    @include outline(2, 1); /* TODO: Сетка */
+    min-height: 40px;
+
+    &--top {
+      display: none;
+    }
+
+    &--bottom {
+      display: block;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 0;
+
+    &__wrapper {
+      padding-top: 47px;
+    }
+
+    &__content {
+      width: 606px;
+      min-height: 277px; /* TODO: Сетка */
+      padding: 0 90px;
+      margin: 0;
+    }
+
+    &__picture {
+      min-height: 530px; /* TODO: Сетка */
+      margin-bottom: 0;
+    }
+
+    &__image {
+      margin-top: -82px;
+    }
+
+    &__link {
+
+      &--top {
+        display: inline-block;
+      }
+
+      &--bottom {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 80px;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      padding-top: 94px;
+      padding-bottom: 55px;
+    }
+
+    &__content {
+      width: 610px;
+      padding: 0 80px;
+      min-height: 416px; /* TODO: Сетка */
+    }
+
+    &__picture {
+      width: 610px;
+      min-height: 416px; /* TODO: Сетка */
+      margin: 0;
+    }
+
+    &__image {
+      margin: 0;
+      margin-top: -84px;
+      margin-left: -159px;
+    }
+
+    &__link {
+
+      &--top {
+      }
+    }
+  }
+}
