@@ -16,6 +16,13 @@
   }
 }
 
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
 @mixin outline($color-num: 1, $hide-content: 0) {
   $sea-green:     #2E8B57;
   $orange-red:    #FF4500;
