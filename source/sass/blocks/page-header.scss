@@ -21,10 +21,11 @@
   }
 
   @media (min-width: $screen-xl) {
-    padding-top: 58px;
+    padding-top: 54px;
 
     &__logo {
       width: 245px;
+      min-height: 58px; /* TODO: Сетка */
     }
   }
 }
