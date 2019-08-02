@@ -1,0 +1,46 @@
+.contacts {
+  $block: &;
+  @include outline; /* TODO: Сетка */
+
+  &__info {
+    @include container;
+    @include outline(2, 1);
+    min-height: 114px; /* TODO: Сетка */
+  }
+
+  &__map {
+    @include outline(2, 1);
+    min-height: 362px; /* TODO: Сетка */
+  }
+
+  @media (min-width: $screen-md) {
+    &__info {
+      min-height: 201px; /* TODO: Сетка */
+      padding: 0 ($container-gap-md + $grid-gutter-2);
+    }
+
+    &__map {
+      min-height: 396px; /* TODO: Сетка */
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    $width: 570px;
+    position: relative;
+
+    &__info {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%);
+
+      width: $width;
+      margin-left: (-$width - $grid-gutter-2);
+      padding: 0 75px;
+    }
+
+    &__map {
+      min-height: 399px; /* TODO: Сетка */
+    }
+  }
+}
