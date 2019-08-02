@@ -1,0 +1,30 @@
+.page-main {
+  $block: &;
+
+  &__title {
+    @include container;
+    @include outline(1, 1); /* TODO: Сетка */
+    min-height: 60px; /* TODO: Сетка */
+
+    margin-top: 21px;
+    margin-bottom: 22px;
+  }
+
+  @media (min-width: $screen-md) {
+    &__title {
+
+      margin-top: 52px;
+      margin-bottom: 48px;
+
+      &--page-catalog {
+        margin-bottom: 75px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    &__title {
+      margin-top: 70px;
+    }
+  }
+}

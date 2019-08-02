@@ -5,11 +5,14 @@
 @import "base/fonts.scss";
 @import "base/base.scss";
 
-// Базовые блоки
+// Блоки-хелперы
 @import "blocks/visually-hidden.scss";
+
+// Главные блоки
 @import "blocks/page.scss";
 @import "blocks/page-header.scss";
 @import "blocks/main-nav.scss";
+@import "blocks/page-main.scss";
 @import "blocks/page-footer.scss";
 
 // Блоки
