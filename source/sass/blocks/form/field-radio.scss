@@ -1,0 +1,4 @@
+.field-radio {
+  $block: &;
+  @include reset-list;
+}

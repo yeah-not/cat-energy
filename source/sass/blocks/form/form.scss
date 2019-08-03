@@ -1,0 +1,139 @@
+.form {
+  $block: &;
+  @include container;
+  @include outline; /* TODO: Сетка */
+
+  margin-bottom: 35px;
+
+  &__part {
+    @include outline(2); /* TODO: Сетка */
+
+    margin: 0 0 32px;
+    padding: 0;
+
+    border: none;
+
+    &--last {
+      margin-bottom: 0;
+    }
+
+    &:not(:nth-of-type(1)) {
+      @include outline(2, 1); /* TODO: Сетка */
+    }
+
+    &:nth-of-type(2) {
+      min-height: 181px; /* TODO: Сетка */
+    }
+
+    &:nth-of-type(3) {
+      min-height: 205px; /* TODO: Сетка */
+    }
+
+    &:nth-of-type(4) {
+      min-height: 213px; /* TODO: Сетка */
+    }
+  }
+
+  &__group {
+    @include outline(3, 1); /* TODO: Сетка */
+
+    margin: 0 0 23px;
+
+    &--last {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(2) {
+      min-height: 163px; /* TODO: Сетка */
+    }
+
+    &:nth-child(4) {
+      min-height: 158px; /* TODO: Сетка */
+    }
+  }
+
+  &__actions {
+    @include outline(2, 1);
+    min-height: 75px; /* TODO: Сетка */
+
+    margin: 34px 0 0;
+  }
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 72px;
+
+    &__part {
+      margin-bottom: 70px;
+      padding: 0 ($grid-gutter-2);
+
+      &--last {
+        margin-bottom: 0;
+      }
+
+      &:nth-of-type(2) {
+        min-height: 231px; /* TODO: Сетка */
+      }
+
+      &:nth-of-type(3) {
+        min-height: 281px; /* TODO: Сетка */
+      }
+
+      &:nth-of-type(4) {
+        min-height: 200px; /* TODO: Сетка */
+      }
+    }
+
+    &__group {
+      margin-bottom: 70px;
+
+      &--last {
+        margin-bottom: 0;
+      }
+
+      &:nth-child(2) {
+        min-height: 196px; /* TODO: Сетка */
+      }
+
+      &:nth-child(4) {
+        min-height: 196px; /* TODO: Сетка */
+      }
+    }
+
+    &__actions {
+      min-height: 52px; /* TODO: Сетка */
+
+      margin-top: 54px;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 82px;
+
+    &__part {
+      margin-bottom: 73px;
+      padding: 0;
+
+      &--last {
+        margin-bottom: 0;
+      }
+
+      &:nth-of-type(2) {
+        min-height: 159px; /* TODO: Сетка */
+      }
+
+      &:nth-of-type(3) {
+        // min-height: 281px; /* TODO: Сетка */
+      }
+
+      &:nth-of-type(4) {
+        min-height: 128px; /* TODO: Сетка */
+      }
+    }
+
+    &__actions {
+      // min-height: 52px; /* TODO: Сетка */
+
+      margin-top: 61px;
+    }
+  }
+}

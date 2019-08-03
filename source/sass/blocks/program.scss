@@ -1,0 +1,39 @@
+.program {
+  $block: &;
+
+  &__pet-group {
+    &--target {
+      @include row--sm;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    &__pet {
+      margin-bottom: 80px;
+    }
+
+    &__pet-group {
+      &--target {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    &__pet {
+      margin-bottom: 72px;
+    }
+
+    &__pet-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__pet-group {
+      width: 570px;
+      margin: 0;
+    }
+  }
+}
