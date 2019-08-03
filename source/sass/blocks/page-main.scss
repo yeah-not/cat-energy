@@ -7,7 +7,15 @@
     min-height: 60px; /* TODO: Сетка */
 
     margin-top: 21px;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
+  }
+
+  &__intro {
+    @include container;
+    @include outline(1, 1); /* TODO: Сетка */
+    min-height: 36px; /* TODO: Сетка */
+
+    margin-bottom: 38px;
   }
 
   @media (min-width: $screen-md) {
@@ -20,11 +28,27 @@
         margin-bottom: 75px;
       }
     }
+
+    &__intro {
+      min-height: 60px; /* TODO: Сетка */
+
+      margin-bottom: 63px;
+
+      &--page-program {
+        padding-left: $container-gap-md + $grid-gutter-2;
+      }
+    }
   }
 
   @media (min-width: $screen-xl) {
     &__title {
       margin-top: 70px;
+    }
+
+    &__intro {
+      &--page-program {
+        padding-left: $container-gap-xl;
+      }
     }
   }
 }
