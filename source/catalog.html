@@ -2,14 +2,18 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HTML Academy: Кэт энерджи - Каталог продукции</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="page page--catalog">
     <header class="page-header">
-      <a class="page-header__logo logo logo--complex" href="index.html">
-        <img class="logo__image" src="http://placehold.it/191x38" alt="Магазин питания для котов Cat Energy" />
-      </a>
+      <div class="page-header__logo">
+        <a class="logo logo--complex" href="index.html">
+          <img class="logo__image" src="http://placehold.it/191x38" alt="Магазин питания для котов Cat Energy" />
+        </a>
+      </div>
       <nav class="page-header__nav main-nav">
         <button class="main-nav__toggle" type="button">Открыть меню</button>
         <ul class="main-nav__list">
@@ -20,255 +24,271 @@
       </nav>
     </header>
     <main class="page-main">
-      <h1 class="page-main__title">Каталог продукции</h1>
+      <h1 class="page-main__title page-main__title--page-catalog">Каталог продукции</h1>
       <section class="catalog">
-        <article class="catalog__item catalog-item">
-          <p class="catalog-item__picture">
-            <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
-          </p>
-          <h2 class="catalog-item__title">
-            <span class="catalog-item__name">Cat Energy</span>
-            <span class="catalog-item__category">Pro</span>
-            <span class="catalog-item__amount">500 г</span>
-          </h2>
-          <table class="catalog-item__params">
-            <tr>
-              <th class="catalog-item__param">Объем</th>
-              <td class="catalog-item__value">500 г</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Вкус</th>
-              <td class="catalog-item__value">Курица</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Цена</th>
-              <td class="catalog-item__value">700 Р.</td>
-            </tr>
-          </table>
-          <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
-        </article>
-        <article class="catalog__item catalog-item">
-          <p class="catalog-item__picture">
-            <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
-          </p>
-          <h2 class="catalog-item__title">
-            <span class="catalog-item__name">Cat Energy</span>
-            <span class="catalog-item__category">Pro</span>
-            <span class="catalog-item__amount">1000 г</span>
-          </h2>
-          <table class="catalog-item__params">
-            <tr>
-              <th class="catalog-item__param">Объем</th>
-              <td class="catalog-item__value">1000 г</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Вкус</th>
-              <td class="catalog-item__value">Курица</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Цена</th>
-              <td class="catalog-item__value">1000 Р.</td>
-            </tr>
-          </table>
-          <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
-        </article>
-        <article class="catalog__item catalog-item">
-          <p class="catalog-item__picture">
-            <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
-          </p>
-          <h2 class="catalog-item__title">
-            <span class="catalog-item__name">Cat Energy</span>
-            <span class="catalog-item__category">Pro</span>
-            <span class="catalog-item__amount">500 г</span>
-          </h2>
-          <table class="catalog-item__params">
-            <tr>
-              <th class="catalog-item__param">Объем</th>
-              <td class="catalog-item__value">500 г</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Вкус</th>
-              <td class="catalog-item__value">Рыба</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Цена</th>
-              <td class="catalog-item__value">700 Р.</td>
-            </tr>
-          </table>
-          <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
-        </article>
-        <article class="catalog__item catalog-item">
-          <p class="catalog-item__picture">
-            <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
-          </p>
-          <h2 class="catalog-item__title">
-            <span class="catalog-item__name">Cat Energy</span>
-            <span class="catalog-item__category">Pro</span>
-            <span class="catalog-item__amount">1000 г</span>
-          </h2>
-          <table class="catalog-item__params">
-            <tr>
-              <th class="catalog-item__param">Объем</th>
-              <td class="catalog-item__value">1000 г</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Вкус</th>
-              <td class="catalog-item__value">Рыба</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Цена</th>
-              <td class="catalog-item__value">700 Р.</td>
-            </tr>
-          </table>
-          <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
-        </article>
-        <article class="catalog__item catalog-item">
-          <p class="catalog-item__picture">
-            <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
-          </p>
-          <h2 class="catalog-item__title">
-            <span class="catalog-item__name">Cat Energy</span>
-            <span class="catalog-item__category">Slim</span>
-            <span class="catalog-item__amount">500 г</span>
-          </h2>
-          <table class="catalog-item__params">
-            <tr>
-              <th class="catalog-item__param">Объем</th>
-              <td class="catalog-item__value">500 г</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Вкус</th>
-              <td class="catalog-item__value">Гречка</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Цена</th>
-              <td class="catalog-item__value">400 Р.</td>
-            </tr>
-          </table>
-          <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
-        </article>
-        <article class="catalog__item catalog-item">
-          <p class="catalog-item__picture">
-            <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
-          </p>
-          <h2 class="catalog-item__title">
-            <span class="catalog-item__name">Cat Energy</span>
-            <span class="catalog-item__category">Slim</span>
-            <span class="catalog-item__amount">1000 г</span>
-          </h2>
-          <table class="catalog-item__params">
-            <tr>
-              <th class="catalog-item__param">Объем</th>
-              <td class="catalog-item__value">1000 г</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Вкус</th>
-              <td class="catalog-item__value">Гречка</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Цена</th>
-              <td class="catalog-item__value">700 Р.</td>
-            </tr>
-          </table>
-          <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
-        </article>
-        <article class="catalog__item catalog-item">
-          <p class="catalog-item__picture">
-            <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
-          </p>
-          <h2 class="catalog-item__title">
-            <span class="catalog-item__name">Cat Energy</span>
-            <span class="catalog-item__category">Slim</span>
-            <span class="catalog-item__amount">500 г</span>
-          </h2>
-          <table class="catalog-item__params">
-            <tr>
-              <th class="catalog-item__param">Объем</th>
-              <td class="catalog-item__value">500 г</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Вкус</th>
-              <td class="catalog-item__value">Рис</td>
-            </tr>
-            <tr>
-              <th class="catalog-item__param">Цена</th>
-              <td class="catalog-item__value">500 Р.</td>
-            </tr>
-          </table>
-          <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
-        </article>
-        <div class="catalog__item catalog-item catalog-item--show-all">
-          <b class="catalog-item__title">Показать еще 100500 товаров</b>
-          <p class="catalog-item__text">На самом деле вкусов гораздо больше!</p>
-          <a class="catalog-item__show-all btn btn--secondary btn--full-width" href="#">Показать все</a>
+        <div class="catalog__list">
+          <article class="catalog__item catalog-item">
+            <p class="catalog-item__picture">
+              <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
+            </p>
+            <h2 class="catalog-item__title">
+              <span class="catalog-item__name">Cat Energy</span>
+              <span class="catalog-item__category">Pro</span>
+              <span class="catalog-item__amount">500 г</span>
+            </h2>
+            <table class="catalog-item__params">
+              <tr>
+                <th class="catalog-item__param">Объем</th>
+                <td class="catalog-item__value">500 г</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Вкус</th>
+                <td class="catalog-item__value">Курица</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Цена</th>
+                <td class="catalog-item__value">700 Р.</td>
+              </tr>
+            </table>
+            <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
+          </article>
+          <article class="catalog__item catalog-item">
+            <p class="catalog-item__picture">
+              <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
+            </p>
+            <h2 class="catalog-item__title">
+              <span class="catalog-item__name">Cat Energy</span>
+              <span class="catalog-item__category">Pro</span>
+              <span class="catalog-item__amount">1000 г</span>
+            </h2>
+            <table class="catalog-item__params">
+              <tr>
+                <th class="catalog-item__param">Объем</th>
+                <td class="catalog-item__value">1000 г</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Вкус</th>
+                <td class="catalog-item__value">Курица</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Цена</th>
+                <td class="catalog-item__value">1000 Р.</td>
+              </tr>
+            </table>
+            <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
+          </article>
+          <article class="catalog__item catalog-item">
+            <p class="catalog-item__picture">
+              <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
+            </p>
+            <h2 class="catalog-item__title">
+              <span class="catalog-item__name">Cat Energy</span>
+              <span class="catalog-item__category">Pro</span>
+              <span class="catalog-item__amount">500 г</span>
+            </h2>
+            <table class="catalog-item__params">
+              <tr>
+                <th class="catalog-item__param">Объем</th>
+                <td class="catalog-item__value">500 г</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Вкус</th>
+                <td class="catalog-item__value">Рыба</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Цена</th>
+                <td class="catalog-item__value">700 Р.</td>
+              </tr>
+            </table>
+            <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
+          </article>
+          <article class="catalog__item catalog-item">
+            <p class="catalog-item__picture">
+              <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
+            </p>
+            <h2 class="catalog-item__title">
+              <span class="catalog-item__name">Cat Energy</span>
+              <span class="catalog-item__category">Pro</span>
+              <span class="catalog-item__amount">1000 г</span>
+            </h2>
+            <table class="catalog-item__params">
+              <tr>
+                <th class="catalog-item__param">Объем</th>
+                <td class="catalog-item__value">1000 г</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Вкус</th>
+                <td class="catalog-item__value">Рыба</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Цена</th>
+                <td class="catalog-item__value">700 Р.</td>
+              </tr>
+            </table>
+            <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
+          </article>
+          <article class="catalog__item catalog-item">
+            <p class="catalog-item__picture">
+              <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
+            </p>
+            <h2 class="catalog-item__title">
+              <span class="catalog-item__name">Cat Energy</span>
+              <span class="catalog-item__category">Slim</span>
+              <span class="catalog-item__amount">500 г</span>
+            </h2>
+            <table class="catalog-item__params">
+              <tr>
+                <th class="catalog-item__param">Объем</th>
+                <td class="catalog-item__value">500 г</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Вкус</th>
+                <td class="catalog-item__value">Гречка</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Цена</th>
+                <td class="catalog-item__value">400 Р.</td>
+              </tr>
+            </table>
+            <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
+          </article>
+          <article class="catalog__item catalog-item">
+            <p class="catalog-item__picture">
+              <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
+            </p>
+            <h2 class="catalog-item__title">
+              <span class="catalog-item__name">Cat Energy</span>
+              <span class="catalog-item__category">Slim</span>
+              <span class="catalog-item__amount">1000 г</span>
+            </h2>
+            <table class="catalog-item__params">
+              <tr>
+                <th class="catalog-item__param">Объем</th>
+                <td class="catalog-item__value">1000 г</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Вкус</th>
+                <td class="catalog-item__value">Гречка</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Цена</th>
+                <td class="catalog-item__value">700 Р.</td>
+              </tr>
+            </table>
+            <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
+          </article>
+          <article class="catalog__item catalog-item">
+            <p class="catalog-item__picture">
+              <img class="catalog-item__image" src="http://placehold.it/140x144" alt="Упаковка корма Cat Energy Pro 500 г" />
+            </p>
+            <h2 class="catalog-item__title">
+              <span class="catalog-item__name">Cat Energy</span>
+              <span class="catalog-item__category">Slim</span>
+              <span class="catalog-item__amount">500 г</span>
+            </h2>
+            <table class="catalog-item__params">
+              <tr>
+                <th class="catalog-item__param">Объем</th>
+                <td class="catalog-item__value">500 г</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Вкус</th>
+                <td class="catalog-item__value">Рис</td>
+              </tr>
+              <tr>
+                <th class="catalog-item__param">Цена</th>
+                <td class="catalog-item__value">500 Р.</td>
+              </tr>
+            </table>
+            <a class="catalog-item__buy btn btn--full-width" href="#">Заказать</a>
+          </article>
+          <div class="catalog__item catalog-item catalog-item--show-all">
+            <b class="catalog-item__title">Показать еще 100500 товаров</b>
+            <p class="catalog-item__text">На самом деле вкусов гораздо больше!</p>
+            <a class="catalog-item__show-all btn btn--secondary btn--full-width" href="#">Показать все</a>
+          </div>
         </div>
       </section>
       <section class="supplements">
         <h2 class="supplements__title">Дополнительные товары</h2>
-        <ul class="supplements__list">
-          <li class="supplements__item supplement">
-            <h3 class="supplement__name">Сахарозаменитель</h3>
-            <p class="supplement__amount">1 упаковка (100 г)</p>
-            <p class="supplement__price">200 Р.</p>
-            <a class="supplement__buy btn" href="#">Заказать</a>
-          </li>
-          <li class="supplements__item supplement">
-            <h3 class="supplement__name">Питьевая вода</h3>
-            <p class="supplement__amount">5 литров</p>
-            <p class="supplement__price">50 Р.</p>
-            <a class="supplement__buy btn" href="#">Заказать</a>
-          </li>
-          <li class="supplements__item supplement">
-            <h3 class="supplement__name">Молоко</h3>
-            <p class="supplement__amount">1 литр</p>
-            <p class="supplement__price">100 Р.</p>
-            <a class="supplement__buy btn" href="#">Заказать</a>
-          </li>
-          <li class="supplements__item supplement">
-            <h3 class="supplement__name">Витамины</h3>
-            <p class="supplement__amount">1 упаковка (30 г)</p>
-            <p class="supplement__price">300 Р.</p>
-            <a class="supplement__buy btn" href="#">Заказать</a>
-          </li>
-        </ul>
-        <p class="supplements__offer">
-          <a class="supplements__offer-link" href="#">Закажите все и получите чехол для кота в подарок!</a>
-        </p>
+        <div class="supplements__content">
+          <ul class="supplements__list">
+            <li class="supplements__item supplement">
+              <h3 class="supplement__name">Сахарозаменитель</h3>
+              <p class="supplement__amount">1 упаковка (100 г)</p>
+              <p class="supplement__price">200 Р.</p>
+              <a class="supplement__buy btn" href="#">Заказать</a>
+            </li>
+            <li class="supplements__item supplement">
+              <h3 class="supplement__name">Питьевая вода</h3>
+              <p class="supplement__amount">5 литров</p>
+              <p class="supplement__price">50 Р.</p>
+              <a class="supplement__buy btn" href="#">Заказать</a>
+            </li>
+            <li class="supplements__item supplement">
+              <h3 class="supplement__name">Молоко</h3>
+              <p class="supplement__amount">1 литр</p>
+              <p class="supplement__price">100 Р.</p>
+              <a class="supplement__buy btn" href="#">Заказать</a>
+            </li>
+            <li class="supplements__item supplement">
+              <h3 class="supplement__name">Витамины</h3>
+              <p class="supplement__amount">1 упаковка (30 г)</p>
+              <p class="supplement__price">300 Р.</p>
+              <a class="supplement__buy btn" href="#">Заказать</a>
+            </li>
+          </ul>
+          <p class="supplements__offer">
+            <a class="supplements__offer-link" href="#">Закажите все и получите чехол для кота в подарок!</a>
+          </p>
+        </div>
       </section>
     </main>
     <footer class="page-footer">
-      <p class="page-footer__logo">
-        <a class="logo logo--simple" href="index.html">
-          <img class="logo__image" src="http://placehold.it/128x24" alt="Магазин питания для котов Cat Energy" />
-        </a>
-      </p>
-      <div class="page-footer__social">
-        <b class="visually-hidden">Мы в социальных сетях:</b>
-        <ul class="social__list">
-          <li class="social__item">
-            <a class="social__link" href="#">
-              <img class="social__icon" src="http://placehold.it/30x16" alt="" />
-              <span class="visually-hidden">Вконтакте</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="#">
-              <img class="social__icon" src="http://placehold.it/23x23" alt="" />
-              <span class="visually-hidden">Инстаграм</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="#">
-              <img class="social__icon" src="http://placehold.it/14x28" alt="" />
-              <span class="visually-hidden">Фейсбук</span>
-            </a>
-          </li>
-        </ul>
+      <section class="contacts">
+        <h2 class="visually-hidden">Контакты</h2>
+        <div class="contacts__info">
+          <b class="contacts__title">Приглашаем к сотрудничеству дилеров!</b>
+          <p class="contacts__address">ул. Большая Конюшенная, д. 19/8<br><br> Санкт-Петербург</p>
+        </div>
+        <div class="contacts__map">
+          <img class="contacts__map-image" src="http://placehold.it/320x360" alt="Карта проезда: ул. Большая Конюшенная, д. 19/8, Санкт-Петербург" />
+        </div>
+      </section>
+      <div class="page-footer__wrapper">
+        <p class="page-footer__logo">
+          <a class="logo logo--simple" href="index.html">
+            <img class="logo__image" src="http://placehold.it/128x24" alt="Магазин питания для котов Cat Energy" />
+          </a>
+        </p>
+        <div class="page-footer__social">
+          <b class="visually-hidden">Мы в социальных сетях:</b>
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <img class="social__icon" src="http://placehold.it/30x16" alt="" />
+                <span class="visually-hidden">Вконтакте</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <img class="social__icon" src="http://placehold.it/23x23" alt="" />
+                <span class="visually-hidden">Инстаграм</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <img class="social__icon" src="http://placehold.it/14x28" alt="" />
+                <span class="visually-hidden">Фейсбук</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <p class="page-footer__copyright copyright">
+          <b class="visually-hidden">Разработано:</b>
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy <img class="copyright__icon" src="http://placehold.it/27x34" alt="HTML Academy" /></a>
+        </p>
       </div>
-      <p class="page-footer__copyright copyright">
-        <b class="visually-hidden">Разработано:</b>
-        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy <img class="copyright__icon" src="http://placehold.it/27x34" alt="HTML Academy" /></a>
-      </p>
     </footer>
   </body>
 </html>

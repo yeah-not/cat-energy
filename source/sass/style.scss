@@ -5,6 +5,26 @@
 @import "base/fonts.scss";
 @import "base/base.scss";
 
-// Базовые блоки
+// Хелперы
 @import "blocks/visually-hidden.scss";
+
+// Форма
+@import "blocks/form/field-radio.scss";
+@import "blocks/form/form.scss";
+
+// Главные блоки
 @import "blocks/page.scss";
+@import "blocks/page-header.scss";
+@import "blocks/main-nav.scss";
+@import "blocks/page-main.scss";
+@import "blocks/page-footer.scss";
+
+// Блоки
+@import "blocks/leading.scss";
+@import "blocks/categories.scss";
+@import "blocks/features.scss";
+@import "blocks/live-example.scss";
+@import "blocks/contacts.scss";
+@import "blocks/catalog.scss";
+@import "blocks/supplements.scss";
+@import "blocks/program.scss";

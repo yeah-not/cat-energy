@@ -1,1 +1,76 @@
-// Тут будут миксины
+@mixin container {
+  width: $container-sm;
+  padding: 0 $container-gap-sm;
+  margin: 0 auto;
+
+  @media (min-width: $screen-md) {
+    width: $container-md;
+    padding-left: $container-gap-md;
+    padding-right: $container-gap-md;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: $container-xl;
+    padding-left: $container-gap-xl;
+    padding-right: $container-gap-xl;
+  }
+}
+
+@mixin row {
+  margin: 0 (-$container-gap-sm);
+
+  @media (min-width: $screen-md) {
+    margin: 0 (-$container-gap-md);
+  }
+
+  @media (min-width: $screen-xl) {
+    margin: 0 (-$container-gap-xl);
+  }
+}
+
+@mixin row--sm {
+  margin: 0 (-$container-gap-sm);
+}
+
+@mixin row--md {
+  margin: 0 (-$container-gap-md);
+}
+
+@mixin row--xl {
+  margin: 0 (-$container-gap-xl);
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@mixin outline($color-num: 1, $hide-content: 0) {
+  $sea-green:     #2E8B57;
+  $orange-red:    #FF4500;
+  $sky-blue:      #87CEEB;
+  $gold:          #FFD700;
+  $aquamarine:    #7FFFD4;
+  $blue-violet:   #8A2BE2;
+
+  // $outline-colors: $orange-red $sky-blue $gold $aquamarine $blue-violet $sea-green;
+  $color-per-num: (1: red, 2: blue, 3: orange, 4: violet, 5: $orange-red);
+  $color: map-get($color-per-num, $color-num);
+
+  background-clip: content-box;
+  // background-color: rgba($color, 0.1);
+  outline: 1px solid $color;
+  outline-offset: -1px;
+  // box-shadow: inset 0 0 0 1px rgba($white, 0.5);
+
+  @if $hide-content == 1 {
+    font-size: 0;
+    line-height: 0;
+
+    > * {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.categories {
+  $block: &;
+  @include container;
+  @include outline(1, 1); /* TODO: Сетка */
+  overflow: hidden; /* TODO: Сетка */
+
+  margin-bottom: 21px;
+
+  &__list {
+    @include reset-list;
+
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 0 -20px;
+  }
+
+  &__item {
+    @include outline(2, 1); /* TODO: Сетка */
+
+    min-height: 266px; /* TODO: Сетка */
+    padding: 32px 20px 24px;
+    margin: 0 0 20px;
+  }
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 52px;
+
+    &__list {
+      margin-bottom: -30px;
+    }
+
+    &__item {
+      min-height: 372px; /* TODO: Сетка */
+      padding: 82px 0 63px;
+      padding-left: 52px;
+      padding-right: 280px;
+      margin-bottom: 30px;
+
+      &--gain {
+        padding-right: 310px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 80px;
+
+    &__list {
+      flex-direction: row;
+      justify-content: space-between;
+
+      margin-bottom: 0;
+    }
+
+    &__item {
+      width: 570px;
+      padding-right: 52px;
+      margin: 0;
+    }
+  }
+}

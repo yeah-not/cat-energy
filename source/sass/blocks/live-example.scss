@@ -1,0 +1,55 @@
+.live-example {
+  $block: &;
+  @include container;
+  @include outline; /* TODO: Сетка */
+
+  display: flex;
+  flex-direction: column;
+
+  &__info {
+    @include outline(2, 1);
+    min-height: 344px; /* TODO: Сетка */
+
+    margin-bottom: 33px;
+  }
+
+  &__pictures {
+    @include outline(2, 1);
+    min-height: 328px; /* TODO: Сетка */
+
+    margin: 0 (-$container-gap-sm);
+  }
+
+  @media (min-width: $screen-md) {
+    &__info {
+      min-height: 371px; /* TODO: Сетка */
+
+      margin-bottom: 80px;
+    }
+
+    &__pictures {
+      min-height: 631px; /* TODO: Сетка */
+
+      margin: 0;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    flex-direction: row;
+
+    &__info {
+      min-height: 655px; /* TODO: Сетка */
+
+      width: 570px;
+      margin-bottom: 0;
+      padding-right: $grid-gutter;
+    }
+
+    &__pictures {
+      min-height: 655px; /* TODO: Сетка */
+
+      width: 650px;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.page-footer {
+  $block: &;
+  @include outline; /* TODO: Сетка */
+
+
+  &__wrapper {
+    @include container;
+    @include outline(2); /* TODO: Сетка */
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    @include outline(3, 1); /* TODO: Сетка */
+    min-height: 95px; /* TODO: Сетка */
+  }
+
+  &__social {
+    @include outline(3, 1); /* TODO: Сетка */
+    min-height: 62px; /* TODO: Сетка */
+  }
+
+  &__copyright {
+    @include outline(3, 1); /* TODO: Сетка */
+    min-height: 78px; /* TODO: Сетка */
+  }
+
+  @media (min-width: $screen-md) {
+    &__wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__logo {
+      min-height: 150px; /* TODO: Сетка */
+
+      width: 182px;
+    }
+
+    &__social {
+      min-height: 150px; /* TODO: Сетка */
+
+      width: 250px;
+    }
+
+    &__copyright {
+      min-height: 150px; /* TODO: Сетка */
+
+      width: 182px;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    &__wrapper {
+    }
+
+    &__logo {
+      width: 245px;
+    }
+
+    &__social {
+      width: 570px;
+    }
+
+    &__copyright {
+      width: 245px;
+    }
+  }
+}
