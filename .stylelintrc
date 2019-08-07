@@ -3,6 +3,15 @@
 
   "rules": {
     "declaration-no-important": true,
-    "indentation": [2, {"ignore": ["inside-parens"]}]
+    "indentation": [2, {"ignore": ["inside-parens"]}],
+
+    "at-rule-empty-line-before": ["always", {
+      "except": [
+        "first-nested",
+        "blockless-after-blockless",
+        "after-same-name"
+      ],
+      "ignore": ["after-comment"]
+    }],
   }
 }
