@@ -19,45 +19,38 @@
   background-repeat: no-repeat;
 
   &--index {
-    // background-image: url("../img/preview/1 cat-energy-index-mobile.jpg");
-    background-image: url("../img/preview/1 cat-energy-index-mobile-2.jpg");
+    background-image: url("../img/preview/Index-Mobile.jpg");
+
+    @media (min-width: $screen-md) {
+      background-image: url("../img/preview/Index-Tablet.jpg");
+    }
+
+    @media (min-width: $screen-xl) {
+      background-image: url("../img/preview/Index-Desktop.jpg");
+    }
   }
 
   &--catalog {
-    // background-image: url("../img/preview/cat-energy-catalog-1-mobile.jpg");
-    background-image: url("../img/preview/cat-energy-catalog-1-mobile-2.jpg");
+    background-image: url("../img/preview/Catalog-Mobile.jpg");
+
+    @media (min-width: $screen-md) {
+      background-image: url("../img/preview/Catalog-Tablet.jpg");
+    }
+
+    @media (min-width: $screen-xl) {
+      background-image: url("../img/preview/Catalog-Desktop.jpg");
+    }
   }
 
   &--program {
-    // background-image: url("../img/preview/cat-energy-form-1-mobile.jpg");
-    background-image: url("../img/preview/cat-energy-form-1-mobile-2.jpg");
-  }
+    background-image: url("../img/preview/Form-Mobile.jpg");
 
-  @media (min-width: $screen-md) {
-    &--index {
-      background-image: url("../img/preview/2 cat-energy-index-tablet.jpg");
+    @media (min-width: $screen-md) {
+      background-image: url("../img/preview/Form-Tablet.jpg");
     }
 
-    &--catalog {
-      background-image: url("../img/preview/cat-energy-catalog-2-tablet.jpg");
-    }
-
-    &--program {
-      background-image: url("../img/preview/cat-energy-form-2-tablet.jpg");
-    }
-  }
-
-  @media (min-width: $screen-xl) {
-    &--index {
-      background-image: url("../img/preview/3 cat-energy-index-desktop.jpg");
-    }
-
-    &--catalog {
-      background-image: url("../img/preview/cat-energy-catalog-3-desktop.jpg");
-    }
-
-    &--program {
-      background-image: url("../img/preview/cat-energy-form-3-desktop.jpg");
+    @media (min-width: $screen-xl) {
+      background-image: url("../img/preview/Form-Desktop.jpg");
     }
   }
   /* EO TODO: Сетка */
