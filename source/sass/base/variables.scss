@@ -35,15 +35,16 @@ $color-danger:                #ff8282;
 // Семантические цвета
 
 $text-color:                  $gray--darken;
-// $text-color-muted:            $gray;
-$body-bg:                     $white;
+// $text-color--muted:            $gray;
+$text-color--headings:        $gray--darkest;
 
 $link-color:                  $color-main;
 $link-color--hover:           darken($color-main, 15%);
 $link-color--visited:         lighten($color-main, 15%);
 
 $border-color:                $gray--lighter;
-
+$body-bg:                     $white;
+$bg-light-gray:               $gray--ultra-light;
 
 // Базовая типографика
 

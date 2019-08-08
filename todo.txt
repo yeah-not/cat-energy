@@ -1,4 +1,6 @@
-
+color: $gray--darkest; > $text-color--headings
+line-height: 1 > $line-height--headings;
+line-height: 1.5 > пусто ($line-height--md)
 
 
 
