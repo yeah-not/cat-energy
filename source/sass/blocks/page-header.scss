@@ -1,31 +1,84 @@
 .page-header {
   $block: &;
   @include container;
-  @include outline; /* TODO: Сетка */
+  // @include outline; /* TODO: Сетка */
+
+
+  &__wrapper {
+    margin: 0 (-$container-gap-sm - 1) 0;
+
+    position: relative;
+    border: 1px solid $gray--lightest-4;
+    border-top: none;
+  }
 
   &__logo {
-    @include outline(2, 1); /* TODO: Сетка */
-    min-height: 66px; /* TODO: Сетка */
+    // @include outline(2); /* TODO: Сетка */
+    display: flex;
+
+    padding: 12px $container-gap-sm 15px;
+    padding-right: 65px;
+  }
+
+  &__logo-link {
+
+    &[href]:hover {
+      opacity: 0.8;
+    }
+
+    &[href]:active {
+      opacity: 0.6;
+    }
+  }
+
+  &__logo-image {
+    display: block;
   }
 
   @media (min-width: $screen-md) {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 24px;
-    padding-bottom: 15px;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      margin: 0;
+      padding-top: 24px;
+      padding-bottom: 15px;
+
+      border: none;
+    }
 
     &__logo {
-      width: 182px;
-      min-height: 58px; /* TODO: Сетка */
+      max-width: 192px;
+      padding: 0;
+      padding-right: 10px;
+    }
+
+    &__logo-image {
+      width: 173px; /* TODO: Картинки */
+      height: 58px; /* TODO: Картинки */
     }
   }
 
   @media (min-width: $screen-xl) {
-    padding-top: 54px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    // background: linear-gradient(to right, $white 50%, $color-main--dark-2 50%);
+
+    &__wrapper {
+      width: $container-xl;
+      margin: 0 auto;
+      padding: 54px $container-gap-xl 15px;
+    }
 
     &__logo {
       width: 245px;
-      min-height: 58px; /* TODO: Сетка */
+    }
+
+    &__logo-image {
+      width: 202px; /* TODO: Картинки */
+      height: 59px; /* TODO: Картинки */
     }
   }
 }

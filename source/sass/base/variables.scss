@@ -14,11 +14,13 @@ $gray--lighter:               #cdcdcd; // hsl(0, 0%, 80%);
 $gray--lightest:              #dcdcdc; // hsl(0, 0%, 86%);
 $gray--lightest-2:            #eaeaea; // hsl(0, 0%, 92%);
 $gray--lightest-3:            #ebebeb; // hsl(0, 0%, 92%);
+$gray--lightest-4:            #e6e6e6; // hsl(0, 0%, 90%);
 $gray--ultra-light:           #f2f2f2; // hsl(0, 0%, 95%);
 $white:                       hsl(0, 0%, 100%);
 
 $color-main:                  #68b738; // hsl(97, 53%, 47%);
 $color-main--dark:            #5eaa2f; // hsl(97, 57%, 43%);
+$color-main--dark-2:          #63a73a; // hsl(97, 48%, 44%);
 $color-danger:                #ff8282;
 // $color-success:               hsl(120, 39%, 54%);
 // $color-warning:               hsl(35, 84%, 62%);
@@ -45,7 +47,7 @@ $border-color:                $gray--lighter;
 // Базовая типографика
 
 $font-size--xxlarge:          20px;
-// $font-size--xlarge:           18px;
+$font-size--xlarge:           18px;
 $font-size--large:            16px;
 $font-size:                   14px;
 $font-size--small:            12px;

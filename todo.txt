@@ -16,3 +16,11 @@ $screen-xs?
 atom SCSS autocomplete &
 
 Удалить лишние классы
+
+Резина
+Посмотреть тему 2017 (миксин контейнера)
+
+Кроссбраузерность
+Sticky Footer IE
+flex-shrink 1 IE 10
+Линки-картинки с display: block;
