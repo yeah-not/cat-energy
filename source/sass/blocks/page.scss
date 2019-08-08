@@ -14,6 +14,7 @@
   background: $body-bg;
 
   @media (min-width: $screen-md) {
+    font-size: $font-size--md;
     line-height: $line-height--md;
   }
 
@@ -22,17 +23,17 @@
   background-position: 50% 0;
   background-repeat: no-repeat;
 
-  &--index {
-    background-image: url("../img/preview/Index-Mobile.jpg");
-
-    @media (min-width: $screen-md) {
-      background-image: url("../img/preview/Index-Tablet.jpg");
-    }
-
-    @media (min-width: $screen-xl) {
-      background-image: url("../img/preview/Index-Desktop.jpg");
-    }
-  }
+  // &--index {
+  //   background-image: url("../img/preview/Index-Mobile.jpg");
+  //
+  //   @media (min-width: $screen-md) {
+  //     background-image: url("../img/preview/Index-Tablet.jpg");
+  //   }
+  //
+  //   @media (min-width: $screen-xl) {
+  //     background-image: url("../img/preview/Index-Desktop.jpg");
+  //   }
+  // }
 
   &--catalog {
     background-image: url("../img/preview/Catalog-Mobile.jpg");
