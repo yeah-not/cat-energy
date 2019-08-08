@@ -13,6 +13,10 @@
 
   background: $body-bg;
 
+  @media (min-width: $screen-md) {
+    line-height: $line-height--md;
+  }
+
   /* TODO: Сетка */
   min-height: 1000px;
   background-position: 50% 0;
