@@ -1,24 +1,129 @@
 .live-example {
   $block: &;
-  @include container;
   @include outline; /* TODO: Сетка */
 
   display: flex;
   flex-direction: column;
 
+  background: $bg-light-gray;
+
+  &__wrapper {
+    @include container;
+    @include outline(2); /* TODO: Сетка */
+  }
+
   &__info {
-    @include outline(2, 1);
-    min-height: 344px; /* TODO: Сетка */
+    @include outline(3);
+    // min-height: 344px; /* TODO: Сетка */
 
     margin-bottom: 33px;
   }
 
+  &__title {
+    font-size: $font-size--page-h1;
+    line-height: 1.67;
+    font-family: $font-family--headings;
+    color: $text-color--headings;
+
+    margin: 0 0 30px;
+  }
+
+  &__desc {
+    margin: 0 0 25px;
+  }
+
+  &__results {
+    margin: 0 0 40px;
+
+    tbody {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__result {
+    display: block;
+    position: relative;
+
+    margin: 0 0 35px;
+  }
+
+  &__field {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 87px;
+    padding: 0 5px;
+    margin-top: -10px;
+
+    font-size: $font-size--small;
+    line-height: 1;
+    font-weight: normal;
+    text-align: center;
+    text-transform: lowercase;
+
+    background: $bg-light-gray;
+    border-radius: 10px;
+  }
+
+  &__value {
+    display: block;
+
+    width: 124px;
+    padding: 16px;
+
+    font-size: $font-size--ultra-large;
+    line-height: 1;
+    font-family: $font-family--custom;
+    text-align: center;
+    color: $gray--darkest;
+
+    border: solid 1px $border-color;
+    border-radius: 3px;
+  }
+
+  &__cost {
+    width: 100%;
+
+    font-size: $font-size;
+    line-height: 1.43;
+    font-family: $font-family--custom;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: $gray--darkest;
+  }
+
+  &__cost-field {
+    display: inline;
+    font-weight: inherit;
+
+    &::after { content: ": "; }
+  }
+
+  &__cost-value {
+    display: inline;
+  }
+
   &__pictures {
-    @include outline(2, 1);
-    min-height: 328px; /* TODO: Сетка */
+    @include outline(3); /* TODO: Сетка */
 
     margin: 0 (-$container-gap-sm);
   }
+
+  &__pictures-wrapper {
+    margin: 0 0 30px;
+  }
+
+  &__picture {
+    @include outline(3); /* TODO: Сетка */
+  }
+
+
+
 
   @media (min-width: $screen-md) {
     &__info {
