@@ -1,20 +1,24 @@
 .live-example {
   $block: &;
-  @include outline; /* TODO: Сетка */
-
-  display: flex;
-  flex-direction: column;
+  $padding-top-md: 51px;
+  $picture-bg-gap: 170px;
+  $picture-bg: linear-gradient(to bottom, $white $picture-bg-gap, $bg-light-gray $picture-bg-gap);
+  $picture-bg--overlap: linear-gradient(to bottom, $white $picture-bg-gap, $gray--lightest-2 $picture-bg-gap);
+  // @include outline; /* TODO: Сетка */
 
   background: $bg-light-gray;
 
   &__wrapper {
-    @include container;
-    @include outline(2); /* TODO: Сетка */
+    // @include outline(2); /* TODO: Сетка */
+
+    display: flex;
+    flex-direction: column;
   }
 
+  // Информация
   &__info {
-    @include outline(3);
-    // min-height: 344px; /* TODO: Сетка */
+    // @include outline(3);
+    @include container;
 
     margin-bottom: 33px;
   }
@@ -23,6 +27,7 @@
     font-size: $font-size--page-h1;
     line-height: 1.67;
     font-family: $font-family--headings;
+    font-weight: normal;
     color: $text-color--headings;
 
     margin: 0 0 30px;
@@ -33,6 +38,7 @@
   }
 
   &__results {
+    display: block;
     margin: 0 0 40px;
 
     tbody {
@@ -72,7 +78,7 @@
   &__value {
     display: block;
 
-    width: 124px;
+    min-width: 124px;
     padding: 16px;
 
     font-size: $font-size--ultra-large;
@@ -99,7 +105,7 @@
 
   &__cost-field {
     display: inline;
-    font-weight: inherit;
+    font-weight: normal;
 
     &::after { content: ": "; }
   }
@@ -108,53 +114,242 @@
     display: inline;
   }
 
+  // Слайдер с нахлестом
   &__pictures {
-    @include outline(3); /* TODO: Сетка */
-
-    margin: 0 (-$container-gap-sm);
+    // @include outline(3); /* TODO: Сетка */
+    padding: 0 0 36px;
   }
 
   &__pictures-wrapper {
-    margin: 0 0 30px;
+    @include container;
+
+    margin-bottom: 30px;
   }
 
   &__picture {
-    @include outline(3); /* TODO: Сетка */
+    // @include outline(3); /* TODO: Сетка */
   }
 
+  &__image {
+    display: block;
+    flex-shrink: 0;
+  }
 
-
+  &__controls {
+    @include row;
+  }
 
   @media (min-width: $screen-md) {
-    &__info {
-      min-height: 371px; /* TODO: Сетка */
+    background-color: transparent;
 
+    &__wrapper {
+      padding-top: $padding-top-md;
+    }
+
+    // Информация
+    &__info {
       margin-bottom: 80px;
     }
 
-    &__pictures {
-      min-height: 631px; /* TODO: Сетка */
+    &__title {
+      margin-bottom: 56px;
 
-      margin: 0;
+      font-size: $font-size--page-h1-md;
+      line-height: 1;
+    }
+
+    &__desc {
+      margin-bottom: 52px;
+
+      font-size: $font-size--large;
+      line-height: 1.5;
+    }
+
+    &__results tbody {
+      align-items: center;
+    }
+
+    &__result {
+      margin-right: 42px;
+      margin-bottom: 0;
+    }
+
+    &__field {
+      font-size: 14px;
+      background-color: $white;
+    }
+
+    &__value {
+      font-size: 30px;
+      line-height: 1.23;
+
+      min-width: 162px;
+    }
+
+    &__cost {
+      display: flex;
+      flex-direction: column;
+
+      width: auto;
+      margin-left: auto;
+
+      text-align: right;
+    }
+
+    &__cost-field,
+    &__cost-value {
+      font-size: $font-size--xxlarge;
+      line-height: 1;
+    }
+
+    &__cost-field {
+      margin-bottom: 10px;
+    }
+
+    // Слайдер с нахлестом
+    &__pictures {
+      padding-bottom: 0;
+      background: $picture-bg;
+    }
+
+    &__pictures-wrapper {
+      position: relative;
+      margin-bottom: 0;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0; bottom: 0;
+        left: calc(100% - #{$container-gap-md});
+
+        width: 100vw;
+        background: $picture-bg--overlap;
+      }
+    }
+
+    &__picture {
+      background: $picture-bg;
+
+      &--overlap {
+        background: $picture-bg--overlap;
+      }
+    }
+    &__image {
+      width: 708px; /* TODO: Картинки */
+      height: 517px; /* TODO: Картинки */
+    }
+
+    &__controls {
+      position: relative;
+      padding-top: 21px;
+      padding-bottom: 75px;
+
+      background: $bg-light-gray;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 50%; right: 0;
+
+        background: $gray--lightest-2;
+      }
     }
   }
 
   @media (min-width: $screen-xl) {
-    flex-direction: row;
+    background: $picture-bg;
 
-    &__info {
-      min-height: 655px; /* TODO: Сетка */
+    // Информация
+    &__wrapper {
+      @include container--xl;
+      flex-direction: row;
+      position: relative;
 
-      width: 570px;
-      margin-bottom: 0;
-      padding-right: $grid-gutter;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0; bottom: 0;
+        left: calc(100% - #{$container-gap-xl});
+
+        width: 100vw;
+
+        background: $picture-bg--overlap;
+      }
     }
 
-    &__pictures {
-      min-height: 655px; /* TODO: Сетка */
-
-      width: 650px;
+    &__info {
+      width: 570px;
       margin: 0;
+      padding: 0;
+      padding-right: 140px;
+      padding-bottom: 50px;
+    }
+
+    &__title {
+      margin-bottom: 138px;
+    }
+
+    &__desc {
+      margin-bottom: 67px;
+    }
+
+    &__results {
+      width: 366px;
+    }
+
+    &__result {
+      margin-right: 0;
+    }
+
+    &__field {
+      background-color: $bg-light-gray;
+    }
+
+    &__cost {
+      flex-direction: row;
+
+      width: 100%;
+      margin: 62px 0 0;
+    }
+
+    &__cost-field {
+      text-align: left;
+      width: 200px;
+      margin-right: 10px;
+    }
+
+    &__cost-value {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    // Слайдер с нахлестом
+    &__pictures {
+      width: 690px;
+      margin: 0;
+      margin-top: -$padding-top-md;
+      margin-right: -$grid-gutter-2;
+    }
+
+    &__pictures-wrapper {
+      width: auto;
+      margin: 0;
+      padding: 0;
+
+      background: none;
+
+      &:after { display: none; }
+    }
+
+    &__controls {
+      margin: 0;
+      padding: 48px 0 81px;
+    }
+
+    &__image {
+      width: 690x; /* TODO: Картинки */
+      height: 517px; /* TODO: Картинки */
     }
   }
 }

@@ -27,6 +27,8 @@
 
   &__controls {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__scale {
@@ -34,6 +36,7 @@
 
     width: 84px;
     height: 14px;
+    margin: 0 18px;
     padding: 3px 5px;
 
     background: $white;
@@ -49,5 +52,120 @@
 
     background: $color-main;
     border-radius: 3px;
+  }
+
+  &__toggle {
+    display: none;
+  }
+
+  &__button {
+    padding: 0;
+
+    font-size: $font-size--large;
+    line-height: 1.25;
+    font-family: $font-family--custom;
+    text-transform: uppercase;
+    color: $gray--darkest;
+
+    background: none;
+    border: none;
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    &__controls {
+      padding-left: 3px;
+    }
+
+    &__scale {
+      width: 428px;
+      height: 6px;
+      margin: 0 23px;
+
+      background-color: $gray--lightest;
+      border: none;
+    }
+
+    &__bar {
+      display: none;
+    }
+
+    &__toggle {
+      display: block;
+
+      position: absolute;
+      top: 0;
+      transform: translate(-50%, -50%);
+
+      width: 34px;
+      height: 34px;
+
+      background-color: #ffffff;
+      border: 1px solid $border-color;
+      border-radius: 50%;
+      box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.15);
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 8px;
+        height: 8px;
+
+        background: $color-main;
+        border-radius: 50%;
+      }
+
+      &:hover,
+      &:focus {
+        outline: 0 none;
+        box-shadow: 0px 3px 5px 0 rgba(0, 0, 0, 0.25);
+      }
+
+      &:active {
+        box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.3);
+        border-width: 2px;
+        border-color: $color-main;
+      }
+    }
+
+    &__button {
+      position: relative;
+      font-size: $font-size--xxlarge;
+      line-height: 1;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0; right: 0;
+
+        border-bottom: 1px dashed #000;
+        opacity: 0.23;
+      }
+
+      &:hover,
+      &:focus {
+        outline: 0 none;
+        &:after {
+          border-bottom-style: solid;
+          opacity: 0.4;
+        }
+      }
+
+      &:active {
+        opacity: 1;
+
+        &:after {
+          border: none;
+        }
+      }
+    }
   }
 }
