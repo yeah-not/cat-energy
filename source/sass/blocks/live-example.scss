@@ -1,9 +1,12 @@
 .live-example {
   $block: &;
-  $padding-top-md: 51px;
-  $picture-bg-gap: 170px;
-  $picture-bg: linear-gradient(to bottom, $white $picture-bg-gap, $bg-light-gray $picture-bg-gap);
-  $picture-bg--overlap: linear-gradient(to bottom, $white $picture-bg-gap, $gray--lightest-2 $picture-bg-gap);
+  $padding-top-xl: 57px;
+  $picture-bg-md-gap: 170px;
+  $picture-bg-xl-gap: 190px;
+  $picture-bg-md: linear-gradient(to bottom, $white $picture-bg-md-gap, $bg-light-gray $picture-bg-md-gap);
+  $picture-bg-md--overlap: linear-gradient(to bottom, $white $picture-bg-md-gap, $gray--lightest-2 $picture-bg-md-gap);
+  $picture-bg-xl: linear-gradient(to bottom, $white $picture-bg-xl-gap, $bg-light-gray $picture-bg-xl-gap);
+  $picture-bg-xl--overlap: linear-gradient(to bottom, $white $picture-bg-xl-gap, $gray--lightest-2 $picture-bg-xl-gap);
   // @include outline; /* TODO: Сетка */
 
   background: $bg-light-gray;
@@ -20,6 +23,7 @@
     // @include outline(3);
     @include container;
 
+    padding-top: 20px;
     margin-bottom: 33px;
   }
 
@@ -30,7 +34,7 @@
     font-weight: normal;
     color: $text-color--headings;
 
-    margin: 0 0 30px;
+    margin: 0 0 20px;
   }
 
   &__desc {
@@ -39,7 +43,6 @@
 
   &__results {
     display: block;
-    margin: 0 0 40px;
 
     tbody {
       display: flex;
@@ -52,7 +55,7 @@
     display: block;
     position: relative;
 
-    margin: 0 0 35px;
+    margin: 0 0 30px;
   }
 
   &__field {
@@ -85,6 +88,7 @@
     line-height: 1;
     font-family: $font-family--custom;
     text-align: center;
+    text-transform: uppercase;
     color: $gray--darkest;
 
     border: solid 1px $border-color;
@@ -123,7 +127,11 @@
   &__pictures-wrapper {
     @include container;
 
-    margin-bottom: 30px;
+    margin-bottom: 33px;
+  }
+
+  &__pictures-inner {
+    @include row--sm;
   }
 
   &__picture {
@@ -143,16 +151,16 @@
     background-color: transparent;
 
     &__wrapper {
-      padding-top: $padding-top-md;
+      padding-top: 25px;
     }
 
     // Информация
     &__info {
-      margin-bottom: 80px;
+      margin-bottom: 85px;
     }
 
     &__title {
-      margin-bottom: 56px;
+      margin-bottom: 63px;
 
       font-size: $font-size--page-h1-md;
       line-height: 1;
@@ -175,15 +183,22 @@
     }
 
     &__field {
+      width: auto;
+      max-width: 150px;
+      padding: 0 8px;
+
       font-size: 14px;
+      white-space: nowrap;
+
       background-color: $white;
     }
 
     &__value {
+      min-width: 162px;
+      padding-bottom: 18px;
+
       font-size: 30px;
       line-height: 1.23;
-
-      min-width: 162px;
     }
 
     &__cost {
@@ -209,7 +224,7 @@
     // Слайдер с нахлестом
     &__pictures {
       padding-bottom: 0;
-      background: $picture-bg;
+      background: $picture-bg-md;
     }
 
     &__pictures-wrapper {
@@ -223,15 +238,17 @@
         left: calc(100% - #{$container-gap-md});
 
         width: 100vw;
-        background: $picture-bg--overlap;
+        background: $picture-bg-md--overlap;
       }
     }
 
-    &__picture {
-      background: $picture-bg;
+    &__pictures-inner {
+      margin: 0;
+    }
 
+    &__picture {
       &--overlap {
-        background: $picture-bg--overlap;
+        background: $picture-bg-md--overlap;
       }
     }
     &__image {
@@ -258,13 +275,14 @@
   }
 
   @media (min-width: $screen-xl) {
-    background: $picture-bg;
+    background: $picture-bg-xl;
 
     // Информация
     &__wrapper {
       @include container--xl;
       flex-direction: row;
       position: relative;
+      padding-top: $padding-top-xl;
 
       &:after {
         content: "";
@@ -274,7 +292,7 @@
 
         width: 100vw;
 
-        background: $picture-bg--overlap;
+        background: $picture-bg-xl--overlap;
       }
     }
 
@@ -282,12 +300,12 @@
       width: 570px;
       margin: 0;
       padding: 0;
-      padding-right: 140px;
+      padding-right: 135px;
       padding-bottom: 50px;
     }
 
     &__title {
-      margin-bottom: 138px;
+      margin-bottom: 146px;
     }
 
     &__desc {
@@ -315,7 +333,7 @@
 
     &__cost-field {
       text-align: left;
-      width: 200px;
+      width: 190px;
       margin-right: 10px;
     }
 
@@ -328,8 +346,10 @@
     &__pictures {
       width: 690px;
       margin: 0;
-      margin-top: -$padding-top-md;
+      margin-top: -$padding-top-xl;
       margin-right: -$grid-gutter-2;
+
+      background: $picture-bg-xl;
     }
 
     &__pictures-wrapper {
@@ -342,9 +362,16 @@
       &:after { display: none; }
     }
 
+    &__picture {
+      &--overlap {
+        background: $picture-bg-xl--overlap;
+      }
+    }
+
     &__controls {
       margin: 0;
-      padding: 48px 0 81px;
+      padding: 43px 0 72px;
+      padding-left: 37px;
     }
 
     &__image {
