@@ -1,56 +1,116 @@
 .page-footer {
   $block: &;
+  $separator-sm: 1px solid rgba($black, 0.1);
   // @include outline; /* TODO: Сетка */
+
+  color: $text-color;
+  background: $bg-light-gray;
 
   &__wrapper {
     @include container;
-    @include outline(2); /* TODO: Сетка */
+    // @include outline(2); /* TODO: Сетка */
 
     display: flex;
     flex-direction: column;
   }
 
   &__logo {
-    @include outline(3, 1); /* TODO: Сетка */
-    min-height: 95px; /* TODO: Сетка */
+    // @include outline(3); /* TODO: Сетка */
+    display: flex;
+    justify-content: center;
+
+    margin: 0;
+    padding: 40px 0 32px;
+  }
+
+  &__logo-link,
+  &__logo-image {
+    display: block;
   }
 
   &__social {
-    @include outline(3, 1); /* TODO: Сетка */
-    min-height: 62px; /* TODO: Сетка */
+    // @include outline(3); /* TODO: Сетка */
+    padding: 22px 0 17px;
+    border-top: $separator-sm;
   }
 
   &__copyright {
-    @include outline(3, 1); /* TODO: Сетка */
-    min-height: 78px; /* TODO: Сетка */
+    // @include outline(3); /* TODO: Сетка */
+    margin: 0;
+    padding: 19px 0;
+
+    border-top: $separator-sm;
+  }
+
+  &__copyright-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: $font-size--large;
+    line-height: 1;
+    text-decoration: none;
+    color: inherit;
+
+    &,
+    &:hover {
+      color: inherit;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  &__copyright-icon {
+    margin-right: -5px;
   }
 
   @media (min-width: $screen-md) {
     &__wrapper {
       flex-direction: row;
+      align-items: center;
       justify-content: space-between;
+
+      padding-top: 53px;
+      padding-bottom: 53px;
     }
 
     &__logo {
-      min-height: 150px; /* TODO: Сетка */
+      display: block;
 
       width: 182px;
+      padding: 0;
     }
 
     &__social {
-      min-height: 150px; /* TODO: Сетка */
-
       width: 250px;
+      padding: 0;
+
+      border: none;
     }
 
     &__copyright {
-      min-height: 150px; /* TODO: Сетка */
-
       width: 182px;
+      padding: 0;
+
+      border: none;
+    }
+
+    &__copyright-link {
+      display: block;
+      text-align: right;
+    }
+
+    &__copyright-icon {
+      margin-left: 10px;
+      vertical-align: middle;
     }
   }
   @media (min-width: $screen-xl) {
     &__wrapper {
+      padding-top: 58px;
+      padding-bottom: 58px;
     }
 
     &__logo {
