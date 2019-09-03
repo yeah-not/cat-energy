@@ -9,8 +9,13 @@
 @import "blocks/visually-hidden.scss";
 
 // Форма
+@import "blocks/form/btn.scss";
 @import "blocks/form/field-radio.scss";
 @import "blocks/form/form.scss";
+
+// Переиспользуемые блоки
+@import "blocks/overlap-slider.scss";
+@import "blocks/social.scss";
 
 // Главные блоки
 @import "blocks/page.scss";

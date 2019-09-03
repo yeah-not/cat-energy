@@ -1,6 +1,15 @@
 
 
 
+color: $gray--darkest; > $text-color--headings
+line-height: 1 > $line-height--headings;
+line-height: 1.5 > пусто ($line-height--md)
+font-size: 16px > пусто ($font-size--md);
+
+Категории
+Состояния ссылок
+
+Footer Social, Copyright - inline-svg + состояния
 
 
 Шрифты
@@ -16,3 +25,11 @@ $screen-xs?
 atom SCSS autocomplete &
 
 Удалить лишние классы
+
+Резина
+Посмотреть тему 2017 (миксин контейнера)
+
+Кроссбраузерность
+Sticky Footer IE
+flex-shrink 1 IE 10
+Линки-картинки с display: block;

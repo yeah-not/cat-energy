@@ -7,21 +7,25 @@
     <title>HTML Academy: Кэт энерджи</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="page page--index">
+  <body class="no-js page page--index">
     <header class="page-header">
-      <div class="page-header__logo">
-        <a class="logo logo--complex">
-          <img class="logo__image" src="http://placehold.it/191x38" alt="Магазин питания для котов Cat Energy" />
-        </a>
+      <div class="page-header__wrapper">
+        <div class="page-header__logo">
+          <a class="page-header__logo-link">
+            <img class="page-header__logo-image" src="img/logo-mobile.svg" width="191" height="38" alt="Магазин питания для котов Cat Energy" />
+          </a>
+        </div>
+        <nav class="page-header__nav main-nav main-nav--closed">
+          <button class="main-nav__toggle" type="button">
+            <span class="visually-hidden">Открыть меню</span>
+          </button>
+          <ul class="main-nav__list">
+            <li class="main-nav__item main-nav__item--active"><a class="main-nav__link">Главная</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Каталог продукции</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="program.html">Подбор программы</a></li>
+          </ul>
+        </nav>
       </div>
-      <nav class="page-header__nav main-nav">
-        <button class="main-nav__toggle" type="button">Открыть меню</button>
-        <ul class="main-nav__list">
-          <li class="main-nav__list__item main-nav__list__item--active"><a class="main-nav__link">Главная</a></li>
-          <li class="main-nav__list__item"><a class="main-nav__link" href="catalog.html">Каталог продукции</a></li>
-          <li class="main-nav__list__item"><a class="main-nav__link" href="program.html">Подбор программы</a></li>
-        </ul>
-      </nav>
     </header>
     <main class="page-main">
       <h1 class="visually-hidden">Магазин питания для котов "Cat Energy"</h1>
@@ -33,7 +37,7 @@
             <a class="leading__link leading__link--top btn" href="#">Подобрать программу</a>
           </div>
           <div class="leading__picture">
-            <img class="leading__image" src="http://placehold.it/280x270" alt="Контейнер Cat Energy Pro" />
+            <img class="leading__image" src="img/index-can-mobile@1x.png" width="280" height="270" alt="Контейнер Cat Energy Pro" />
           </div>
           <a class="leading__link leading__link--bottom btn" href="#">Подобрать программу</a>
         </div>
@@ -41,13 +45,19 @@
       <section class="categories">
         <h2 class="visually-hidden">Категории продукции</h2>
         <ul class="categories__list">
-          <li class="categories__item">
-            <h3 class="categories__title">Похудение</h3>
+          <li class="categories__item categories__item--slim">
+            <h3 class="categories__title">
+              <span class="categories__heading">Похудение</span>
+              <span class="categories__icon"></span>
+            </h3>
             <p class="categories__desc">Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.</p>
             <p class="categories__actions"><a class="categories__to-catalog" href="catalog.html">Каталог Slim</a></p>
           </li>
-          <li class="categories__item categories__item--gain">
-            <h3 class="categories__title">Набор массы</h3>
+          <li class="categories__item categories__item--pro">
+            <h3 class="categories__title">
+              <span class="categories__heading">Набор массы</span>
+              <span class="categories__icon"></span>
+            </h3>
             <p class="categories__desc">Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!</p>
             <p class="categories__actions"><a class="categories__to-catalog" href="catalog.html">Каталог Pro</a></p>
           </li>
@@ -57,56 +67,60 @@
         <h2 class="features__title">Как это работает</h2>
         <ul class="features__list">
           <li class="features__item features__item--icon-leaf">
-            <p class="features__text">Функциональное питание содержит только полезные питательные вещества.</p>
+            Функциональное питание содержит только полезные питательные вещества.
           </li>
-          <li class="features__item features__item--icon-boiling">
-            <p class="features__text">Выпускается в виде порошка, который нужно лишь залить кипятком и готово.</p>
+          <li class="features__item features__item--icon-powder">
+            Выпускается в виде порошка, который нужно лишь залить кипятком и готово.
           </li>
-          <li class="features__item features__item--icon-kitchenware">
-            <p class="features__text">Замените один-два приема обычной еды на наше функциональное питание.</p>
+          <li class="features__item features__item--icon-dining">
+            Замените один-два приема обычной еды на наше функциональное питание.
           </li>
           <li class="features__item features__item--icon-clock">
-            <p class="features__text">Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!</p>
+            Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!
           </li>
         </ul>
       </section>
       <section class="live-example">
-        <div class="live-example__info">
-          <h2 class="live-example__title">Живой пример</h2>
-          <p class="live-example__desc">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
-          <table class="live-example__results">
-            <tr>
-              <th class="live-example__field">Снижение веса</th>
-              <td class="live-example__value">5 кг</td>
-            </tr>
-            <tr>
-              <th class="live-example__field">Затрачено времени</th>
-              <td class="live-example__value">60 дней</td>
-            </tr>
-            <tr class="live-example__cost">
-              <th class="live-example__cost-field">Затраты на питание</th>
-              <td class="live-example__cost-value">15 000 руб.</td>
-            </tr>
-          </table>
-        </div>
-        <div class="live-example__pictures overlap-slider">
-          <div class="live-example__pictures-wrapper overlap-slider__wrapper">
-            <h3 class="visually-hidden">До использования корма Cat Energy</h3>
-            <p class="live-example__picture overlap-slider__item">
-              <img class="live-example__image" src="http://placehold.it/311x232" alt="Толстый кот">
-            </p>
-            <h3 class="visually-hidden">После использования корма Cat Energy</h3>
-            <p class="live-example__picture overlap-slider__item">
-              <img class="live-example__image" src="http://placehold.it/251x240" alt="Поджарый кот">
-            </p>
+        <div class="live-example__wrapper">
+          <div class="live-example__info">
+            <h2 class="live-example__title">Живой пример</h2>
+            <p class="live-example__desc">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
+            <table class="live-example__results">
+              <tr class="live-example__result">
+                <th class="live-example__field">Снижение веса</th>
+                <td class="live-example__value">5 кг</td>
+              </tr>
+              <tr class="live-example__result">
+                <th class="live-example__field">Затрачено времени</th>
+                <td class="live-example__value">60 дней</td>
+              </tr>
+              <tr class="live-example__cost">
+                <th class="live-example__cost-field">Затраты на питание</th>
+                <td class="live-example__cost-value">15 000 руб.</td>
+              </tr>
+            </table>
           </div>
-          <div class="live-example__controls overlap-slider__controls">
-            <button class="overlap-slider__button" type="button">Было</button>
-            <span class="overlap-slider__scale">
-              <span class="overlap-slider__bar"></span>
-              <span class="overlap-slider__toggle"></span>
-            </span>
-            <button class="overlap-slider__button" type="button">Стало</button>
+          <div class="live-example__pictures overlap-slider">
+            <div class="live-example__pictures-wrapper">
+              <div class="live-example__pictures-inner overlap-slider__wrapper">
+                <h3 class="visually-hidden">До корма Cat Energy</h3>
+                <p class="live-example__picture overlap-slider__item overlap-slider__item--before">
+                  <img class="live-example__image" src="img/before-mobile@1x.png" width="320" height="240" alt="Толстый кот">
+                </p>
+                <h3 class="visually-hidden">После корма Cat Energy</h3>
+                <p class="live-example__picture live-example__picture--overlap live-example__picture--overlap overlap-slider__item overlap-slider__item--overlap" style="left: 50%;">
+                  <img class="live-example__image" src="img/after-mobile@1x.png" width="320" height="240" alt="Поджарый кот">
+                </p>
+              </div>
+            </div>
+            <div class="live-example__controls overlap-slider__controls">
+              <button class="overlap-slider__button" type="button">Было</button>
+              <span class="overlap-slider__scale">
+                <span class="overlap-slider__bar" style="width: 50%;"></span>
+                <span class="overlap-slider__toggle" style="left: 50%"></span>
+              </span>
+              <button class="overlap-slider__button" type="button">Стало</button>
+            </div>
           </div>
         </div>
       </section>
@@ -115,37 +129,37 @@
       <section class="contacts">
         <h2 class="visually-hidden">Контакты</h2>
         <div class="contacts__info">
-          <b class="contacts__title">Приглашаем к сотрудничеству дилеров!</b>
+          <b class="contacts__title">Приглашаем <br> к сотрудничеству дилеров!</b>
           <p class="contacts__address">ул. Большая Конюшенная, д. 19/8<br><br> Санкт-Петербург</p>
         </div>
         <div class="contacts__map">
-          <img class="contacts__map-image" src="http://placehold.it/320x360" alt="Карта проезда: ул. Большая Конюшенная, д. 19/8, Санкт-Петербург" />
+          <img class="contacts__map-image" src="img/bg-map-mobile@1x.png" width="320" height="400" alt="Карта проезда: ул. Большая Конюшенная, д. 19/8, Санкт-Петербург" />
         </div>
       </section>
       <div class="page-footer__wrapper">
         <p class="page-footer__logo">
-          <a class="logo logo--simple">
-            <img class="logo__image" src="http://placehold.it/128x24" alt="Магазин питания для котов Cat Energy" />
+          <a class="page-footer__logo-link">
+            <img class="page-footer__logo-image" src="img/logo-footer.svg" width="128" height="24" alt="Магазин питания для котов Cat Energy" />
           </a>
         </p>
-        <div class="page-footer__social">
+        <div class="page-footer__social social">
           <b class="visually-hidden">Мы в социальных сетях:</b>
           <ul class="social__list">
             <li class="social__item">
               <a class="social__link" href="#">
-                <img class="social__icon" src="http://placehold.it/30x16" alt="" />
+                <img class="social__icon" src="img/icon-vk-mobile.svg" width="22" height="12" alt="" />
                 <span class="visually-hidden">Вконтакте</span>
               </a>
             </li>
             <li class="social__item">
               <a class="social__link" href="#">
-                <img class="social__icon" src="http://placehold.it/23x23" alt="" />
+                <img class="social__icon" src="img/icon-insta-mobile.svg" width="16" height="16" alt="" />
                 <span class="visually-hidden">Инстаграм</span>
               </a>
             </li>
             <li class="social__item">
               <a class="social__link" href="#">
-                <img class="social__icon" src="http://placehold.it/14x28" alt="" />
+                <img class="social__icon" src="img/icon-fb-mobile.svg" width="10" height="19" alt="" />
                 <span class="visually-hidden">Фейсбук</span>
               </a>
             </li>
@@ -153,7 +167,7 @@
         </div>
         <p class="page-footer__copyright copyright">
           <b class="visually-hidden">Разработано:</b>
-          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy <img class="copyright__icon" src="http://placehold.it/27x34" alt="HTML Academy" /></a>
+          <a class="page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy <img class="page-footer__copyright-icon" src="img/htmlacademy.svg" width="37" height="47" alt="HTML Academy" /></a>
         </p>
       </div>
     </footer>

@@ -16,6 +16,13 @@
   }
 }
 
+@mixin container--xl {
+    width: $container-xl;
+    margin: 0 auto;
+    padding-left: $container-gap-xl;
+    padding-right: $container-gap-xl;
+}
+
 @mixin row {
   margin: 0 (-$container-gap-sm);
 

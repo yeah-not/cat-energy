@@ -1,0 +1,42 @@
+.social {
+  $block: &;
+
+  &__list {
+    @include reset-list;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: -10px;
+  }
+
+  &__item {
+    margin: 0 19px;
+  }
+
+  @media (min-width: $screen-md) {
+    &__list {
+      margin-left: -19px;
+    }
+
+    &__item {
+      margin: 0 14px;
+
+      &:nth-child(1) #{$block}__icon {
+        width: 30px; /* TODO: Картинки */
+        height: 16px; /* TODO: Картинки */
+      }
+
+      &:nth-child(2) #{$block}__icon {
+        width: 23px; /* TODO: Картинки */
+        height: 23px; /* TODO: Картинки */
+      }
+
+      &:nth-child(3) #{$block}__icon {
+        width: 14px; /* TODO: Картинки */
+        height: 28px; /* TODO: Картинки */
+      }
+    }
+  }
+}

@@ -1,14 +1,163 @@
 .main-nav {
   $block: &;
-  @include outline(2, 1); /* TODO: Сетка */
-  min-height: 198px; /* TODO: Сетка */
+  // @include outline(2); /* TODO: Сетка */
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__link  {
+    display: block;
+
+    padding: 22px $container-gap-sm 23px;
+
+    font-family: $font-family--custom;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    border-top: 1px solid $gray--lightest-4;
+
+    &,
+    &:hover {
+      color: $gray--darkest;
+      background: $white;
+    }
+
+    &[href]:hover {
+      opacity: 0.6;
+    }
+
+    &[href]:active {
+      opacity: 0.3;
+    }
+  }
+
+  @media (max-width: $screen-md - 1) {
+    &__toggle {
+      position: absolute;
+      padding: 0;
+      border: none;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.6;
+      }
+    }
+
+    &--closed {
+      #{$block}__list { display: none; }
+
+      #{$block}__toggle {
+        top: 20px;
+        right: 20px;
+
+        width: 24px;
+        height: 18px;
+
+        background: url(../img/icon-mobile-menu.svg) 0 0 no-repeat;
+      }
+    }
+
+    &--opened {
+      #{$block}__toggle {
+        top: 23px;
+        right: 23px;
+
+        width: 18px;
+        height: 18px;
+
+        background: url(../img/icon-close.svg) 0 0 no-repeat;
+      }
+    }
+
+    @at-root .no-js {
+      #{$block}__toggle { display: none; }
+      #{$block}__list { display: block; }
+    }
+  }
+
 
   @media (min-width: $screen-md) {
-    width: 506px;
-    min-height: 58px; /* TODO: Сетка */
+    flex-grow: 1;
+
+    width: 516px;
+    padding-left: 10px;
+
+    &__list {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__item {
+      position: relative;
+
+      margin-left: 36px;
+      padding: 18px 0 9px;
+
+      &--active {
+        ::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+
+          height: 2px;
+          background: $color-main;
+        }
+      }
+    }
+
+    &__link {
+      padding: 0;
+
+      font-size: $font-size--xlarge;
+      line-height: 1.39;
+      font-weight: normal;
+      text-align: left;
+
+      border: none;
+    }
+
+    &__toggle { display: none; }
+
   }
 
   @media (min-width: $screen-xl) {
-    width: 600px;
+    flex-grow: 0;
+
+    width: 50%;
+    padding-left: 15px;
+
+    color: $white;
+    // background: $color-main--dark-2;
+
+    &__item {
+      padding-top: 20px;
+
+      &--active {
+        ::after {
+          background: $white;
+        }
+      }
+    }
+
+    &__link {
+      font-size: $font-size--xxlarge;
+      line-height: 1.25;
+
+      &,
+      &:hover {
+        color: inherit;
+        background-color: transparent;
+      }
+    }
   }
 }

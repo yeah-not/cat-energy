@@ -1,0 +1,15 @@
+.btn {
+  $block: &;
+
+  padding: 11px 27px;
+
+  font-size: $font-size;
+  line-height: 1.29;
+  font-family: $font-family--custom;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $white;
+
+  background: $color-main;
+}

@@ -1,29 +1,89 @@
 .contacts {
   $block: &;
-  @include outline; /* TODO: Сетка */
+  // @include outline; /* TODO: Сетка */
+
+  color: $text-color;
+  background: $body-bg;
 
   &__info {
+    // @include outline(2); /* TODO: Сетка */
     @include container;
-    @include outline(2, 1);
-    min-height: 114px; /* TODO: Сетка */
+
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 29px;
+    padding-bottom: 24px;
+
+    background: $body-bg;
+  }
+
+  &__title {
+    display: block;
+
+    width: 50%;
+    padding-right: 15px;
+
+    font-size: 16px;
+    line-height: 1.25;
+    font-family: $font-family--headings;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: $text-color--headings;
+  }
+
+  &__address {
+    width: 50%;
+    margin: 0;
+
+    line-height: 1.43;
+
+    br {
+      display: none;
+    }
   }
 
   &__map {
-    @include outline(2, 1);
-    min-height: 362px; /* TODO: Сетка */
+    // @include outline(2); /* TODO: Сетка */
+  }
+
+  &__map-image {
+    display: block;
+    margin: 0 auto;
+
+    height: 362px; /* TODO: Картинки */
   }
 
   @media (min-width: $screen-md) {
     &__info {
-      min-height: 201px; /* TODO: Сетка */
-      padding: 0 ($container-gap-md + $grid-gutter-2);
+      padding: 65px ($container-gap-md + $grid-gutter-2) 55px;
     }
 
-    &__map {
-      min-height: 396px; /* TODO: Сетка */
+    &__title {
+      width: 155px;
+      padding-right: 0;
+
+      font-size: $font-size--xxlarge;
+      line-height: 1.25;
+    }
+
+    &__address {
+      width: 155px;
+
+      font-size: $font-size--large;
+      line-height: 1.25;
+      text-align: right;
+
+      br {
+        display: block;
+      }
+    }
+
+    &__map-image {
+      width: 768px; /* TODO: Картинки */
+      height: 400px; /* TODO: Картинки */
     }
   }
-
   @media (min-width: $screen-xl) {
     $width: 570px;
     position: relative;
@@ -36,11 +96,24 @@
 
       width: $width;
       margin-left: (-$width - $grid-gutter-2);
-      padding: 0 75px;
+      padding: 66px 75px 60px;
+
+      color: $text-color;
+      background: $white;
     }
 
-    &__map {
-      min-height: 399px; /* TODO: Сетка */
+    &__title {
+      width: 170px;
+    }
+
+    &__address {
+      width: 170px;
+      text-align: left;
+    }
+
+    &__map-image {
+      width: 1440px; /* TODO: Картинки */
+      height: 400px; /* TODO: Картинки */
     }
   }
 }

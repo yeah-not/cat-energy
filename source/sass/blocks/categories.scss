@@ -1,10 +1,11 @@
 .categories {
   $block: &;
+  $item-margin-bottom: 20px;
   @include container;
-  @include outline(1, 1); /* TODO: Сетка */
+  // @include outline(1); /* TODO: Сетка */
   overflow: hidden; /* TODO: Сетка */
 
-  margin-bottom: 21px;
+  margin-bottom: 18px;
 
   &__list {
     @include reset-list;
@@ -12,39 +13,196 @@
     display: flex;
     flex-direction: column;
 
-    margin: 0 0 -20px;
+    margin: 0 0 (-$item-margin-bottom);
   }
 
   &__item {
-    @include outline(2, 1); /* TODO: Сетка */
+    // @include outline(2); /* TODO: Сетка */
 
-    min-height: 266px; /* TODO: Сетка */
-    padding: 32px 20px 24px;
-    margin: 0 0 20px;
+    padding: 24px 20px 22px;
+    margin: 0 0 $item-margin-bottom;
+
+    background: $bg-light-gray;
+
+    &--slim {
+      #{$block}__icon {
+        &::after {
+          width: 35px;
+          height: 49px;
+          background-image: url(../img/icon-cat-slim.svg);
+        }
+      }
+    }
+
+    &--pro {
+      #{$block}__icon {
+        &::after {
+          width: 67px;
+          height: 28px;
+          background-image: url(../img/icon-cat-pro.svg);
+        }
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+
+    margin: 0 0 22px;
+  }
+
+  &__icon {
+    order: 1;
+
+    position: relative;
+
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+
+    background-color: $color-main;
+    border-radius: 50%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__heading {
+    order: 2;
+
+    font-size: $font-size--page-h2;
+    line-height: 1.54;
+    font-family: $font-family--custom;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: $text-color--headings;
+  }
+
+  &__desc {
+    margin: 0 0 21px;
+  }
+
+  &__actions {
+    margin: 0;
+    padding: 20px 0 0;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &__to-catalog {
+    display: flex;
+    align-items: center;
+
+    font-size: $font-size--large;
+    line-height: 1;
+    font-family: $font-family--custom;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+
+      width: 24px;
+      height: 11px;
+      margin-left: 12px;
+
+      background: url(../img/icon-right-arrow-long.svg) 0 0 no-repeat;
+    }
+
+    &,
+    &:hover {
+      color: $gray--darkest;
+    }
   }
 
   @media (min-width: $screen-md) {
-    margin-bottom: 52px;
+    $item-margin-bottom: 29px;
+    margin-bottom: 45px;
 
     &__list {
-      margin-bottom: -30px;
+      margin-bottom: -$item-margin-bottom;
     }
 
     &__item {
-      min-height: 372px; /* TODO: Сетка */
-      padding: 82px 0 63px;
+      position: relative;
+
+      padding: 78px 0 60px;
       padding-left: 52px;
       padding-right: 280px;
-      margin-bottom: 30px;
+      margin-bottom: $item-margin-bottom;
 
-      &--gain {
-        padding-right: 310px;
+      &--slim {
+        #{$block}__icon {
+          &::after {
+            width: 140px;
+            height: 194px;
+          }
+        }
+      }
+
+      &--pro {
+        padding-right: 315px;
+
+        #{$block}__icon {
+          &::after {
+            width: 268px;
+            height: 112px;
+          }
+        }
+      }
+    }
+
+    &__title {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    &__heading {
+      font-size: $font-size--page-h2-md;
+      line-height: 1.03;
+    }
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      right: 62px;
+      transform: translateY(-50%);
+
+      width: 200px;
+      height: 200px;
+      margin: 0;
+    }
+
+    &__desc {
+      margin-bottom: 56px;
+
+      font-size: $font-size--large;
+    }
+
+    &__actions {
+      padding-top: 0;
+      border: none;
+    }
+
+    &__to-catalog {
+      font-size: $font-size--xxlarge;
+
+      &::after {
+        margin-left: 25px;
       }
     }
   }
 
   @media (min-width: $screen-xl) {
-    margin-bottom: 80px;
+    margin-bottom: 72px;
 
     &__list {
       flex-direction: row;
@@ -55,8 +213,47 @@
 
     &__item {
       width: 570px;
+      padding-top: 47px;
       padding-right: 52px;
       margin: 0;
+
+      &--slim {
+        #{$block}__icon {
+          &::after {
+            width: 70px;
+            height: 97px;
+          }
+        }
+      }
+
+      &--pro {
+        #{$block}__icon {
+          &::after {
+            width: 134px;
+            height: 56px;
+          }
+        }
+      }
+    }
+
+    &__title {
+      display: flex;
+      margin-bottom: 41px;
+    }
+
+    &__icon {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+
+      width: 100px;
+      height: 100px;
+      margin-right: 64px;
+    }
+
+    &__desc {
+      margin-bottom: 32px;
     }
   }
 }
