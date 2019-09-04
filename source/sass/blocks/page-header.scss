@@ -1,5 +1,6 @@
 .page-header {
   $block: &;
+
   @include container;
   // @include outline; /* TODO: Сетка */
 
@@ -21,7 +22,6 @@
   }
 
   &__logo-link {
-
     &[href]:hover {
       opacity: 0.8;
     }
@@ -36,7 +36,6 @@
   }
 
   @media (min-width: $screen-md) {
-
     &__wrapper {
       display: flex;
       justify-content: space-between;
@@ -55,16 +54,14 @@
     }
 
     &__logo-image {
-      width: 173px; /* TODO: Картинки */
-      height: 58px; /* TODO: Картинки */
+      width: 173px;
+      height: auto;
     }
   }
-
   @media (min-width: $screen-xl) {
     width: auto;
     margin: 0;
     padding: 0;
-    // background: linear-gradient(to right, $white 50%, $color-main--dark-2 50%);
 
     &__wrapper {
       width: $container-xl;
@@ -73,12 +70,11 @@
     }
 
     &__logo {
-      width: 245px;
+      max-width: 245px;
     }
 
     &__logo-image {
-      width: 202px; /* TODO: Картинки */
-      height: 59px; /* TODO: Картинки */
+      width: 202px;
     }
   }
 }
