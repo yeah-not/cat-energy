@@ -7,7 +7,8 @@
     content: "";
     position: absolute;
     top: 0;
-    left: 0; right: 0;
+    left: 0;
+    right: 0;
     z-index: -1;
 
     height: 305px;
@@ -27,12 +28,18 @@
       content: "";
       position: absolute;
       top: 0;
-      left: 0; right: 0;
+      left: 0;
+      right: 0;
       z-index: -1;
 
       height: 305px;
 
       background: url(../img/index-background-mobile@1x.jpg) 50% 0 no-repeat;
+      background-size: cover;
+
+      @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+        background-image: url(../img/index-background-mobile@2x.jpg);
+      }
     }
   }
 
@@ -68,10 +75,11 @@
     margin: 0 0 5px;
   }
 
-  &__image { display: block; }
+  &__image {
+    display: block;
+  }
 
   &__link {
-
     &--top {
       display: none;
     }
@@ -84,12 +92,16 @@
   @media (min-width: $screen-md) {
     margin-bottom: 0;
 
-    &::before { display: none; }
+    &::before {
+      display: none;
+    }
 
     &__wrapper {
       padding-top: 42px;
 
-      &::before { display: none; }
+      &::before {
+        display: none;
+      }
     }
 
     &__content {
@@ -120,8 +132,8 @@
     }
 
     &__image {
-      width: 709px; /* TODO: Картинки */
-      height: 609px; /* TODO: Картинки */
+      width: auto;
+      height: auto;
       margin-top: -82px;
     }
 
@@ -140,14 +152,14 @@
       }
     }
   }
-
   @media (min-width: $screen-xl) {
     margin-bottom: 80px;
 
     &::before {
       display: block;
 
-      top: -128px; bottom: 0;
+      top: -128px;
+      bottom: 0;
       left: 50%;
 
       height: auto;
@@ -163,13 +175,19 @@
       &::before {
         display: block;
 
-        top: -128px; bottom: 0;
+        top: -128px;
+        bottom: 0;
         left: 50%;
 
         height: auto;
 
+        background-image: url(../img/index-background-desktop@1x.jpg);
         background-position: 100% 100%;
-        background-size: cover; /* TODO: Картинки */
+        background-size: cover;
+
+        @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+          background-image: url(../img/index-background-desktop@2x.jpg);
+        }
       }
     }
 

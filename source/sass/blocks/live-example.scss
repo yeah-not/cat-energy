@@ -111,7 +111,9 @@
     display: inline;
     font-weight: normal;
 
-    &::after { content: ": "; }
+    &::after {
+      content: ": ";
+    }
   }
 
   &__cost-value {
@@ -231,10 +233,11 @@
       position: relative;
       margin-bottom: 0;
 
-      &:after {
+      &::after {
         content: "";
         position: absolute;
-        top: 0; bottom: 0;
+        top: 0;
+        bottom: 0;
         left: calc(100% - #{$container-gap-md});
 
         width: 100vw;
@@ -251,9 +254,10 @@
         background: $picture-bg-md--overlap;
       }
     }
+
     &__image {
-      width: 708px; /* TODO: Картинки */
-      height: 517px; /* TODO: Картинки */
+      width: auto;
+      height: auto;
     }
 
     &__controls {
@@ -263,17 +267,18 @@
 
       background: $bg-light-gray;
 
-      &:before {
+      &::before {
         content: "";
         position: absolute;
-        top: 0; bottom: 0;
-        left: 50%; right: 0;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: 0;
 
         background: $gray--lightest-2;
       }
     }
   }
-
   @media (min-width: $screen-xl) {
     background: $picture-bg-xl;
 
@@ -284,10 +289,11 @@
       position: relative;
       padding-top: $padding-top-xl;
 
-      &:after {
+      &::after {
         content: "";
         position: absolute;
-        top: 0; bottom: 0;
+        top: 0;
+        bottom: 0;
         left: calc(100% - #{$container-gap-xl});
 
         width: 100vw;
@@ -359,7 +365,9 @@
 
       background: none;
 
-      &:after { display: none; }
+      &::after {
+        display: none;
+      }
     }
 
     &__picture {
@@ -371,12 +379,12 @@
     &__controls {
       margin: 0;
       padding: 43px 0 72px;
-      padding-left: 37px;
+      // padding-left: 37px;
     }
 
     &__image {
-      width: 690x; /* TODO: Картинки */
-      height: 517px; /* TODO: Картинки */
+      width: auto;
+      height: auto;
     }
   }
 }

@@ -50,8 +50,6 @@
   &__map-image {
     display: block;
     margin: 0 auto;
-
-    height: 362px; /* TODO: Картинки */
   }
 
   @media (min-width: $screen-md) {
@@ -80,8 +78,8 @@
     }
 
     &__map-image {
-      width: 768px; /* TODO: Картинки */
-      height: 400px; /* TODO: Картинки */
+      width: 768px;
+      height: auto;
     }
   }
   @media (min-width: $screen-xl) {
@@ -112,8 +110,7 @@
     }
 
     &__map-image {
-      width: 1440px; /* TODO: Картинки */
-      height: 400px; /* TODO: Картинки */
+      width: 1440px;
     }
   }
 }
