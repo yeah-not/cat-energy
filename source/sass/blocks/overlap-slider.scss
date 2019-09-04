@@ -6,6 +6,10 @@
   }
 
   &__item {
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+
     margin: 0;
 
     img {
@@ -13,13 +17,11 @@
     }
 
     &--overlap {
-      display: flex;
-      flex-direction: row-reverse;
-      overflow: hidden;
-
       position: absolute;
-      top: 0; bottom: 0;
-      left: 0%; right: 0;
+      top: 0;
+      bottom: 0;
+      left: 0%;
+      right: 0;
 
       background: $bg-light-gray;
     }
@@ -106,9 +108,9 @@
       background-color: #ffffff;
       border: 1px solid $border-color;
       border-radius: 50%;
-      box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
 
-      &:after {
+      &::after {
         content: "";
         position: absolute;
         top: 50%;
@@ -125,11 +127,11 @@
       &:hover,
       &:focus {
         outline: 0 none;
-        box-shadow: 0px 3px 5px 0 rgba(0, 0, 0, 0.25);
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
       }
 
       &:active {
-        box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.3);
         border-width: 2px;
         border-color: $color-main;
       }
@@ -140,20 +142,22 @@
       font-size: $font-size--xxlarge;
       line-height: 1;
 
-      &:after {
+      &::after {
         content: "";
         position: absolute;
         bottom: -5px;
-        left: 0; right: 0;
+        left: 0;
+        right: 0;
 
-        border-bottom: 1px dashed #000;
+        border-bottom: 1px dashed #000000;
         opacity: 0.23;
       }
 
       &:hover,
       &:focus {
         outline: 0 none;
-        &:after {
+
+        &::after {
           border-bottom-style: solid;
           opacity: 0.4;
         }
@@ -162,7 +166,7 @@
       &:active {
         opacity: 1;
 
-        &:after {
+        &::after {
           border: none;
         }
       }
