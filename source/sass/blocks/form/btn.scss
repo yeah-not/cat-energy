@@ -1,10 +1,11 @@
 .btn {
   $block: &;
+  display: inline-block;
 
-  padding: 11px 27px;
+  padding: 10px 27px;
 
   font-size: $font-size;
-  line-height: 1.29;
+  line-height: 1.43;
   font-family: $font-family--custom;
   text-align: center;
   text-decoration: none;
@@ -12,4 +13,34 @@
   color: $white;
 
   background: $color-main;
+
+  &:hover {
+    color: $white;
+    background-color: $color-main--dark;
+  }
+
+  &:active {
+    color: rgba($white, 0.3);
+    background-color: $color-main--dark;
+  }
+
+  &--full-width {
+    display: block;
+    width: 100%;
+  }
+
+  &--secondary {
+    color: $gray--darken;
+    background-color: $gray--ultra-light;
+
+    &:hover {
+      color: $gray--darken;
+      background-color: $gray--lightest-3;
+    }
+
+    &:active {
+      color: rgba($gray--darken, 0.3);
+      background-color: $gray--lightest-3;
+    }
+  }
 }
