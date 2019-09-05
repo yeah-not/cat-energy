@@ -35,16 +35,17 @@
   //   }
   // }
 
-  &--catalog {
-    background-image: url("../img/preview/Catalog-Mobile.jpg");
-
-    @media (min-width: $screen-md) {
-      background-image: url("../img/preview/Catalog-Tablet.jpg");
-    }
-    @media (min-width: $screen-xl) {
-      background-image: url("../img/preview/Catalog-Desktop.jpg");
-    }
-  }
+  // &--catalog {
+  //   background-image: url("../img/preview/Catalog-Mobile.jpg");
+  //
+  //   @media (min-width: $screen-md) {
+  //     background-image: url("../img/preview/Catalog-Tablet.jpg");
+  //   }
+  //
+  //   @media (min-width: $screen-xl) {
+  //     background-image: url("../img/preview/Catalog-Desktop.jpg");
+  //   }
+  // }
 
   &--program {
     background-image: url("../img/preview/Form-Mobile.jpg");
@@ -52,6 +53,7 @@
     @media (min-width: $screen-md) {
       background-image: url("../img/preview/Form-Tablet.jpg");
     }
+
     @media (min-width: $screen-xl) {
       background-image: url("../img/preview/Form-Desktop.jpg");
     }

@@ -9,7 +9,10 @@ font-size: 16px > пусто ($font-size--md);
 Категории
 Состояния ссылок
 
-Footer Social, Copyright - inline-svg + состояния
+SVG - inline/before+bg + состояния
+Footer Social, Copyright
+supplements__offer
+
 
 Убрать user-scalable=no - hardfix
 
