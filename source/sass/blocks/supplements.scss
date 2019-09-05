@@ -9,6 +9,7 @@
   &__title {
     // @include outline(2); /* TODO: Сетка */
     @include row;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -71,6 +72,10 @@
 
     background: $color-main url(../img/gift-photo-mobile@1x.jpg) 50% 100% no-repeat;
     background-size: cover;
+
+    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      background-image: url(../img/gift-photo-mobile@2x.jpg);
+    }
   }
 
   &__offer-icon {
@@ -112,6 +117,12 @@
 
     &__offer {
       min-height: 200px; /* TODO: Сетка */
+
+      background-image: url(../img/gift-photo-tablet@1x.jpg);
+
+      @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+        background-image: url(../img/gift-photo-tablet@2x.jpg);
+      }
     }
   }
 
@@ -136,6 +147,12 @@
     &__offer {
       min-height: 289px; /* TODO: Сетка */
       width: 245px;
+
+      background-image: url(../img/gift-photo-desktop@1x.jpg);
+
+      @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+        background-image: url(../img/gift-photo-desktop@2x.jpg);
+      }
     }
   }
 }
