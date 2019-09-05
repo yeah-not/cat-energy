@@ -15,6 +15,7 @@ $gray--lightest:              #dcdcdc; // hsl(0, 0%, 86%);
 $gray--lightest-2:            #eaeaea; // hsl(0, 0%, 92%);
 $gray--lightest-3:            #ebebeb; // hsl(0, 0%, 92%);
 $gray--lightest-4:            #e6e6e6; // hsl(0, 0%, 90%);
+$gray--lightest-5:            #ededed; // hsl(0, 0%, 93%);
 $gray--ultra-light:           #f2f2f2; // hsl(0, 0%, 95%);
 $white:                       hsl(0, 0%, 100%);
 
@@ -95,3 +96,7 @@ $grid-gutter-2:               40px;
 // Разное
 $border-radius:               3px;
 $z-index-modal:               100;
+
+
+// Для блоков
+$catalog-item-border: 1px solid $gray--lightest-5;

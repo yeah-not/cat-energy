@@ -1,0 +1,48 @@
+.supplement {
+  $block: &;
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 14px 0 17px;
+
+  &__name {
+    width: 100%;
+    margin: 0 0 15px;
+
+    font-size: $font-size--large;
+    line-height: 1;
+    font-family: $font-family--custom;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: $gray--darkest-2;
+  }
+
+  &__amount,
+  &__price {
+    width: 50%;
+    margin: 0 0 14px;
+
+    line-height: 1;
+  }
+
+  &__amount {
+    padding-right: 10px;
+  }
+
+  &__price {
+    padding-left: 10px;
+    text-align: right;
+  }
+
+  &__buy {
+    width: 100%;
+  }
+
+  @media (min-width: $screen-md) {
+
+  }
+
+  @media (min-width: $screen-xl) {
+
+  }
+}

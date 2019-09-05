@@ -1,16 +1,38 @@
 .supplements {
   $block: &;
+
   @include container;
-  @include outline; /* TODO: Сетка */
+  // @include outline; /* TODO: Сетка */
 
   margin-bottom: 35px;
 
   &__title {
+    // @include outline(2); /* TODO: Сетка */
     @include row;
-    @include outline(2, 1); /* TODO: Сетка */
-    min-height: 24px; /* TODO: Сетка */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     margin-bottom: 31px;
+    padding: 0 $container-gap-sm;
+
+    font-size: $font-size--page-h2;
+    line-height: 1;
+    font-family: $font-family--headings;
+    color: $text-color--headings;
+
+    &::after {
+      content: "";
+      flex-grow: 1;
+
+      width: $container-gap-sm + 10;
+      height: 3px;
+      margin-top: 5px;
+      margin-left: 24px;
+      margin-right: -$container-gap-sm;
+
+      background: $color-main;
+    }
   }
 
   &__content {
@@ -20,16 +42,54 @@
 
   &__list {
     @include reset-list;
-    @include outline(2, 1); /* TODO: Сетка */
-    min-height: 516px; /* TODO: Сетка */
+    // @include outline(2); /* TODO: Сетка */
 
     margin: 0 0 40px;
+
+    border-top: 1px solid $gray--lighter;
+  }
+
+  &__item {
+    border-bottom: 1px solid $gray--lighter;
   }
 
   &__offer {
-    @include outline(2, 1); /* TODO: Сетка */
+    // @include outline(2); /* TODO: Сетка */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
-    min-height: 289px; /* TODO: Сетка */
+    min-height: 290px;
+    margin: 0;
+    padding: 65px 60px 40px;
+
+    font-size: $font-size--large;
+    line-height: 1.25;
+    text-align: center;
+    color: $white;
+
+    background: $color-main url(../img/gift-photo-mobile@1x.jpg) 50% 100% no-repeat;
+    background-size: cover;
+  }
+
+  &__offer-icon {
+    display: block;
+    margin: 0 auto 30px;
+  }
+
+  &__offer-link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
   }
 
   @media (min-width: $screen-md) {

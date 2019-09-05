@@ -3,7 +3,6 @@
   // @include outline; /* TODO: Сетка */
 
   color: $text-color;
-  background: $body-bg;
 
   &__info {
     // @include outline(2); /* TODO: Сетка */
@@ -14,8 +13,6 @@
 
     padding-top: 29px;
     padding-bottom: 24px;
-
-    background: $body-bg;
   }
 
   &__title {
@@ -82,6 +79,7 @@
       height: auto;
     }
   }
+
   @media (min-width: $screen-xl) {
     $width: 570px;
     position: relative;
@@ -97,7 +95,7 @@
       padding: 66px 75px 60px;
 
       color: $text-color;
-      background: $white;
+      background: $body-bg;
     }
 
     &__title {

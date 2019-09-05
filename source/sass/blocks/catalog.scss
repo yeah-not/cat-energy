@@ -1,9 +1,10 @@
 .catalog {
   $block: &;
-  @include container;
-  @include outline; /* TODO: Сетка */
-  overflow: hidden; /* TODO: Сетка */
 
+  // @include outline; /* TODO: Сетка */
+  @include container;
+
+  // overflow: hidden; /* TODO: Сетка */
   margin-bottom: 32px;
 
   &__list {
@@ -11,13 +12,13 @@
 
     display: flex;
     flex-direction: column;
+
+    border-top: $catalog-item-border;
   }
 
   &__item {
-    @include outline(2, 1); /* TODO: Сетка */
-    min-height: 209px; /* TODO: Сетка */
-
-    padding: 0 $container-gap-sm;
+    // @include outline(2); /* TODO: Сетка */
+    border-top: none;
   }
 
   @media (min-width: $screen-md) {

@@ -9,7 +9,7 @@
       "except": [
         "first-nested",
         "blockless-after-blockless",
-        "after-same-name"
+        # "after-same-name"
       ],
       "ignore": ["after-comment"]
     }],

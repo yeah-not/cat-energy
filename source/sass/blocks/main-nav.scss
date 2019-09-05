@@ -2,11 +2,14 @@
   $block: &;
   // @include outline(2); /* TODO: Сетка */
 
+  color: $gray--darkest;
+  // background: $white;
+
   &__list {
     @include reset-list;
   }
 
-  &__link  {
+  &__link {
     display: block;
 
     padding: 22px $container-gap-sm 23px;
@@ -23,8 +26,7 @@
 
     &,
     &:hover {
-      color: $gray--darkest;
-      background: $white;
+      color: inherit;
     }
 
     &[href]:hover {
@@ -52,7 +54,9 @@
     }
 
     &--closed {
-      #{$block}__list { display: none; }
+      #{$block}__list {
+        display: none;
+      }
 
       #{$block}__toggle {
         top: 20px;
@@ -78,11 +82,15 @@
     }
 
     @at-root .no-js {
-      #{$block}__toggle { display: none; }
-      #{$block}__list { display: block; }
+      #{$block}__toggle {
+        display: none;
+      }
+
+      #{$block}__list {
+        display: block;
+      }
     }
   }
-
 
   @media (min-width: $screen-md) {
     flex-grow: 1;
@@ -101,17 +109,15 @@
       margin-left: 36px;
       padding: 18px 0 9px;
 
-      &--active {
-        ::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
+      &--active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
 
-          height: 2px;
-          background: $color-main;
-        }
+        height: 2px;
+        background: $color-main;
       }
     }
 
@@ -126,8 +132,9 @@
       border: none;
     }
 
-    &__toggle { display: none; }
-
+    &__toggle {
+      display: none;
+    }
   }
 
   @media (min-width: $screen-xl) {
@@ -136,27 +143,22 @@
     width: 50%;
     padding-left: 15px;
 
-    color: $white;
-    // background: $color-main--dark-2;
 
     &__item {
       padding-top: 20px;
-
-      &--active {
-        ::after {
-          background: $white;
-        }
-      }
     }
 
     &__link {
       font-size: $font-size--xxlarge;
       line-height: 1.25;
+    }
 
-      &,
-      &:hover {
-        color: inherit;
-        background-color: transparent;
+    &--inverse {
+      color: $white;
+      // background: $color-main--dark-2;
+
+      #{$block}__item--active::after {
+        background: $white;
       }
     }
   }

@@ -3,26 +3,36 @@
 
   &__title {
     @include container;
-    @include outline(1, 1); /* TODO: Сетка */
-    min-height: 60px; /* TODO: Сетка */
+    // @include outline(1); /* TODO: Сетка */
 
-    margin-top: 21px;
-    margin-bottom: 20px;
+    font-size: $font-size--page-h1;
+    line-height: 1.67;
+    font-family: $font-family--headings;
+    font-weight: normal;
+    color: $text-color--headings;
+
+    margin-top: 15px;
+    margin-bottom: 27px;
   }
 
   &__intro {
     @include container;
-    @include outline(1, 1); /* TODO: Сетка */
-    min-height: 36px; /* TODO: Сетка */
+    // @include outline(1); /* TODO: Сетка */
+
+    font-family: $font-family--custom;
+    text-transform: uppercase;
+    color: $gray--darkest;
 
     margin-bottom: 38px;
   }
 
   @media (min-width: $screen-md) {
     &__title {
+      margin-top: 44px;
+      margin-bottom: 55px;
 
-      margin-top: 52px;
-      margin-bottom: 48px;
+      font-size: $font-size--page-h1-md;
+      line-height: 1;
 
       &--page-catalog {
         margin-bottom: 75px;
@@ -30,9 +40,10 @@
     }
 
     &__intro {
-      min-height: 60px; /* TODO: Сетка */
-
       margin-bottom: 63px;
+
+      font-size: $font-size--xxlarge;
+      line-height: 1.5;
 
       &--page-program {
         padding-left: $container-gap-md + $grid-gutter-2;
@@ -42,7 +53,7 @@
 
   @media (min-width: $screen-xl) {
     &__title {
-      margin-top: 70px;
+      margin-top: 59px;
     }
 
     &__intro {
