@@ -4,7 +4,7 @@
   @include container;
   // @include outline; /* TODO: Сетка */
 
-  margin-bottom: 35px;
+  margin-bottom: 32px;
 
   &__title {
     // @include outline(2); /* TODO: Сетка */
@@ -12,27 +12,34 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
-    margin-bottom: 31px;
+    margin-bottom: 34px;
     padding: 0 $container-gap-sm;
 
     font-size: $font-size--page-h2;
     line-height: 1;
     font-family: $font-family--headings;
+    font-weight: normal;
     color: $text-color--headings;
+
+    &::before,
+    &::after {
+      box-sizing: content-box;
+
+      width: $container-gap-sm;
+      height: 3px;
+      margin-top: 5px;
+
+      background: $color-main;
+    }
 
     &::after {
       content: "";
       flex-grow: 1;
 
-      width: $container-gap-sm + 10;
-      height: 3px;
-      margin-top: 5px;
-      margin-left: 24px;
+      margin-left: 25px;
       margin-right: -$container-gap-sm;
-
-      background: $color-main;
+      padding-right: 10px;
     }
   }
 
@@ -42,16 +49,15 @@
   }
 
   &__list {
-    @include reset-list;
     // @include outline(2); /* TODO: Сетка */
-
+    @include reset-list;
     margin: 0 0 40px;
-
-    border-top: 1px solid $gray--lighter;
+    border-top: 1px solid $border-color;
   }
 
   &__item {
-    border-bottom: 1px solid $gray--lighter;
+    border: 0 solid $border-color;
+    border-bottom-width: 1px;
   }
 
   &__offer {
@@ -63,7 +69,7 @@
 
     min-height: 290px;
     margin: 0;
-    padding: 65px 60px 40px;
+    padding: 65px 58px 45px;
 
     font-size: $font-size--large;
     line-height: 1.25;
@@ -80,6 +86,7 @@
 
   &__offer-icon {
     display: block;
+
     margin: 0 auto 30px;
   }
 
@@ -98,25 +105,50 @@
   }
 
   @media (min-width: $screen-md) {
-    margin-bottom: 76px;
+    $item-padding-x: 38px;
+    margin-bottom: 75px;
 
     &__title {
-      min-height: 36px; /* TODO: Сетка */
+      margin-bottom: 79px;
+      padding: 0;
 
-      margin-bottom: 75px;
-    }
+      font-size: $font-size--page-h2-md;
 
-    &__content {
+      &::before,
+      &::after {
+        content: "";
+
+        width: $container-gap-md;
+      }
+
+      &::before {
+        margin-right: $item-padding-x;
+      }
+
+      &::after {
+        margin-left: $item-padding-x;
+        margin-right: 0;
+        padding-right: 20px;
+      }
     }
 
     &__list {
-      min-height: 557px; /* TODO: Сетка */
-
       margin-bottom: 70px;
     }
 
+    &__item {
+      border-left-width: 1px;
+      border-right-width: 1px;
+    }
+
     &__offer {
-      min-height: 200px; /* TODO: Сетка */
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      min-height: 0;
+      padding: 30px 91px;
+      padding-right: 120px;
 
       background-image: url(../img/gift-photo-tablet@1x.jpg);
 
@@ -124,12 +156,28 @@
         background-image: url(../img/gift-photo-tablet@2x.jpg);
       }
     }
+
+    &__offer-icon {
+      margin: 35px 0 45px;
+    }
+
+    &__offer-link {
+      width: 165px;
+      text-align: left;
+    }
   }
 
   @media (min-width: $screen-xl) {
     margin-bottom: 85px;
 
     &__title {
+      &::before {
+        width: 72px;
+      }
+
+      &::after {
+        width: 140px;
+      }
     }
 
     &__content {
@@ -144,8 +192,15 @@
       margin: 0;
     }
 
+    &__item {
+      border-left-width: 0;
+      border-right-width: 0;
+    }
+
     &__offer {
-      min-height: 289px; /* TODO: Сетка */
+      flex-direction: column;
+      padding: 65px 43px 41px;
+
       width: 245px;
 
       background-image: url(../img/gift-photo-desktop@1x.jpg);
@@ -153,6 +208,14 @@
       @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
         background-image: url(../img/gift-photo-desktop@2x.jpg);
       }
+    }
+
+    &__offer-icon {
+      margin: 0 0 15px;
+    }
+
+    &__offer-link {
+      text-align: center;
     }
   }
 }

@@ -3,7 +3,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  padding: 14px 0 17px;
+  padding: 13px 0 16px;
 
   &__name {
     width: 100%;
@@ -39,10 +39,57 @@
   }
 
   @media (min-width: $screen-md) {
+    align-items: baseline;
+    padding: 26px 38px;
 
+    &__name {
+      width: 313px;
+      margin-bottom: 26px;
+
+      font-size: $font-size--xxlarge;
+    }
+
+    &__amount,
+    &__price {
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    &__amount {
+      width: 192px;
+      margin-left: auto;
+      padding-right: 0;
+
+      text-align: right;
+    }
+
+    &__price {
+      width: 94px;
+      padding-left: 15px;
+    }
   }
 
   @media (min-width: $screen-xl) {
+    padding: 16px 0 15px;
 
+    &__name {
+      width: 285px;
+      margin: 0;
+    }
+
+    &__amount {
+      width: 175px;
+      text-align: left;
+    }
+
+    &__price {
+      width: 110px;
+      padding-left: 15px;
+    }
+
+    &__buy {
+      width: 245px;
+      margin-left: 39px;
+    }
   }
 }
