@@ -12,7 +12,6 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
     margin-bottom: 31px;
     padding: 0 $container-gap-sm;
@@ -85,6 +84,7 @@
 
   &__offer-icon {
     display: block;
+
     margin: 0 auto 30px;
   }
 
@@ -125,6 +125,7 @@
 
       &::after {
         margin-left: $item-padding-x;
+        margin-right: 0;
         padding-right: 20px;
       }
     }
@@ -134,8 +135,6 @@
     }
 
     &__item {
-      padding: 28px 38px;
-
       border-left-width: 1px;
       border-right-width: 1px;
     }
@@ -169,6 +168,13 @@
     margin-bottom: 85px;
 
     &__title {
+      &::before {
+        width: 72px;
+      }
+
+      &::after {
+        width: 140px;
+      }
     }
 
     &__content {
@@ -183,8 +189,15 @@
       margin: 0;
     }
 
+    &__item {
+      border-left-width: 0;
+      border-right-width: 0;
+    }
+
     &__offer {
-      min-height: 289px; /* TODO: Сетка */
+      flex-direction: column;
+      padding: 65px 43px 41px;
+
       width: 245px;
 
       background-image: url(../img/gift-photo-desktop@1x.jpg);
@@ -192,6 +205,14 @@
       @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
         background-image: url(../img/gift-photo-desktop@2x.jpg);
       }
+    }
+
+    &__offer-icon {
+      margin: 0 0 15px;
+    }
+
+    &__offer-link {
+      text-align: center;
     }
   }
 }

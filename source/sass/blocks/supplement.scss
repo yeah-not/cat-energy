@@ -40,6 +40,7 @@
 
   @media (min-width: $screen-md) {
     align-items: baseline;
+    padding: 28px 38px;
 
     &__name {
       width: 313px;
@@ -51,6 +52,7 @@
     &__amount,
     &__price {
       line-height: 1.25;
+      margin: 0;
     }
 
     &__amount {
@@ -68,6 +70,26 @@
   }
 
   @media (min-width: $screen-xl) {
+    padding: 15px 0;
 
+    &__name {
+      width: 285px;
+      margin: 0;
+    }
+
+    &__amount {
+      width: 151px;
+      text-align: left;
+    }
+
+    &__price {
+      width: 94px;
+      padding-left: 15px;
+    }
+
+    &__buy {
+      width: 245px;
+      margin-left: 39px;
+    }
   }
 }
