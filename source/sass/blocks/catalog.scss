@@ -5,7 +5,7 @@
   @include container;
 
   // overflow: hidden; /* TODO: Сетка */
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 
   &__list {
     @include row--sm;
@@ -41,7 +41,7 @@
   }
 
   @media (min-width: $screen-xl) {
-    margin-bottom: 82px;
+    margin-bottom: 79px;
 
     &__list {
       margin-left: -$grid-gutter-2;

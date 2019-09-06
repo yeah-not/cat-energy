@@ -1,6 +1,6 @@
 .catalog-item {
   $block: &;
-  $padding-top: 23px;
+  $padding-top: 21px;
 
   display: flex;
   flex-wrap: wrap;
@@ -25,6 +25,7 @@
   }
 
   &__image {
+    display: block;
     object-fit: contain;
     width: auto;
   }
@@ -61,7 +62,7 @@
   }
 
   &__text {
-    margin: 10px 0;
+    margin: 0 0 10px;
 
     font-size: $font-size--small;
     line-height: 1.33;
@@ -96,7 +97,7 @@
   }
 
   &__show-all {
-    margin: 20px 0 0;
+    margin: 10px 0 0;
   }
 
   &--show-all {
@@ -110,7 +111,7 @@
 
       width: 30px;
       height: 30px;
-      margin: 2px auto 24px;
+      margin: 4px auto 24px;
 
       background: url(../img/icon-plus-mobile.svg) 0 0 no-repeat;
       opacity: 0.2;
@@ -124,20 +125,19 @@
 
   @media (min-width: $screen-md) {
     $padding-x: 38px;
-
     flex-direction: column;
 
-    padding: 0 $padding-x 40px;
+    padding: 0 $padding-x 38px;
 
     background: $bg-light-gray;
-    border: none;
+    border: 1px solid $bg-light-gray;
 
     &__picture {
       flex-direction: column-reverse;
 
       width: auto;
       height: 208px;
-      margin: -82px (-$padding-x) 39px;
+      margin: -82px (-$padding-x) 38px;
     }
 
     &__info {
@@ -148,7 +148,7 @@
     &__title {
       justify-content: center;
 
-      margin-bottom: 25px;
+      margin-bottom: 20px;
 
       font-size: $font-size--xxlarge;
       line-height: 1;
@@ -162,7 +162,7 @@
     &__text {
       font-size: $font-size--large;
       line-height: 1.2;
-      margin: 15px 0;
+      margin: 0 0 15px;
 
       br {
         display: inline;
@@ -171,6 +171,10 @@
 
     &__name {
       width: auto;
+    }
+
+    &__category {
+      padding: 0;
     }
 
     &__amount {
@@ -186,7 +190,7 @@
 
     &__param,
     &__value {
-      padding: 5px;
+      padding: 7px;
       border-bottom: 1px solid $gray--lightest-4;
     }
 
@@ -204,10 +208,10 @@
     }
 
     &--show-all {
-      padding-top: 55px;
+      padding-top: 53px;
 
       background-color: transparent;
-      border: 1px solid rgba($border-color, 0.5);
+      border-color: rgba($border-color, 0.5);
 
       &::before {
         width: 60px;
