@@ -22,17 +22,24 @@
     font-family: $font-family--headings;
     color: $text-color--headings;
 
+    &::before,
+    &::after {
+      box-sizing: content-box;
+
+      width: $container-gap-sm;
+      height: 3px;
+      margin-top: 5px;
+
+      background: $color-main;
+    }
+
     &::after {
       content: "";
       flex-grow: 1;
 
-      width: $container-gap-sm + 10;
-      height: 3px;
-      margin-top: 5px;
-      margin-left: 24px;
+      margin-left: 25px;
       margin-right: -$container-gap-sm;
-
-      background: $color-main;
+      padding-right: 10px;
     }
   }
 
@@ -42,16 +49,15 @@
   }
 
   &__list {
-    @include reset-list;
     // @include outline(2); /* TODO: Сетка */
-
+    @include reset-list;
     margin: 0 0 40px;
-
-    border-top: 1px solid $gray--lighter;
+    border-top: 1px solid $border-color;
   }
 
   &__item {
-    border-bottom: 1px solid $gray--lighter;
+    border: 0 solid $border-color;
+    border-bottom-width: 1px;
   }
 
   &__offer {
@@ -61,7 +67,6 @@
     align-items: center;
     justify-content: space-between;
 
-    min-height: 290px;
     margin: 0;
     padding: 65px 60px 40px;
 
@@ -98,31 +103,65 @@
   }
 
   @media (min-width: $screen-md) {
+    $item-padding-x: 38px;
     margin-bottom: 76px;
 
     &__title {
-      min-height: 36px; /* TODO: Сетка */
-
       margin-bottom: 75px;
-    }
+      padding: 0;
 
-    &__content {
+      font-size: $font-size--page-h2-md;
+
+      &::before,
+      &::after {
+        content: "";
+
+        width: $container-gap-md;
+      }
+
+      &::before {
+        margin-right: $item-padding-x;
+      }
+
+      &::after {
+        margin-left: $item-padding-x;
+        padding-right: 20px;
+      }
     }
 
     &__list {
-      min-height: 557px; /* TODO: Сетка */
-
       margin-bottom: 70px;
     }
 
+    &__item {
+      padding: 28px 38px;
+
+      border-left-width: 1px;
+      border-right-width: 1px;
+    }
+
     &__offer {
-      min-height: 200px; /* TODO: Сетка */
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 30px 91px;
+      padding-right: 125px;
 
       background-image: url(../img/gift-photo-tablet@1x.jpg);
 
       @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
         background-image: url(../img/gift-photo-tablet@2x.jpg);
       }
+    }
+
+    &__offer-icon {
+      margin: 35px 0 45px;
+    }
+
+    &__offer-link {
+      width: 160px;
+      text-align: left;
     }
   }
 

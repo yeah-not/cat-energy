@@ -43,4 +43,9 @@
       background-color: $gray--lightest-3;
     }
   }
+
+  @media (min-width: $screen-md) {
+    font-size: $font-size--large;
+    line-height: 1.25;
+  }
 }
