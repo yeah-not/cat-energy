@@ -9,6 +9,7 @@
   margin: 0 -1px;
 
   border: $catalog-item-border;
+  border-top: none;
 
   &__picture,
   &__info {
@@ -44,14 +45,30 @@
     font-weight: normal;
     text-transform: uppercase;
     color: $gray--darkest;
+
+    br {
+      display: none;
+    }
   }
 
   &__name {
     width: 100%;
+    padding-right: 5px;
   }
 
   &__category {
-    margin-right: 5px;
+    padding-right: 5px;
+  }
+
+  &__text {
+    margin: 10px 0;
+
+    font-size: $font-size--small;
+    line-height: 1.33;
+
+    br {
+      display: none;
+    }
   }
 
   &__params {
@@ -72,13 +89,6 @@
     text-align: right;
   }
 
-  &__text {
-    margin: 10px 0;
-
-    font-size: $font-size--small;
-    line-height: 1.33;
-  }
-
   &__buy,
   &__show-all {
     font-size: $font-size--large;
@@ -90,7 +100,7 @@
   }
 
   &--show-all {
-    display: block;
+    flex-direction: column;
     padding-top: $padding-top;
     text-align: center;
 
@@ -113,7 +123,104 @@
   }
 
   @media (min-width: $screen-md) {
+    $padding-x: 38px;
 
+    flex-direction: column;
+
+    padding: 0 $padding-x 40px;
+
+    background: $bg-light-gray;
+    border: none;
+
+    &__picture {
+      flex-direction: column-reverse;
+
+      width: auto;
+      height: 208px;
+      margin: -82px (-$padding-x) 39px;
+    }
+
+    &__info {
+      width: auto;
+      padding-top: 0;
+    }
+
+    &__title {
+      justify-content: center;
+
+      margin-bottom: 25px;
+
+      font-size: $font-size--xxlarge;
+      line-height: 1;
+      text-align: center;
+
+      br {
+        display: inline;
+      }
+    }
+
+    &__text {
+      font-size: $font-size--large;
+      line-height: 1.2;
+      margin: 15px 0;
+
+      br {
+        display: inline;
+      }
+    }
+
+    &__name {
+      width: auto;
+    }
+
+    &__amount {
+      width: 100%;
+    }
+
+    &__params {
+      margin-bottom: 33px;
+
+      font-size: $font-size--large;
+      line-height: 1;
+    }
+
+    &__param,
+    &__value {
+      padding: 5px;
+      border-bottom: 1px solid $gray--lightest-4;
+    }
+
+    &__param {
+      padding-left: 0;
+    }
+
+    &__value {
+      padding-right: 0;
+    }
+
+    &__buy,
+    &__show-all {
+      margin-top: auto;
+    }
+
+    &--show-all {
+      padding-top: 55px;
+
+      background-color: transparent;
+      border: 1px solid rgba($border-color, 0.5);
+
+      &::before {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 50px;
+
+        background-image: url(../img/icon-plus.svg);
+      }
+
+      #{$block}__title {
+        margin-bottom: 25px;
+      }
+    }
   }
 
   @media (min-width: $screen-xl) {

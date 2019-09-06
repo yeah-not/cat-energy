@@ -1,4 +1,5 @@
-
+#11 Завершаем вёрстку
+#13 Подготовка адаптивной графики
 
 
 color: $gray--darkest; > $text-color--headings

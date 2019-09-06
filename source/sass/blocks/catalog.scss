@@ -18,7 +18,6 @@
 
   &__item {
     // @include outline(2); /* TODO: Сетка */
-    border-top: none;
   }
 
   @media (min-width: $screen-md) {
@@ -31,11 +30,11 @@
 
       margin: 0 (-$grid-gutter) (-$item-margin-bottom);
       padding-top: 80px;
+
+      border: none;
     }
 
     &__item {
-      min-height: 431px; /* TODO: Сетка */
-
       width: 324px;
       margin: 0 $grid-gutter $item-margin-bottom;
     }
