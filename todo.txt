@@ -1,6 +1,11 @@
 #11 Завершаем вёрстку
 #13 Подготовка адаптивной графики
+#14 Оптимизировать векторную графику
 
+Оптимизация SVG, Программа - Обновил Page Footer, SVG растр из главной.
+Оптимизация SVG, Каталог - Catalog Item, Supplements - фон ч/з URL-encode; стилизация состояний. Обновил Page Footer, SVG растр из главной.
+
+Main Nav,
 
 color: $gray--darkest; > $text-color--headings
 line-height: 1 > $line-height--headings;
@@ -21,6 +26,7 @@ supplements__offer
 В css и html (pics)
 
 Карта + маркер
+Маркер SVG из логотипа
 
 Шрифты
 проверить имя шрифта в системе
