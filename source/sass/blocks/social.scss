@@ -15,7 +15,23 @@
     margin: 0 19px;
   }
 
-  &__link,
+  &__link {
+    display: block;
+
+    &:hover {
+      #{$block}__icon {
+        fill: $color-main;
+      }
+    }
+
+    &:active {
+      #{$block}__icon {
+        fill: $color-main;
+        opacity: 0.3;
+      }
+    }
+  }
+
   &__icon {
     display: block;
   }

@@ -57,8 +57,18 @@
       color: inherit;
     }
 
+    &:hover {
+      #{$block}__copyright-icon {
+        fill: $color-main;
+      }
+    }
+
     &:active {
       opacity: 0.3;
+
+      #{$block}__copyright-icon {
+        fill: $color-main;
+      }
     }
   }
 
@@ -107,6 +117,7 @@
       vertical-align: middle;
     }
   }
+
   @media (min-width: $screen-xl) {
     &__wrapper {
       padding-top: 58px;
