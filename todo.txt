@@ -2,15 +2,16 @@
 #13 Подготовка адаптивной графики
 #14 Оптимизировать векторную графику
 
+Оптимизация SVG, Программа - обновил контакты из главной!!!!!!!!!!!
 Оптимизация SVG, Программа - Обновил Page Footer, SVG растр из главной.
 Оптимизация SVG, Каталог - Catalog Item, Supplements - фон ч/з URL-encode; стилизация состояний. Обновил Page Footer, SVG растр из главной.
 
-Main Nav,
 
 color: $gray--darkest; > $text-color--headings
 line-height: 1 > $line-height--headings;
 line-height: 1.5 > пусто ($line-height--md)
 font-size: 16px > пусто ($font-size--md);
+$text-color--accent: $gray--darkest-2;
 
 Категории
 Состояния ссылок

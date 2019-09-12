@@ -1,0 +1,146 @@
+.field-text {
+  $block: &;
+  $icon-right: 33px;
+  $icon-space: 40px;
+  $icon-email-width: 17px;
+  $icon-phone-width: 20px;
+
+  font-size: $font-size--large;
+  line-height: 1.13;
+  font-family: $font-family--custom;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: $text-color;
+  // background: $body-bg;
+
+  &__item {
+    display: flex;
+    align-items: baseline;
+
+    margin: 0 0 14px;
+
+    &--last {
+      margin-bottom: 0;
+    }
+  }
+
+  &__label {
+    margin-right: 13px;
+    color: $gray--darkest-2;
+
+    &--required::after {
+      content: "*";
+    }
+  }
+
+  &__element {
+    flex-grow: 1;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      background-position: 0 0;
+      background-repeat: no-repeat;
+    }
+
+    &--email,
+    &--phone {
+      #{$block}__input {
+        padding-right: $icon-space;
+      }
+    }
+
+    &--email::after {
+      $width: 17px;
+      content: "";
+      right: $icon-right - $width;
+
+      width: $width;
+      height: 13px;
+
+      background-image: url("../img/icon-mail.svg"); /* TODO: Картинки */
+    }
+
+    &--phone::after {
+      $width: 20px;
+      content: "";
+      right: $icon-right - $width;
+
+      width: $width;
+      height: $width;
+
+      background-image: url("../img/icon-phone.svg"); /* TODO: Картинки */
+    }
+
+    &--area {
+      // line-height: 1.29;
+      line-height: 1.32;
+      word-spacing: -1px;
+    }
+  }
+
+  &__input {
+    display: block;
+
+    width: 100%;
+    padding: 12.5px 15px;
+
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    text-transform: inherit;
+    word-spacing: inherit;
+    color: inherit;
+
+    // color: $text-color;
+    background: $white;
+    border: solid 1px $gray--lighter;
+  }
+
+  @media (min-width: $screen-md) {
+    $icon-right: 38px;
+    $icon-space: 45px;
+    font-size: 20px;
+
+    &__item {
+      margin-bottom: 20px;
+
+      &--last {
+        margin-bottom: 0;
+      }
+    }
+
+    &__element {
+      &--area {
+        line-height: 1.2;
+        word-spacing: 0;
+      }
+
+      &--email,
+      &--phone {
+        #{$block}__input {
+          padding-right: $icon-space;
+        }
+      }
+
+      &--email::after {
+        right: $icon-right - $icon-email-width;
+      }
+
+      &--phone::after {
+        right: $icon-right - $icon-phone-width;
+      }
+    }
+
+    &__label {
+      margin-right: 17px;
+    }
+
+    &__input {
+      padding: 14px 20px;
+    }
+  }
+}

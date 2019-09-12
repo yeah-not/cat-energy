@@ -17,10 +17,10 @@
 }
 
 @mixin container--xl {
-    width: $container-xl;
-    margin: 0 auto;
-    padding-left: $container-gap-xl;
-    padding-right: $container-gap-xl;
+  width: $container-xl;
+  margin: 0 auto;
+  padding-left: $container-gap-xl;
+  padding-right: $container-gap-xl;
 }
 
 @mixin row {
@@ -54,13 +54,68 @@
   list-style: none;
 }
 
+@mixin heading-with-stripes {
+  display: flex;
+  align-items: baseline;
+
+  &::before,
+  &::after {
+    box-sizing: content-box;
+    transform: translateY(-7px);
+
+    width: $container-gap-sm;
+    height: 3px;
+
+    background: $color-main;
+  }
+
+  &::after {
+    content: "";
+    flex-grow: 1;
+
+    margin-left: 25px;
+    margin-right: -$container-gap-sm;
+    padding-right: 10px;
+  }
+
+  @media (min-width: $screen-md) {
+    $item-padding-x: 38px;
+
+    &::before,
+    &::after {
+      content: "";
+      width: $container-gap-md;
+    }
+
+    &::before {
+      margin-right: $item-padding-x;
+    }
+
+    &::after {
+      margin-left: $item-padding-x;
+      margin-right: 0;
+      padding-right: 20px;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    &::before {
+      width: 72px;
+    }
+
+    &::after {
+      width: 140px;
+    }
+  }
+}
+
 @mixin outline($color-num: 1, $hide-content: 0) {
-  $sea-green:     #2E8B57;
-  $orange-red:    #FF4500;
-  $sky-blue:      #87CEEB;
-  $gold:          #FFD700;
-  $aquamarine:    #7FFFD4;
-  $blue-violet:   #8A2BE2;
+  $sea-green:     #2e8b57;
+  $orange-red:    #ff4500;
+  $sky-blue:      #87ceeb;
+  $gold:          #ffd700;
+  $aquamarine:    #7fffd4;
+  $blue-violet:   #8a2be2;
 
   // $outline-colors: $orange-red $sky-blue $gold $aquamarine $blue-violet $sea-green;
   $color-per-num: (1: red, 2: blue, 3: orange, 4: violet, 5: $orange-red);

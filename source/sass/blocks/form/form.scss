@@ -1,14 +1,13 @@
 .form {
   $block: &;
-  @include container;
-  @include outline; /* TODO: Сетка */
 
-  margin-bottom: 35px;
+  // @include outline; /* TODO: Сетка */
+  @include container;
+  margin-bottom: 30px;
 
   &__part {
-    @include outline(2); /* TODO: Сетка */
-
-    margin: 0 0 32px;
+    // @include outline(2); /* TODO: Сетка */
+    margin: 0 0 27px;
     padding: 0;
 
     border: none;
@@ -16,93 +15,97 @@
     &--last {
       margin-bottom: 0;
     }
-
-    &:not(:nth-of-type(1)) {
-      @include outline(2, 1); /* TODO: Сетка */
-    }
-
-    &:nth-of-type(2) {
-      min-height: 181px; /* TODO: Сетка */
-    }
-
-    &:nth-of-type(3) {
-      min-height: 205px; /* TODO: Сетка */
-    }
-
-    &:nth-of-type(4) {
-      min-height: 213px; /* TODO: Сетка */
-    }
   }
 
   &__group {
-    @include outline(3, 1); /* TODO: Сетка */
-
-    margin: 0 0 23px;
+    // @include outline(3); /* TODO: Сетка */
+    margin-top: 0;
+    margin-bottom: 23px;
 
     &--last {
       margin-bottom: 0;
     }
+  }
 
-    &:nth-child(2) {
-      min-height: 163px; /* TODO: Сетка */
-    }
+  &__legend {
+    width: 100%;
+    margin: 0 0 35px;
 
-    &:nth-child(4) {
-      min-height: 158px; /* TODO: Сетка */
+    font-size: $font-size--page-h2;
+    line-height: 1;
+    font-family: $font-family--headings;
+    font-weight: normal;
+    color: $text-color--headings;
+
+    span {
+      @include heading-with-stripes;
     }
   }
 
   &__actions {
-    @include outline(2, 1);
-    min-height: 75px; /* TODO: Сетка */
+    // @include outline(2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     margin: 34px 0 0;
+  }
+
+  &__notice {
+    font-size: $font-size;
+    line-height: 1.14;
   }
 
   @media (min-width: $screen-md) {
     margin-bottom: 72px;
 
     &__part {
-      margin-bottom: 70px;
+      margin-bottom: 64px;
       padding: 0 ($grid-gutter-2);
 
       &--last {
         margin-bottom: 0;
       }
-
-      &:nth-of-type(2) {
-        min-height: 231px; /* TODO: Сетка */
-      }
-
-      &:nth-of-type(3) {
-        min-height: 281px; /* TODO: Сетка */
-      }
-
-      &:nth-of-type(4) {
-        min-height: 200px; /* TODO: Сетка */
-      }
     }
 
     &__group {
-      margin-bottom: 70px;
+      margin-bottom: 72px;
 
       &--last {
         margin-bottom: 0;
       }
+    }
 
-      &:nth-child(2) {
-        min-height: 196px; /* TODO: Сетка */
+    &__legend {
+
+      margin-bottom: 77px;
+      font-size: $font-size--page-h2-md;
+
+      span {
+        margin: 0 (-$grid-gutter-2 - $container-gap-md);
       }
 
-      &:nth-child(4) {
-        min-height: 196px; /* TODO: Сетка */
+      br {
+        display: none;
       }
     }
 
     &__actions {
-      min-height: 52px; /* TODO: Сетка */
-
       margin-top: 54px;
+      padding: 0 ($grid-gutter-2);
+    }
+
+    &__submit {
+      padding-top: 16px;
+      padding-bottom: 16px;
+
+      font-size: $font-size--xxlarge;
+      line-height: 1;
+    }
+
+    &__notice {
+      font-size: $font-size--large;
+      line-height: 1;
     }
   }
 
@@ -110,30 +113,23 @@
     margin-bottom: 82px;
 
     &__part {
-      margin-bottom: 73px;
+      margin-bottom: 67px;
       padding: 0;
 
       &--last {
         margin-bottom: 0;
       }
+    }
 
-      &:nth-of-type(2) {
-        min-height: 159px; /* TODO: Сетка */
-      }
-
-      &:nth-of-type(3) {
-        // min-height: 281px; /* TODO: Сетка */
-      }
-
-      &:nth-of-type(4) {
-        min-height: 128px; /* TODO: Сетка */
+    &__legend {
+      span {
+        margin: 0 (-$container-gap-xl);
       }
     }
 
     &__actions {
-      // min-height: 52px; /* TODO: Сетка */
-
       margin-top: 61px;
+      padding: 0;
     }
   }
 }

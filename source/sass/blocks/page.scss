@@ -19,9 +19,9 @@
   }
 
   /* TODO: Сетка */
-  min-height: 1000px;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
+  // min-height: 1000px;
+  // background-position: 50% 0;
+  // background-repeat: no-repeat;
 
   // &--index {
   //   background-image: url("../img/preview/Index-Mobile.jpg");
@@ -47,16 +47,16 @@
   //   }
   // }
 
-  &--program {
-    background-image: url("../img/preview/Form-Mobile.jpg");
-
-    @media (min-width: $screen-md) {
-      background-image: url("../img/preview/Form-Tablet.jpg");
-    }
-
-    @media (min-width: $screen-xl) {
-      background-image: url("../img/preview/Form-Desktop.jpg");
-    }
-  }
+  // &--program {
+  //   background-image: url("../img/preview/Form-Mobile.jpg");
+  //
+  //   @media (min-width: $screen-md) {
+  //     background-image: url("../img/preview/Form-Tablet.jpg");
+  //   }
+  //
+  //   @media (min-width: $screen-xl) {
+  //     background-image: url("../img/preview/Form-Desktop.jpg");
+  //   }
+  // }
   /* EO TODO: Сетка */
 }
