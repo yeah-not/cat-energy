@@ -1,3 +1,4 @@
+// Сетка
 @mixin container {
   width: $container-sm;
   padding: 0 $container-gap-sm;
@@ -45,6 +46,20 @@
 
 @mixin row--xl {
   margin: 0 (-$container-gap-xl);
+}
+
+// Разное
+@mixin visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 @mixin reset-list {

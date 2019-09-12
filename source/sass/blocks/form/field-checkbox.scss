@@ -19,10 +19,15 @@
   }
 
   &__input {
-    display: none; /* TODO: visually-hidden */
+    @include visually-hidden;
 
     &:checked ~ #{$block}__label::after {
       display: block;
+    }
+
+    &:focus ~ #{$block}__label::before {
+      border-color: $gray--lighten;
+      box-shadow: inset 0 0 0 1px $gray--lighten;
     }
   }
 
@@ -58,6 +63,17 @@
       height: 16px;
 
       background: url("../img/icon-tick.svg") 0 0 no-repeat; /* TODO: Картинки */
+    }
+
+    &:hover,
+    &:active {
+      &::before {
+        border-color: $gray--lighten;
+      }
+    }
+
+    &:active {
+      opacity: 0.3;
     }
   }
 
