@@ -1,4 +1,4 @@
-.field-radio {
+.field-checkbox {
   $block: &;
   $input-radius: 15px;
 
@@ -9,19 +9,6 @@
   font-family: $font-family--custom;
   text-transform: uppercase;
   color: $text-color--accent;
-
-  &--border {
-    @include row--sm;
-    padding-top: 21px;
-    padding-bottom: 22px;
-
-    border: 1px solid $gray--lightest-5;
-
-    #{$block}__item {
-      padding-left: $container-gap-sm - 1;
-      padding-right: $container-gap-sm - 1;
-    }
-  }
 
   &__item {
     margin: 0 0 12px;
@@ -56,7 +43,6 @@
 
       border: 1px solid $border-color;
       background: $white;
-      border-radius: 50%;
     }
 
     &::after {
@@ -68,38 +54,37 @@
       left: $input-radius;
       transform: translate(-50%, -50%);
 
-      width: 12px;
-      height: 12px;
+      width: 21px;
+      height: 16px;
 
-      background: $color-main;
-      border-radius: 50%;
+      background: url("../img/icon-tick.svg") 0 0 no-repeat; /* TODO: Картинки */
     }
   }
 
   @media (min-width: $screen-md) {
     $input-radius: 20px;
+    $item-margin-bottom: 32px;
     font-size: $font-size--xxlarge;
     line-height: 1;
+
+    margin-bottom: -$item-margin-bottom;
+
+    &__item {
+      margin-bottom: 32px;
+    }
 
     &__label {
       &::before {
         width: $input-radius * 2;
         height: $input-radius * 2;
-        margin-right: 20px;
+        margin-right: 18px;
       }
 
       &::after {
         left: $input-radius;
-        width: 18px;
-        height: 18px;
-      }
-    }
 
-    &--border {
-      padding: 24px 0;
-
-      #{$block}__item {
-        padding: 0 28px;
+        width: 21px;
+        height: 16px;
       }
     }
   }

@@ -4,8 +4,8 @@
 
   padding: 10px 27px;
 
-  font-size: $font-size;
-  line-height: 1.43;
+  font-size: $font-size--large;
+  line-height: 1.25;
   font-family: $font-family--custom;
   text-align: center;
   text-decoration: none;
@@ -13,6 +13,7 @@
   color: $white;
 
   background: $color-main;
+  border: none;
 
   &:hover {
     color: $white;
@@ -42,10 +43,5 @@
       color: rgba($gray--darken, 0.3);
       background-color: $gray--lightest-3;
     }
-  }
-
-  @media (min-width: $screen-md) {
-    font-size: $font-size--large;
-    line-height: 1.25;
   }
 }

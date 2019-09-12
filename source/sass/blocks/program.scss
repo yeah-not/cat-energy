@@ -1,15 +1,19 @@
 .program {
   $block: &;
 
-  &__pet-group {
-    &--target {
-      @include row--sm;
-    }
+  &__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &__required {
+    margin-top: 22px;
+    text-align: center;
   }
 
   @media (min-width: $screen-md) {
     &__pet {
-      margin-bottom: 80px;
+      margin-bottom: 76px;
     }
 
     &__pet-group {
@@ -18,11 +22,50 @@
         margin-right: 0;
       }
     }
+
+    &__supplements-title {
+      margin-bottom: 59px;
+    }
+
+    &__supplements-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      margin-left: -$grid-gutter;
+      margin-right: -$grid-gutter;
+    }
+
+    &__supplement-item {
+      width: 50%;
+      padding: 0 $grid-gutter;
+    }
+
+    &__actions {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-left: -$grid-gutter;
+      margin-right: -$grid-gutter;
+    }
+
+    &__submit,
+    &__required {
+      width: 50%;
+      padding: 0 $grid-gutter;
+    }
+
+    &__required {
+      margin-top: 0;
+
+      text-align: left;
+    }
   }
 
   @media (min-width: $screen-xl) {
     &__pet {
-      margin-bottom: 72px;
+      margin-bottom: 67px;
     }
 
     &__pet-wrapper {
@@ -34,6 +77,39 @@
     &__pet-group {
       width: 570px;
       margin: 0;
+    }
+
+    &__owner {
+      display: flex;
+      flex-wrap: wrap;
+
+      margin: 0 (-$grid-gutter-2);
+    }
+
+    &__owner-element {
+      width: 50%;
+      padding: 0 $grid-gutter-2;
+      margin: 0;
+    }
+
+    &__supplements-list {
+      margin-left: (-$grid-gutter-2);
+      margin-right: (-$grid-gutter-2);
+    }
+
+    &__supplement-item {
+      width: 25%;
+      padding: 0 $grid-gutter-2;
+    }
+
+    &__actions {
+      margin-left: -$grid-gutter-2;
+      margin-right: -$grid-gutter-2;
+    }
+
+    &__submit,
+    &__required {
+      padding: 0 $grid-gutter-2;
     }
   }
 }
