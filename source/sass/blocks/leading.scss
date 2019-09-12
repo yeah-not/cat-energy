@@ -80,6 +80,9 @@
   }
 
   &__link {
+    font-size: $font-size;
+    line-height: 1.43;
+
     &--top {
       display: none;
     }
@@ -152,6 +155,7 @@
       }
     }
   }
+
   @media (min-width: $screen-xl) {
     margin-bottom: 80px;
 
