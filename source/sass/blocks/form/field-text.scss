@@ -80,6 +80,13 @@
       line-height: 1.32;
       word-spacing: -1px;
     }
+
+    &--error {
+      #{$block}__input {
+        border-color: $color-danger;
+        box-shadow: inset 0 0 0 1px $color-danger;
+      }
+    }
   }
 
   &__input {
@@ -97,7 +104,18 @@
 
     // color: $text-color;
     background: $white;
-    border: solid 1px $gray--lighter;
+    border: solid 1px rgba($border-color, 0.5);
+
+    &:hover {
+      border-color: $border-color;
+    }
+
+    &:active,
+    &:focus {
+      border-color: $gray--darken;
+      box-shadow: inset 0 0 0 1px $gray--darken;
+      outline: none;
+    }
   }
 
   @media (min-width: $screen-md) {
