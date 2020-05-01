@@ -7,6 +7,8 @@ line-height: 1 > $line-height--headings;
 line-height: 1.5 > пусто ($line-height--md)
 font-size: 16px > пусто ($font-size--md);
 $text-color--accent: $gray--darkest-2;
+$font-family--custom >> $font-family--headings для заголовков
+@mixin heading(0/1/2);
 
 Категории
 Состояния ссылок
@@ -46,3 +48,52 @@ atom SCSS autocomplete &
 Sticky Footer IE
 flex-shrink 1 IE 10
 Линки-картинки с display: block;
+
+*************************
+Горизонтальный скролл
+Скрипты
+Проверить работоспособность форм без js
+Проверить работоспособность форм c js
+Карта
+Отдельные страницы на попапы, если отключен js
+a.leading__link - на страницу ордера
+a.leading__link - сделать одну?
+.categories__actions > display:flex, чтобы .categories__to-catalog не тянулась
+Удалить неиспользуемые классы
+.live-example__picture--overlap 2 раза
+.live-example__picture--overlap - нужен?
+.overlap-slider__item--before - не нужен
+.field-text__element 2 раза
+.program__pet-group--data > .program__pet-data?
+posthtml-include для хедера и футера
+.page-main flex-grow:1 - для sticky footer
+font-display: swap;???
+variables.scss подключить перед mixins.scss
+map для scss
+page-header__logo-link блоком
+.page-header__logo - убрать max-width на md и lg
+@mixin container--xl для page-header__wrapper
+.leading__slogan margin: 0 0 25px; - перенести в .leading__content
+.live-example__controls margin: 0 -20px; нет @row
+отступы .catalog-item (серый фон на lg)
+избавиться от .page-header__wrapper или его не делать контейнером на xl
+.main-nav__item--active для sm
+.leading::before top: -130px; -  сдвиг градиента для XL
+.leading__content width: 50%; для XL
+.features__item::after content: "1" >> counter
+.live-example__cost display:block
+.overlap-slider__item--overlap background: $bg-light-gray; и другие bg перенести в live-example__picture
+.live-example__cost-field max-width для MD
+.overlap-slider__controls MD минимальные вертикальные падинги
+.live-example__controls::before left:50% должно браться из html|js либо только фон .live-example__picture--overlap тянем
+.overlap-slider__toggle left:0; MD
+.live-example__wrapper оставить контейнером как в XL? лишние врапперы убрать
+.live-example__pictures XL bg:none;
+.live-example__image { width: auto; height: auto; } убрать на XL - есть на MD
+
+Тест на Переполнение
+Версия на 1200px вместо 1440px
+pixel perfect test
+адаптивная резина? Посмотреть как в бутстрапе. body min-width, container max-width
+
+>>> Wordpress - другой проект?
