@@ -146,13 +146,14 @@
   }
 
   &__controls {
-    @include row;
+    @include container;
   }
 
   @media (min-width: $screen-md) {
     background-color: transparent;
 
     &__wrapper {
+      overflow: hidden;
       padding-top: 25px;
     }
 
@@ -273,18 +274,20 @@
         top: 0;
         bottom: 0;
         left: 50%;
-        right: 0;
+        width: 50vw;
 
         background: $gray--lightest-2;
       }
     }
   }
+
   @media (min-width: $screen-xl) {
     background: $picture-bg-xl;
 
     // Информация
     &__wrapper {
       @include container--xl;
+
       flex-direction: row;
       position: relative;
       padding-top: $padding-top-xl;
@@ -377,6 +380,7 @@
     }
 
     &__controls {
+      width: auto;
       margin: 0;
       padding: 43px 0 72px;
       // padding-left: 37px;

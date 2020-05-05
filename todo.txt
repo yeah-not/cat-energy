@@ -50,7 +50,6 @@ flex-shrink 1 IE 10
 Линки-картинки с display: block;
 
 *************************
-Горизонтальный скролл
 Скрипты
 Проверить работоспособность форм без js
 Проверить работоспособность форм c js
@@ -81,6 +80,7 @@ page-header__logo-link блоком
 .leading::before top: -130px; -  сдвиг градиента для XL
 .leading__content width: 50%; для XL
 .features__item::after content: "1" >> counter
+
 .live-example__cost display:block
 .overlap-slider__item--overlap background: $bg-light-gray; и другие bg перенести в live-example__picture
 .live-example__cost-field max-width для MD
@@ -91,6 +91,9 @@ page-header__logo-link блоком
 .live-example__pictures XL bg:none;
 .live-example__image { width: auto; height: auto; } убрать на XL - есть на MD
 
+Live Eaxample - убрал горизонтальный скролл.
+
+Минимальный горизонтальный скролл на 320px
 Тест на Переполнение
 Версия на 1200px вместо 1440px
 pixel perfect test
