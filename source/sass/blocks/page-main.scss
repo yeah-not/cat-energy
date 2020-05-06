@@ -1,5 +1,6 @@
 .page-main {
   $block: &;
+  flex-grow: 1;
 
   &__title {
     @include container;

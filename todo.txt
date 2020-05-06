@@ -58,9 +58,7 @@ flex-shrink 1 IE 10
 
 .field-text__element 2 раза
 .program__pet-group--data > .program__pet-data?
-posthtml-include для хедера и футера
-.page-main flex-grow:1 - для sticky footer
-font-display: swap;???
+
 variables.scss подключить перед mixins.scss
 map для scss
 page-header__logo-link блоком
@@ -77,12 +75,14 @@ page-header__logo-link блоком
 ГОТОВО
 
 
+font-display: swap;???
 a.leading__link - сделать одну?
 Удалить неиспользуемые классы
 Минимальный горизонтальный скролл на 320px
 Тест на Переполнение
 Версия на 1200px вместо 1440px
 pixel perfect test
+posthtml-include для хедера и футера
 адаптивная резина? Посмотреть как в бутстрапе. body min-width, container max-width
 
 >>> Wordpress - другой проект?
