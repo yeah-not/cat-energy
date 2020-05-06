@@ -1,5 +1,6 @@
 .overlap-slider {
   $block: &;
+  $scale-margin-horiz: 18px;
 
   &__wrapper {
     position: relative;
@@ -38,7 +39,8 @@
 
     width: 84px;
     height: 14px;
-    margin: 0 18px;
+    margin: 0 $scale-margin-horiz;
+    margin-left: $scale-margin-horiz + 3px;
     padding: 3px 5px;
 
     background: $white;
@@ -78,14 +80,18 @@
   }
 
   @media (min-width: $screen-md) {
+    $scale-margin-horiz: 23px;
+
     &__controls {
+      padding: 20px 0;
       padding-left: 3px;
     }
 
     &__scale {
       width: 428px;
       height: 6px;
-      margin: 0 23px;
+      margin: 0 $scale-margin-horiz;
+      margin-left: $scale-margin-horiz + 3px;
 
       background-color: $gray--lightest;
       border: none;
@@ -100,6 +106,7 @@
 
       position: absolute;
       top: 50%;
+      left: 0;
       transform: translate(-50%, -50%);
 
       width: 34px;

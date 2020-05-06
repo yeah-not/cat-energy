@@ -1,6 +1,7 @@
 .live-example {
   $block: &;
   $padding-top-xl: 57px;
+  $picture-padding-bottom-md: 116px;
   $picture-bg-md-gap: 170px;
   $picture-bg-xl-gap: 190px;
   $picture-bg-md: linear-gradient(to bottom, $white $picture-bg-md-gap, $bg-light-gray $picture-bg-md-gap);
@@ -96,6 +97,7 @@
   }
 
   &__cost {
+    display: block;
     width: 100%;
 
     font-size: $font-size;
@@ -209,6 +211,7 @@
       flex-direction: column;
 
       width: auto;
+      max-width: 192px;
       margin-left: auto;
 
       text-align: right;
@@ -251,6 +254,8 @@
     }
 
     &__picture {
+      padding-bottom: $picture-padding-bottom-md;
+
       &--overlap {
         background: $picture-bg-md--overlap;
       }
@@ -263,25 +268,15 @@
 
     &__controls {
       position: relative;
+
+      margin-top: -$picture-padding-bottom-md;
       padding-top: 21px;
       padding-bottom: 75px;
-
-      background: $bg-light-gray;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        width: 50vw;
-
-        background: $gray--lightest-2;
-      }
     }
   }
 
   @media (min-width: $screen-xl) {
+    $picture-padding-bottom-md: 135px;
     background: $picture-bg-xl;
 
     // Информация
@@ -337,6 +332,7 @@
       flex-direction: row;
 
       width: 100%;
+      max-width: none;
       margin: 62px 0 0;
     }
 
@@ -358,7 +354,7 @@
       margin-top: -$padding-top-xl;
       margin-right: -$grid-gutter-2;
 
-      background: $picture-bg-xl;
+      background: none;
     }
 
     &__pictures-wrapper {
@@ -374,6 +370,8 @@
     }
 
     &__picture {
+      padding-bottom: $picture-padding-bottom-md;
+
       &--overlap {
         background: $picture-bg-xl--overlap;
       }
@@ -381,14 +379,9 @@
 
     &__controls {
       width: auto;
-      margin: 0;
+      margin-top: -$picture-padding-bottom-md;
       padding: 43px 0 72px;
       // padding-left: 37px;
-    }
-
-    &__image {
-      width: auto;
-      height: auto;
     }
   }
 }
