@@ -60,16 +60,14 @@ flex-shrink 1 IE 10
 .program__pet-group--data > .program__pet-data?
 
 
-map для scss
-page-header__logo-link блоком
-.page-header__logo - убрать max-width на md и lg
-@mixin container--xl для page-header__wrapper
+.main-nav__item--active для sm
+
 .leading__slogan margin: 0 0 25px; - перенести в .leading__content
 отступы .catalog-item (серый фон на lg)
 избавиться от .page-header__wrapper или его не делать контейнером на xl
-.main-nav__item--active для sm
 .leading::before top: -130px; -  сдвиг градиента для XL
 .leading__content width: 50%; для XL
+
 .features__item::after content: "1" >> counter
 
 ГОТОВО
@@ -77,9 +75,11 @@ page-header__logo-link блоком
 
 font-display: swap;???
 a.leading__link - сделать одну?
-Удалить неиспользуемые классы
-Минимальный горизонтальный скролл на 320px
+map для scss
+
 Тест на Переполнение
+Минимальный горизонтальный скролл на 320px
+Удалить неиспользуемые классы
 Версия на 1200px вместо 1440px
 pixel perfect test
 posthtml-include для хедера и футера

@@ -58,15 +58,16 @@
       height: auto;
     }
   }
+
   @media (min-width: $screen-xl) {
     width: auto;
     margin: 0;
     padding: 0;
 
     &__wrapper {
-      width: $container-xl;
-      margin: 0 auto;
-      padding: 54px $container-gap-xl 15px;
+      @include container--xl;
+      padding-top: 54px;
+      padding-bottom: 15px;
     }
 
     &__logo {
