@@ -58,10 +58,7 @@ flex-shrink 1 IE 10
 a.leading__link - на страницу ордера
 a.leading__link - сделать одну?
 .categories__actions > display:flex, чтобы .categories__to-catalog не тянулась
-Удалить неиспользуемые классы
-.live-example__picture--overlap 2 раза
-.live-example__picture--overlap - нужен?
-.overlap-slider__item--before - не нужен
+
 .field-text__element 2 раза
 .program__pet-group--data > .program__pet-data?
 posthtml-include для хедера и футера
@@ -80,9 +77,7 @@ page-header__logo-link блоком
 .leading__content width: 50%; для XL
 .features__item::after content: "1" >> counter
 
-Live Eaxample / Overlap slider. Не пройдет переполнение на MD - упростить - сделать span, как у модальных окон на пол-ширины с фоном.
-.live-example__wrapper оставить контейнером как в XL? лишние врапперы убрать
-
+Удалить неиспользуемые классы
 Минимальный горизонтальный скролл на 320px
 Тест на Переполнение
 Версия на 1200px вместо 1440px
