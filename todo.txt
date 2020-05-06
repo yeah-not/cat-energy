@@ -60,11 +60,7 @@ flex-shrink 1 IE 10
 .program__pet-group--data > .program__pet-data?
 отступы .catalog-item (серый фон на lg)
 
-.main-nav__item--active для sm
-.features__item::after content: "1" >> counter
-
 ГОТОВО
-
 
 избавиться от .page-header__wrapper или его не делать контейнером на xl
 a.leading__link - сделать одну?
