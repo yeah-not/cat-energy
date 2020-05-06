@@ -59,7 +59,7 @@ flex-shrink 1 IE 10
 .field-text__element 2 раза
 .program__pet-group--data > .program__pet-data?
 
-variables.scss подключить перед mixins.scss
+
 map для scss
 page-header__logo-link блоком
 .page-header__logo - убрать max-width на md и lg
