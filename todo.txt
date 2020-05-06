@@ -55,9 +55,6 @@ flex-shrink 1 IE 10
 Проверить работоспособность форм c js
 Карта
 Отдельные страницы на попапы, если отключен js
-a.leading__link - на страницу ордера
-a.leading__link - сделать одну?
-.categories__actions > display:flex, чтобы .categories__to-catalog не тянулась
 
 .field-text__element 2 раза
 .program__pet-group--data > .program__pet-data?
@@ -77,6 +74,10 @@ page-header__logo-link блоком
 .leading__content width: 50%; для XL
 .features__item::after content: "1" >> counter
 
+ГОТОВО
+
+
+a.leading__link - сделать одну?
 Удалить неиспользуемые классы
 Минимальный горизонтальный скролл на 320px
 Тест на Переполнение
