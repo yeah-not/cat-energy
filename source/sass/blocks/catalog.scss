@@ -8,10 +8,10 @@
   margin-bottom: 28px;
 
   &__list {
-    @include row--sm;
-
     display: flex;
     flex-direction: column;
+
+    margin: 0 (-$container-gap-sm - 1);
 
     border-top: $catalog-item-border;
   }
@@ -22,13 +22,14 @@
 
   @media (min-width: $screen-md) {
     $item-margin-bottom: 141px;
+    $item-margin-horiz: $grid-gutter;
     margin-bottom: 69px;
 
     &__list {
       flex-direction: row;
       flex-wrap: wrap;
 
-      margin: 0 (-$grid-gutter) (-$item-margin-bottom);
+      margin: 0 (-$item-margin-horiz) (-$item-margin-bottom);
       padding-top: 80px;
 
       border: none;
@@ -36,24 +37,25 @@
 
     &__item {
       width: 324px;
-      margin: 0 $grid-gutter $item-margin-bottom;
+      margin: 0 $item-margin-horiz $item-margin-bottom;
     }
   }
 
   @media (min-width: $screen-xl) {
+    $item-margin-horiz: $grid-gutter-2;
     margin-bottom: 79px;
 
     &__list {
-      margin-left: -$grid-gutter-2;
-      margin-right: -$grid-gutter-2;
+      margin-left: -$item-margin-horiz;
+      margin-right: -$item-margin-horiz;
     }
 
     &__item {
-      min-height: 431px; /* TODO: Сетка */
+      // min-height: 431px; /* TODO: Сетка */
 
       width: 245px;
-      margin-left: $grid-gutter-2;
-      margin-right: $grid-gutter-2;
+      margin-left: $item-margin-horiz;
+      margin-right: $item-margin-horiz;
     }
   }
 }
