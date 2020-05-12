@@ -152,10 +152,10 @@
   }
 
   @media (min-width: $screen-md) {
+    overflow: hidden;
     background-color: transparent;
 
     &__wrapper {
-      overflow: hidden;
       padding-top: 25px;
     }
 
@@ -245,6 +245,7 @@
         left: calc(100% - #{$container-gap-md});
 
         width: 100vw;
+
         background: $picture-bg-md--overlap;
       }
     }
