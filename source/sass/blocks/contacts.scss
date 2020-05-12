@@ -5,6 +5,10 @@
   color: $text-color;
   background: $white;
 
+  &--gray {
+    background: $bg-light-gray;
+  }
+
   &__info {
     // @include outline(2); /* TODO: Сетка */
     @include container;
@@ -43,6 +47,7 @@
 
   &__map {
     // @include outline(2); /* TODO: Сетка */
+    background: $white;
   }
 
   &__map-image {
