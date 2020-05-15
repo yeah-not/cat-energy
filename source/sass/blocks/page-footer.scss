@@ -23,7 +23,18 @@
     padding: 40px 0 32px;
   }
 
-  &__logo-link,
+  &__logo-link {
+    display: inline-block;
+
+    &[href]:hover {
+      opacity: 0.8;
+    }
+
+    &[href]:active {
+      opacity: 0.6;
+    }
+  }
+
   &__logo-image {
     display: block;
   }
@@ -87,7 +98,7 @@
     }
 
     &__logo {
-      display: block;
+      justify-content: flex-start;
 
       width: 182px;
       padding: 0;
@@ -105,11 +116,11 @@
       padding: 0;
 
       border: none;
+      text-align: right;
     }
 
     &__copyright-link {
-      display: block;
-      text-align: right;
+      display: inline-block;
     }
 
     &__copyright-icon {
