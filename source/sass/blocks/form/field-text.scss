@@ -1,9 +1,14 @@
 .field-text {
   $block: &;
+  $item-margin-bottom: 14px;
   $icon-right: 33px;
   $icon-space: 40px;
   $icon-email-width: 17px;
   $icon-phone-width: 20px;
+
+  overflow: auto;
+
+  margin: 0 0 (-$item-margin-bottom);
 
   font-size: $font-size--large;
   line-height: 1.13;
@@ -17,11 +22,7 @@
     display: flex;
     align-items: baseline;
 
-    margin: 0 0 14px;
-
-    &--last {
-      margin-bottom: 0;
-    }
+    margin: 0 0 $item-margin-bottom;
   }
 
   &__label {
@@ -148,17 +149,20 @@
     }
   }
 
+  &--single {
+    overflow: visible;
+    margin-bottom: 0;
+  }
+
   @media (min-width: $screen-md) {
+    $item-margin-bottom: 20px;
     $icon-right: 38px;
     $icon-space: 45px;
+    margin-bottom: -$item-margin-bottom;
     font-size: 20px;
 
     &__item {
-      margin-bottom: 20px;
-
-      &--last {
-        margin-bottom: 0;
-      }
+      margin-bottom: $item-margin-bottom;
     }
 
     &__element {
@@ -189,6 +193,10 @@
 
     &__input {
       padding: 14px 20px;
+    }
+
+    &--single {
+      margin-bottom: 0;
     }
   }
 }

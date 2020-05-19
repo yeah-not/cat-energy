@@ -1,8 +1,13 @@
 .field-checkbox {
   $block: &;
   $input-radius: 15px;
+  $item-margin-bottom: 12px;
 
   @include reset-list;
+
+  overflow: auto;
+
+  margin-bottom: -$item-margin-bottom;
 
   font-size: $font-size--large;
   line-height: 1.13;
@@ -11,11 +16,7 @@
   color: $text-color--accent;
 
   &__item {
-    margin: 0 0 12px;
-
-    &--last {
-      margin-bottom: 0;
-    }
+    margin: 0 0 $item-margin-bottom;
   }
 
   &__input {
@@ -71,15 +72,16 @@
       &::before {
         border-color: $gray--lighten;
       }
-
-      &::after {
-
-      }
     }
 
     &:active {
       opacity: 0.3;
     }
+  }
+
+  &--single {
+    overflow: visible;
+    margin-bottom: 0;
   }
 
   @media (min-width: $screen-md) {
@@ -107,6 +109,10 @@
         width: 21px;
         height: 16px;
       }
+    }
+
+    &--single {
+      margin-bottom: 0;
     }
   }
 }

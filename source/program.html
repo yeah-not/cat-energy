@@ -101,29 +101,31 @@
       <form class="program__form form" action="https://echo.htmlacademy.ru/">
         <fieldset class="program__pet form__part">
           <div class="program__pet-wrapper">
-            <legend class="visually-hidden">Данные о питомце</legend>
-            <div class="program__pet-group program__pet-group--data form__group field-text">
-              <p class="field-text__item">
-                <label class="field-text__label field-text__label--required" for="program_pet_name">Имя:</label>
-                <span class="field-text__element field-text__element">
-                  <input class="field-text__input" id="program_pet_name" type="text" name="pet_name" value="" placeholder="Барсик" required />
-                </span>
-              </p>
-              <p class="field-text__item">
-                <label class="field-text__label field-text__label--required" for="program_pet_weight">Вес (кг):</label>
-                <span class="field-text__element">
-                  <input class="field-text__input" id="program_pet_weight" type="text" name="pet_weight" value="" placeholder="7" required />
-                </span>
-              </p>
-              <p class="field-text__item field-text__item--last">
-                <label class="field-text__label" for="1111">Возраст (лет):</label>
-                <span class="field-text__element">
-                  <input class="field-text__input" id="program_pet_age" type="text" name="pet_age" value="" placeholder="7" />
-                </span>
-              </p>
+            <div class="program__pet-group">
+              <legend class="visually-hidden">Данные о питомце</legend>
+              <div class="field-text">
+                <p class="field-text__item">
+                  <label class="field-text__label field-text__label--required" for="program_pet_name">Имя:</label>
+                  <span class="field-text__element">
+                    <input class="field-text__input" id="program_pet_name" type="text" name="pet_name" value="" placeholder="Барсик" required />
+                  </span>
+                </p>
+                <p class="field-text__item">
+                  <label class="field-text__label field-text__label--required" for="program_pet_weight">Вес (кг):</label>
+                  <span class="field-text__element">
+                    <input class="field-text__input" id="program_pet_weight" type="text" name="pet_weight" value="" placeholder="7" required />
+                  </span>
+                </p>
+                <p class="field-text__item">
+                  <label class="field-text__label" for="1111">Возраст (лет):</label>
+                  <span class="field-text__element">
+                    <input class="field-text__input" id="program_pet_age" type="text" name="pet_age" value="" placeholder="7" />
+                  </span>
+                </p>
+              </div>
             </div>
             <legend class="visually-hidden">Ваша цель</legend>
-            <ul class="program__pet-group program__pet-group--target form__group form__group--last field-radio field-radio--border">
+            <ul class="program__pet-group program__pet-group--target field-radio field-radio--border">
               <li class="field-radio__item">
                 <input class="field-radio__input" id="program_slim" type="radio" name="program_target" value="1" checked/>
                 <label class="field-radio__label" for="program_slim">Похудение</label>
@@ -132,7 +134,7 @@
                 <input class="field-radio__input" id="program_gain" type="radio" name="program_target" value="2" />
                 <label class="field-radio__label" for="program_gain">Набор массы</label>
               </li>
-              <li class="field-radio__item field-radio__item--last">
+              <li class="field-radio__item">
                 <input class="field-radio__input" id="program_advice" type="radio" name="program_target" value="3" />
                 <label class="field-radio__label" for="program_advice">Не знаю (Нужен ваш совет)</label>
               </li>
@@ -149,7 +151,7 @@
                 <span class="field-text__icon"></span>
               </span>
             </p>
-            <p class="program__owner-element field-text__item field-text__item--last">
+            <p class="program__owner-element field-text__item">
               <label class="field-text__label field-text__label--required" for="program_phone">Телефон:</label>
               <span class="field-text__element field-text__element--phone">
                 <input class="field-text__input" id="program_phone" type="tel" name="phone" value="" placeholder="8 (960) 900-60-90" required />
@@ -160,7 +162,7 @@
         </fieldset>
         <fieldset class="form__part">
           <legend class="form__legend"><span>Комментарий</span></legend>
-          <div class="field-text">
+          <div class="field-text field-text--single">
             <label class="visually-hidden" for="programm_comment">Дополнительно о коте:</label>
             <span class="field-text__element field-text__element--area">
               <textarea class="field-text__input" id="programm_comment" name="comment" cols="30" rows="6" placeholder="Расскажите обо всех повадках кота"></textarea>
@@ -182,7 +184,7 @@
               <input class="field-checkbox__input" id="program_supplement_3" type="checkbox" name="supplement_3" />
               <label class="field-checkbox__label" for="program_supplement_3">Молоко</label>
             </li>
-            <li class="program__supplement-item field-checkbox__item field-checkbox__item--last">
+            <li class="program__supplement-item field-checkbox__item">
               <input class="field-checkbox__input" id="program_supplement_4" type="checkbox" name="supplement_4" />
               <label class="field-checkbox__label" for="program_supplement_4">Витамины</label>
             </li>

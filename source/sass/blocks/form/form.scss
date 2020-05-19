@@ -17,16 +17,6 @@
     }
   }
 
-  &__group {
-    // @include outline(3); /* TODO: Сетка */
-    margin-top: 0;
-    margin-bottom: 23px;
-
-    &--last {
-      margin-bottom: 0;
-    }
-  }
-
   &__legend {
     width: 100%;
     margin: 0 0 35px;
@@ -68,16 +58,7 @@
       }
     }
 
-    &__group {
-      margin-bottom: 72px;
-
-      &--last {
-        margin-bottom: 0;
-      }
-    }
-
     &__legend {
-
       margin-bottom: 77px;
       font-size: $font-size--page-h2-md;
 
