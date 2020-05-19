@@ -9,8 +9,8 @@ var server = require("browser-sync").create();
 
 sass.compiler = require('node-sass');
 
-gulp.task("style", function(done) {
-  gulp.src("source/sass/style.scss")
+gulp.task("style", function() {
+  return gulp.src("source/sass/style.scss")
     .pipe(plumber())
     .pipe(sass())
     .pipe(postcss([
@@ -18,17 +18,12 @@ gulp.task("style", function(done) {
     ]))
     .pipe(gulp.dest("source/css"))
     .pipe(server.stream());
-
-  done();
 });
 
 gulp.task("serve", gulp.series("style", function() {
   server.init({
     server: "source/",
     notify: false,
-    open: true,
-    cors: true,
-    ui: false
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("style"));
