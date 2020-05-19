@@ -48,22 +48,17 @@ gulp.task("build", gulp.series(
   "style"
 ));
 
+gulp.task("reload", function(done) {
+  server.reload();
+  done();
+});
 
-
-
-
-
-
-
-
-
-
-gulp.task("serve", gulp.series("style", function() {
+gulp.task("serve", function() {
   server.init({
-    server: "source/",
+    server: "build/",
     notify: false,
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("style"));
-  gulp.watch("source/*.html").on("change", server.reload);
-}));
+  gulp.watch("source/*.html", gulp.series("html", "reload"));
+});
