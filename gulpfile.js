@@ -20,6 +20,33 @@ gulp.task("style", function() {
     .pipe(server.stream());
 });
 
+gulp.task("copy", function(){
+  return gulp.src([
+    "source/img/*.{jpg,png,svg}",
+    "source/fonts/**/*.{woff,woff2}",
+    "source/js/**/*.js"], {
+      base: "source/"
+    })
+    .pipe(gulp.dest("build"));
+});
+
+gulp.task("html", function(){
+  return gulp.src("source/*.html")
+    .pipe(gulp.dest("build"));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 gulp.task("serve", gulp.series("style", function() {
   server.init({
     server: "source/",
