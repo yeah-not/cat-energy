@@ -73,5 +73,6 @@ pixel perfect test
 Фавиконки
 posthtml-include для хедера и футера
 адаптивная резина? Посмотреть как в бутстрапе. body min-width, container max-width
+Gulp перевести новый синтаксис
 
 >>> Wordpress - другой проект?

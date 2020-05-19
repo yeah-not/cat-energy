@@ -1,12 +1,15 @@
 "use strict";
 
 var gulp = require("gulp");
-var sass = require("gulp-sass");
 var plumber = require("gulp-plumber");
+var del = require("del");
+var rename = require("gulp-rename");
+
+var sass = require("gulp-sass");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
+var minCSS = require('gulp-csso');
 
-var del = require("del");
 var server = require("browser-sync").create();
 
 sass.compiler = require('node-sass');
@@ -18,6 +21,9 @@ gulp.task("style", function() {
     .pipe(postcss([
       autoprefixer()
     ]))
+    .pipe(gulp.dest("build/css"))
+    .pipe(minCSS())
+    .pipe(rename("style.min.css"))
     .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
 });
