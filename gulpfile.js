@@ -8,7 +8,10 @@ var rename = require("gulp-rename");
 var sass = require("gulp-sass");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
-var minCSS = require('gulp-csso');
+var csso = require("gulp-csso");
+
+var imagemin = require("gulp-imagemin");
+var imageminJpegtran = require("imagemin-jpegtran");
 
 var server = require("browser-sync").create();
 
@@ -22,10 +25,20 @@ gulp.task("style", function() {
       autoprefixer()
     ]))
     .pipe(gulp.dest("build/css"))
-    .pipe(minCSS())
+    .pipe(csso())
     .pipe(rename("style.min.css"))
     .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
+});
+
+gulp.task("images", function() {
+  return gulp.src("build/img/**/*.{png,jpg,svg}")
+    .pipe(imagemin([
+      imagemin.optipng({optimizationLevel: 3}),
+      imageminJpegtran({progressive: true}),
+      imagemin.svgo(),
+    ]))
+    .pipe(gulp.dest("build/img"))
 });
 
 gulp.task("clean", function() {
@@ -51,7 +64,8 @@ gulp.task("build", gulp.series(
   "clean",
   "copy",
   "html",
-  "style"
+  "style",
+  "images"
 ));
 
 gulp.task("reload", function(done) {
