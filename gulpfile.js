@@ -5,6 +5,8 @@ var sass = require("gulp-sass");
 var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
+
+var del = require("del");
 var server = require("browser-sync").create();
 
 sass.compiler = require('node-sass');
@@ -16,8 +18,12 @@ gulp.task("style", function() {
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(gulp.dest("source/css"))
+    .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
+});
+
+gulp.task("clean", function() {
+  return del("build");
 });
 
 gulp.task("copy", function(){
@@ -35,7 +41,12 @@ gulp.task("html", function(){
     .pipe(gulp.dest("build"));
 });
 
-
+gulp.task("build", gulp.series(
+  "clean",
+  "copy",
+  "html",
+  "style"
+));
 
 
 
