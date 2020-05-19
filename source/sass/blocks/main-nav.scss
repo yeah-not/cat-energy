@@ -1,5 +1,6 @@
 .main-nav {
   $block: &;
+  $link-padding-horiz: $container-gap-sm;
   // @include outline(2); /* TODO: Сетка */
 
   color: $gray--darkest;
@@ -9,20 +10,39 @@
     @include reset-list;
   }
 
-  &__link {
+  &__item {
+    position: relative;
     display: block;
+    text-align: center;
+    border-top: 1px solid $gray--lightest-4;
 
-    padding: 22px $container-gap-sm 23px;
+    &--active {
+      #{$block}__link::after {
+        content: "";
+        position: absolute;
+        bottom: 13px;
+        left: $link-padding-horiz;
+        right: $link-padding-horiz;
+
+        height: 2px;
+        background: $color-main;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 22px $link-padding-horiz 23px;
 
     font-family: $font-family--custom;
     font-size: 20px;
     line-height: 1;
     font-weight: bold;
-    text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-
-    border-top: 1px solid $gray--lightest-4;
 
     &,
     &:hover {
@@ -95,6 +115,8 @@
   }
 
   @media (min-width: $screen-md) {
+    $link-padding: 5px;
+
     flex-grow: 1;
 
     width: 516px;
@@ -103,35 +125,34 @@
     &__list {
       display: flex;
       justify-content: flex-end;
+
+      padding: 13px 0 0;
     }
 
     &__item {
       position: relative;
 
-      margin-left: 36px;
-      padding: 18px 0 9px;
+      margin-left: 31px;
 
-      &--active::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+      text-align: left;
 
-        height: 2px;
-        background: $color-main;
+      border: none;
+
+      &--active {
+        #{$block}__link::after {
+          bottom: -4px;
+          left: $link-padding;
+          right: $link-padding;
+        }
       }
     }
 
     &__link {
-      padding: 0;
+      padding: $link-padding;
 
       font-size: $font-size--xlarge;
       line-height: 1.39;
       font-weight: normal;
-      text-align: left;
-
-      border: none;
     }
 
     &__toggle {
@@ -145,6 +166,9 @@
     width: 50%;
     padding-left: 15px;
 
+    &__list {
+      padding-top: 0;
+    }
 
     &__item {
       padding-top: 20px;
@@ -159,8 +183,10 @@
       color: $white;
       // background: $color-main--dark-2;
 
-      #{$block}__item--active::after {
-        background: $white;
+      #{$block}__item--active {
+        #{$block}__link::after {
+          background: $white;
+        }
       }
     }
   }

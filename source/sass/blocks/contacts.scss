@@ -3,6 +3,11 @@
   // @include outline; /* TODO: Сетка */
 
   color: $text-color;
+  background: $white;
+
+  &--gray {
+    background: $bg-light-gray;
+  }
 
   &__info {
     // @include outline(2); /* TODO: Сетка */
@@ -42,6 +47,23 @@
 
   &__map {
     // @include outline(2); /* TODO: Сетка */
+    position: relative;
+    background: $white;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 139px;
+
+      width: 62px;
+      height: 53px;
+      margin-left: -32px;
+
+      background: url("../img/map-pin.png") 0 0 no-repeat;
+      background-size: cover;
+    }
   }
 
   &__map-image {
@@ -72,6 +94,14 @@
       br {
         display: block;
       }
+    }
+
+    &__map::before {
+      top: 146px;
+
+      width: 124px;
+      height: 106px;
+      margin-left: -60px;
     }
 
     &__map-image {
@@ -105,6 +135,11 @@
     &__address {
       width: 170px;
       text-align: left;
+    }
+
+    &__map::before {
+      top: 150px;
+      margin-left: 275px;
     }
 
     &__map-image {

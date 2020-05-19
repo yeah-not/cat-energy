@@ -7,6 +7,8 @@ line-height: 1 > $line-height--headings;
 line-height: 1.5 > пусто ($line-height--md)
 font-size: 16px > пусто ($font-size--md);
 $text-color--accent: $gray--darkest-2;
+$font-family--custom >> $font-family--headings для заголовков
+@mixin heading(0/1/2);
 
 Категории
 Состояния ссылок
@@ -46,3 +48,28 @@ atom SCSS autocomplete &
 Sticky Footer IE
 flex-shrink 1 IE 10
 Линки-картинки с display: block;
+
+*************************
+Скрипты
+Проверить работоспособность форм без js
+Проверить работоспособность форм c js
+Карта
+Отдельные страницы на попапы, если отключен js
+
+ГОТОВО
+
+
+избавиться от .page-header__wrapper или его не делать контейнером на xl
+a.leading__link - сделать одну?
+map для scss
+
+Тест на Переполнение
+Минимальный горизонтальный скролл на 320px/768/1440
+Удалить неиспользуемые классы
+Версия на 1200px вместо 1440px
+pixel perfect test
+Фавиконки
+posthtml-include для хедера и футера
+адаптивная резина? Посмотреть как в бутстрапе. body min-width, container max-width
+
+>>> Wordpress - другой проект?

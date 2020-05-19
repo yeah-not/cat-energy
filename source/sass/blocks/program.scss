@@ -1,6 +1,15 @@
 .program {
   $block: &;
 
+  &__pet-group {
+    // @include outline(3); /* TODO: Сетка */
+    margin: 0 0 23px;
+
+    &--target {
+      @include row--sm;
+    }
+  }
+
   &__actions {
     flex-direction: column;
     align-items: stretch;
@@ -17,9 +26,10 @@
     }
 
     &__pet-group {
+      margin-bottom: 72px;
+
       &--target {
-        margin-left: 0;
-        margin-right: 0;
+        margin: 0;
       }
     }
 
@@ -45,18 +55,16 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-
-      margin-left: -$grid-gutter;
-      margin-right: -$grid-gutter;
     }
 
-    &__submit,
+    &__submit {
+      width: 50%;
+      padding-right: $grid-gutter;
+    }
+
     &__required {
       width: 50%;
-      padding: 0 $grid-gutter;
-    }
-
-    &__required {
+      padding-left: $grid-gutter;
       margin-top: 0;
 
       text-align: left;
@@ -83,13 +91,13 @@
       display: flex;
       flex-wrap: wrap;
 
-      margin: 0 (-$grid-gutter-2);
+      margin-left: -$grid-gutter-2;
+      margin-right: -$grid-gutter-2;
     }
 
     &__owner-element {
       width: 50%;
       padding: 0 $grid-gutter-2;
-      margin: 0;
     }
 
     &__supplements-list {
@@ -102,14 +110,12 @@
       padding: 0 $grid-gutter-2;
     }
 
-    &__actions {
-      margin-left: -$grid-gutter-2;
-      margin-right: -$grid-gutter-2;
+    &__submit {
+      padding-right: $grid-gutter-2;
     }
 
-    &__submit,
     &__required {
-      padding: 0 $grid-gutter-2;
+      padding-left: $grid-gutter-2;
     }
   }
 }

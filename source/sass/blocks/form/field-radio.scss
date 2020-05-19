@@ -1,8 +1,13 @@
 .field-radio {
   $block: &;
   $input-radius: 15px;
+  $item-margin-bottom: 12px;
 
   @include reset-list;
+
+  overflow: auto;
+
+  margin-bottom: -$item-margin-bottom;
 
   font-size: $font-size--large;
   line-height: 1.13;
@@ -10,25 +15,8 @@
   text-transform: uppercase;
   color: $text-color--accent;
 
-  &--border {
-    @include row--sm;
-    padding-top: 21px;
-    padding-bottom: 22px;
-
-    border: 1px solid $gray--lightest-5;
-
-    #{$block}__item {
-      padding-left: $container-gap-sm - 1;
-      padding-right: $container-gap-sm - 1;
-    }
-  }
-
   &__item {
-    margin: 0 0 12px;
-
-    &--last {
-      margin-bottom: 0;
-    }
+    margin: 0 0 $item-margin-bottom;
   }
 
   &__input {
@@ -92,6 +80,24 @@
     }
   }
 
+  &--single {
+    overflow: visible;
+    margin-bottom: 0;
+  }
+
+  &--border {
+    margin-bottom: 0;
+    padding-top: 21px;
+    padding-bottom: 21px - $item-margin-bottom;
+
+    border: 1px solid $gray--lightest-5;
+
+    #{$block}__item {
+      padding-left: $container-gap-sm - 1;
+      padding-right: $container-gap-sm - 1;
+    }
+  }
+
   @media (min-width: $screen-md) {
     $input-radius: 20px;
     font-size: $font-size--xxlarge;
@@ -111,8 +117,13 @@
       }
     }
 
+    &--single {
+      margin-bottom: 0;
+    }
+
     &--border {
-      padding: 24px 0;
+      padding-top: 24px;
+      padding-bottom: 24px - $item-margin-bottom;
 
       #{$block}__item {
         padding: 0 28px;

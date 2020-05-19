@@ -6,7 +6,6 @@
   flex-wrap: wrap;
 
   padding: 0 $container-gap-sm 24px;
-  margin: 0 -1px;
 
   border: $catalog-item-border;
   border-top: none;
@@ -19,6 +18,7 @@
 
   &__picture {
     display: flex;
+    justify-content: center;
 
     height: 144px;
     margin: 0;
@@ -26,7 +26,6 @@
 
   &__image {
     display: block;
-    object-fit: contain;
     width: auto;
   }
 
@@ -61,17 +60,6 @@
     padding-right: 5px;
   }
 
-  &__text {
-    margin: 0 0 10px;
-
-    font-size: $font-size--small;
-    line-height: 1.33;
-
-    br {
-      display: none;
-    }
-  }
-
   &__params {
     border-collapse: collapse;
     width: 100%;
@@ -88,6 +76,17 @@
 
   &__value {
     text-align: right;
+  }
+
+  &__text {
+    margin: 0 0 10px;
+
+    font-size: $font-size--small;
+    line-height: 1.33;
+
+    br {
+      display: none;
+    }
   }
 
   &__show-all {
@@ -128,7 +127,8 @@
     border: 1px solid $bg-light-gray;
 
     &__picture {
-      flex-direction: column-reverse;
+      flex-direction: column;
+      justify-content: flex-end;
 
       width: auto;
       height: 208px;
@@ -148,16 +148,6 @@
       font-size: $font-size--xxlarge;
       line-height: 1;
       text-align: center;
-
-      br {
-        display: inline;
-      }
-    }
-
-    &__text {
-      font-size: $font-size--large;
-      line-height: 1.2;
-      margin: 0 0 15px;
 
       br {
         display: inline;
@@ -197,6 +187,16 @@
       padding-right: 0;
     }
 
+    &__text {
+      font-size: $font-size--large;
+      line-height: 1.2;
+      margin: 0 0 15px;
+
+      br {
+        display: inline;
+      }
+    }
+
     &__buy,
     &__show-all {
       margin-top: auto;
@@ -221,9 +221,5 @@
         margin-bottom: 25px;
       }
     }
-  }
-
-  @media (min-width: $screen-xl) {
-
   }
 }
