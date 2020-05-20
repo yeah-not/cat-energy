@@ -51,7 +51,7 @@ gulp.task("style", function() {
 });
 
 gulp.task("images", function() {
-  return gulp.src(["source/img/**/*.{jpg,png,svg}", "!source/img/preview/**"])
+  return gulp.src("source/img/*.{jpg,png,svg}")
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 3}),
       // imagemin.mozjpeg({quality: 85, progressive: true}),
@@ -68,17 +68,16 @@ gulp.task("webp", function() {
 });
 
 gulp.task("sprite", function() {
-  return gulp.src("build/img/sprite/*.svg")
+  return gulp.src("source/img/sprite/*.svg")
+    .pipe(imagemin([imagemin.svgo()]))
     .pipe(rename({prefix: 'svg-'}))
-    .pipe(svgstore({ inlineSvg: true }))
+    .pipe(svgstore({inlineSvg: true}))
     .pipe(gulp.dest("build/img"))
 });
 
 gulp.task("html", function(){
   return gulp.src("source/*.html")
-    .pipe(posthtml([
-      include()
-    ]))
+    .pipe(posthtml([include()]))
     .pipe(gulp.dest("build"));
 });
 
