@@ -83,12 +83,16 @@ gulp.task("html", function(){
 
 gulp.task("build", gulp.series(
   "clean",
-  "copy",
-  "style",
-  "images",
-  "webp",
-  "sprite",
-  "html",
+  gulp.parallel(
+    "copy",
+    "style",
+    "webp",
+    "images",
+    gulp.series(
+      "sprite",
+      "html",
+    ),
+  ),
 ));
 
 gulp.task("reload", function(done) {
