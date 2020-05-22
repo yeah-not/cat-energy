@@ -1,111 +1,119 @@
-"use strict";
+'use strict';
 
-var gulp = require("gulp");
-var plumber = require("gulp-plumber");
-var del = require("del");
-var rename = require("gulp-rename");
+var gulp = require('gulp');
+var plumber = require('gulp-plumber');
+var del = require('del');
+var rename = require('gulp-rename');
 
-var sass = require("gulp-sass");
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var csso = require("gulp-csso");
+var sass = require('gulp-sass');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var csso = require('gulp-csso');
 
-var imagemin = require("gulp-imagemin");
-var imageminJpegtran = require("imagemin-jpegtran");
-var webp = require("gulp-webp");
+var imagemin = require('gulp-imagemin');
+var imageminJpegtran = require('imagemin-jpegtran');
+var webp = require('gulp-webp');
 var svgstore = require('gulp-svgstore');
 
-var posthtml = require("gulp-posthtml");
-var include = require("posthtml-include");
+var posthtml = require('gulp-posthtml');
+var include = require('posthtml-include');
 
-var server = require("browser-sync").create();
+var server = require('browser-sync').create();
 
 sass.compiler = require('node-sass');
 
-gulp.task("clean", function() {
-  return del("build");
+gulp.task('clean', function () {
+  return del('build');
 });
 
-gulp.task("copy", function(){
+gulp.task('copy', function () {
   return gulp.src([
-    // "source/img/*.{jpg,png,svg}",
-    "source/fonts/**/*.{woff,woff2}",
-    "source/js/**/*.js"], {
-      base: "source/"
+      // 'source/js/**/*.js',
+      // 'source/img/*.{jpg,png,svg}',
+      'source/fonts/**/*.{woff,woff2}',
+    ], {
+      base: 'source/'
     })
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest('build'));
 });
 
-gulp.task("style", function() {
-  return gulp.src("source/sass/style.scss")
+gulp.task('style', function () {
+  return gulp.src('source/sass/style.scss')
     .pipe(plumber())
     .pipe(sass())
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest('build/css'))
     .pipe(csso())
-    .pipe(rename("style.min.css"))
-    .pipe(gulp.dest("build/css"))
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest('build/css'))
     .pipe(server.stream());
 });
 
-gulp.task("images", function() {
-  return gulp.src("source/img/*.{jpg,png,svg}")
+gulp.task('images', function () {
+  return gulp.src('source/img/*.{jpg,png,svg}')
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 3}),
       // imagemin.mozjpeg({quality: 85, progressive: true}),
       imageminJpegtran({progressive: true}),
       imagemin.svgo(),
     ]))
-    .pipe(gulp.dest("build/img"))
+    .pipe(gulp.dest('build/img'))
 });
 
-gulp.task("webp", function() {
-  return gulp.src("source/img/*.{png,jpg}")
+gulp.task('webp', function () {
+  return gulp.src('source/img/*.{png,jpg}')
     .pipe(webp({quality: 90}))
-    .pipe(gulp.dest("build/img"))
+    .pipe(gulp.dest('build/img'))
 });
 
-gulp.task("sprite", function() {
-  return gulp.src("source/img/sprite/*.svg")
+gulp.task('sprite', function () {
+  return gulp.src('source/img/sprite/*.svg')
     .pipe(imagemin([imagemin.svgo()]))
     .pipe(rename({prefix: 'svg-'}))
     .pipe(svgstore({inlineSvg: true}))
-    .pipe(gulp.dest("build/img"))
+    .pipe(gulp.dest('build/img'))
 });
 
-gulp.task("html", function(){
-  return gulp.src("source/*.html")
+gulp.task('html', function () {
+  return gulp.src('source/*.html')
     .pipe(posthtml([include()]))
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest('build'));
 });
 
-gulp.task("build", gulp.series(
-  "clean",
+gulp.task('script', function () {
+  return gulp.src('source/js/**/*.js')
+    .pipe(gulp.dest('build/js'));
+});
+
+gulp.task('build', gulp.series(
+  'clean',
   gulp.parallel(
-    "copy",
-    "style",
-    "webp",
-    "images",
+    'copy',
+    'style',
+    'script',
+    'webp',
+    'images',
     gulp.series(
-      "sprite",
-      "html",
+      'sprite',
+      'html',
     ),
   ),
 ));
 
-gulp.task("reload", function(done) {
+gulp.task('reload', function (done) {
   server.reload();
   done();
 });
 
-gulp.task("serve", function() {
+gulp.task('serve', function () {
   server.init({
-    server: "build/",
+    server: 'build/',
     notify: false,
   });
 
-  gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("style"));
-  gulp.watch("source/*.html", gulp.series("html", "reload"));
+  gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('style'));
+  gulp.watch('source/js/**/*.js', gulp.series('script', 'reload'));
+  gulp.watch('source/*.html', gulp.series('html', 'reload'));
 });
