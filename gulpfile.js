@@ -9,6 +9,7 @@ var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var csso = require('gulp-csso');
+var uglify = require('gulp-uglify');
 
 var imagemin = require('gulp-imagemin');
 var imageminJpegtran = require('imagemin-jpegtran');
@@ -84,6 +85,8 @@ gulp.task('html', function () {
 
 gulp.task('script', function () {
   return gulp.src('source/js/**/*.js')
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('build/js'));
 });
 
