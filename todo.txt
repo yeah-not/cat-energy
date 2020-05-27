@@ -75,5 +75,6 @@ posthtml-include для хедера и футера
 адаптивная резина? Посмотреть как в бутстрапе. body min-width, container max-width
 Обновить пакеты npm --dev update
 Gulp перевести новый синтаксис
+разобраться с emmet - выводит атрибуты webp-t по алфавиту (type в конце)
 
 >>> Wordpress - другой проект?
