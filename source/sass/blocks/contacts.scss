@@ -61,8 +61,21 @@
       height: 53px;
       margin-left: -32px;
 
-      background: url("../img/map-pin.png") 0 0 no-repeat;
+      background-position: 0 0;
+      background-repeat: no-repeat;
       background-size: cover;
+    }
+  }
+
+  @at-root .webp {
+    #{$block}__map::before {
+      background-image: url("../img/map-pin.webp");
+    }
+  }
+
+  @at-root .no-webp, .no-js {
+    #{$block}__map::before {
+      background-image: url("../img/map-pin.png");
     }
   }
 
