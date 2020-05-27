@@ -29,8 +29,8 @@ gulp.task('clean', function () {
 
 gulp.task('copy', function () {
   return gulp.src([
-      // 'source/js/**/*.js',
       // 'source/img/*.{jpg,png,svg}',
+      'source/js/**/*.min.js',
       'source/fonts/**/*.{woff,woff2}',
     ], {
       base: 'source/'
@@ -84,7 +84,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('script', function () {
-  return gulp.src('source/js/**/*.js')
+  return gulp.src(['source/js/**/*.js', '!source/js/**/*.min.js'])
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('build/js'));
