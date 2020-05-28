@@ -65,6 +65,7 @@ flex-shrink 1 IE 10
 a.leading__link - сделать одну?
 map для scss
 
+github pages
 Тест на Переполнение
 Минимальный горизонтальный скролл на 320px/768/1440
 Удалить неиспользуемые классы
@@ -72,7 +73,7 @@ map для scss
 pixel perfect test
 Фавиконки
 posthtml-include для хедера и футера
-адаптивная резина? Посмотреть как в бутстрапе. body min-width, container max-width
+адаптивная резина? Посмотреть как в бутстрапе/htmlacademy. body min-width, container max-width
 Обновить пакеты npm --dev update
 Gulp перевести новый синтаксис
 разобраться с emmet - выводит атрибуты webp-t по алфавиту (type в конце)
