@@ -20,7 +20,7 @@ var posthtml = require('gulp-posthtml');
 var include = require('posthtml-include');
 
 var server = require('browser-sync').create();
-var ghPages = require('gulp-gh-pages');
+var ghPages = require('gh-pages');
 
 sass.compiler = require('node-sass');
 
@@ -123,6 +123,5 @@ gulp.task('serve', function () {
 });
 
 gulp.task('deploy', function() {
-  return gulp.src('./build/**/*')
-    .pipe(ghPages());
+  return ghPages.publish('build');
 });
