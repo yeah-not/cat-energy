@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="no-js">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HTML Academy: Кэт энерджи</title>
+    <link rel="preload" href="fonts/oswaldregular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/oswaldmedium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.min.css" />
+    <script src="js/modernizr-custom.min.js"></script>
   </head>
-  <body class="no-js page page--index">
+  <body class="page page--index">
     <div style="display: none;">
       <include src="build/img/sprite.svg"></include>
     </div>
@@ -45,6 +48,9 @@
           </div>
           <div class="leading__picture">
             <picture>
+              <source type="image/webp" media="(min-width: 1440px)" srcset="img/index-can-desktop@1x.webp, img/index-can-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/index-can-tablet@1x.webp, img/index-can-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/index-can-mobile@1x.webp, img/index-can-mobile@2x.webp 2x">
               <source media="(min-width: 1440px)" srcset="img/index-can-desktop@1x.png, img/index-can-desktop@2x.png 2x" />
               <source media="(min-width: 768px)" srcset="img/index-can-tablet@1x.jpg, img/index-can-tablet@2x.jpg 2x" />
               <img class="leading__image" src="img/index-can-mobile@1x.png" srcset="img/index-can-mobile@2x.png 2x" width="280" height="270" alt="Контейнер Cat Energy Pro" />
@@ -117,6 +123,9 @@
                 <h3 class="visually-hidden">До корма Cat Energy</h3>
                 <p class="live-example__picture overlap-slider__item">
                   <picture>
+                    <source type="image/webp" media="(min-width: 1440px)" srcset="img/before-desktop@1x.webp, img/before-desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/before-tablet@1x.webp, img/before-tablet@2x.webp 2x">
+                    <source type="image/webp" srcset="img/before-mobile@1x.webp, img/before-mobile@2x.webp 2x">
                     <source media="(min-width: 1440px)" srcset="img/before-desktop@1x.png, img/before-desktop@2x.png 2x" />
                     <source media="(min-width: 768px)" srcset="img/before-tablet@1x.png, img/before-tablet@2x.png 2x" />
                     <img class="live-example__image" src="img/before-mobile@1x.png" srcset="img/before-mobile@2x.png 2x" width="320" height="240" alt="Толстый кот">
@@ -125,6 +134,9 @@
                 <h3 class="visually-hidden">После корма Cat Energy</h3>
                 <p class="live-example__picture live-example__picture--overlap overlap-slider__item overlap-slider__item--overlap" style="left: 50%;">
                   <picture>
+                    <source type="image/webp" media="(min-width: 1440px)" srcset="img/after-desktop@1x.webp, img/after-desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/after-tablet@1x.webp, img/after-tablet@2x.webp 2x">
+                    <source type="image/webp" srcset="img/after-mobile@1x.webp, img/after-mobile@2x.webp 2x">
                     <source media="(min-width: 1440px)" srcset="img/after-desktop@1x.png, img/after-desktop@2x.png 2x" />
                     <source media="(min-width: 768px)" srcset="img/after-tablet@1x.png, img/after-tablet@2x.png 2x" />
                     <img class="live-example__image" src="img/after-mobile@1x.png" srcset="img/after-mobile@2x.png 2x" width="320" height="240" alt="Поджарый кот">
@@ -153,6 +165,9 @@
         </div>
         <div class="contacts__map">
           <picture>
+            <source type="image/webp" media="(min-width: 1440px)" srcset="img/bg-map-desktop@1x.webp, img/bg-map-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.webp, img/bg-map-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/bg-map-mobile@1x.webp, img/bg-map-mobile@2x.webp 2x">
             <source media="(min-width: 1440px)" srcset="img/bg-map-desktop@1x.png, img/bg-map-desktop@2x.png 2x" />
             <source media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.png, img/bg-map-tablet@2x.png 2x" />
             <img class="contacts__map-image" src="img/bg-map-mobile@1x.png" srcset="img/bg-map-mobile@2x.png 2x" width="320" height="400" alt="Карта проезда: ул. Большая Конюшенная, д. 19/8, Санкт-Петербург" />
@@ -200,6 +215,6 @@
         </p>
       </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>

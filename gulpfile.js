@@ -9,6 +9,7 @@ var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var csso = require('gulp-csso');
+var uglify = require('gulp-uglify');
 
 var imagemin = require('gulp-imagemin');
 var imageminJpegtran = require('imagemin-jpegtran');
@@ -19,6 +20,7 @@ var posthtml = require('gulp-posthtml');
 var include = require('posthtml-include');
 
 var server = require('browser-sync').create();
+var ghPages = require('gh-pages');
 
 sass.compiler = require('node-sass');
 
@@ -28,8 +30,8 @@ gulp.task('clean', function () {
 
 gulp.task('copy', function () {
   return gulp.src([
-      // 'source/js/**/*.js',
       // 'source/img/*.{jpg,png,svg}',
+      'source/js/**/*.min.js',
       'source/fonts/**/*.{woff,woff2}',
     ], {
       base: 'source/'
@@ -83,7 +85,9 @@ gulp.task('html', function () {
 });
 
 gulp.task('script', function () {
-  return gulp.src('source/js/**/*.js')
+  return gulp.src(['source/js/**/*.js', '!source/js/**/*.min.js'])
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('build/js'));
 });
 
@@ -116,4 +120,8 @@ gulp.task('serve', function () {
   gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('style'));
   gulp.watch('source/js/**/*.js', gulp.series('script', 'reload'));
   gulp.watch('source/*.html', gulp.series('html', 'reload'));
+});
+
+gulp.task('deploy', function() {
+  return ghPages.publish('build');
 });

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="no-js">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HTML Academy: Кэт энерджи - Подбор программы</title>
+    <link rel="preload" href="fonts/oswaldregular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/oswaldmedium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/modernizr-custom.min.js"></script>
   </head>
-  <body class="no-js page page--program">
+  <body class="page page--program">
     <div style="display: none;">
       <include src="build/img/sprite.svg"></include>
     </div>
@@ -146,6 +149,9 @@
         </div>
         <div class="contacts__map">
           <picture>
+            <source type="image/webp" media="(min-width: 1440px)" srcset="img/bg-map-desktop@1x.webp, img/bg-map-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.webp, img/bg-map-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/bg-map-mobile@1x.webp, img/bg-map-mobile@2x.webp 2x">
             <source media="(min-width: 1440px)" srcset="img/bg-map-desktop@1x.png, img/bg-map-desktop@2x.png 2x" />
             <source media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.png, img/bg-map-tablet@2x.png 2x" />
             <img class="contacts__map-image" src="img/bg-map-mobile@1x.png" srcset="img/bg-map-mobile@2x.png 2x" width="320" height="400" alt="Карта проезда: ул. Большая Конюшенная, д. 19/8, Санкт-Петербург" />
@@ -193,6 +199,6 @@
         </p>
       </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>

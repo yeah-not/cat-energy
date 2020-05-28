@@ -18,12 +18,10 @@
 
   // DOM
   // ---------------
-  var body = document.querySelector('body');
   var mainNav = document.querySelector('.main-nav');
   var mainNavToggle = mainNav.querySelector('.main-nav__toggle');
 
   // Старт
   // ---------------
-  body.classList.remove('no-js');
   mainNavToggle.addEventListener('click', toggleMainNav);
 })();
