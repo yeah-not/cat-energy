@@ -11,7 +11,26 @@
         "blockless-after-blockless",
         # "after-same-name"
       ],
-      "ignore": ["after-comment"]
+      "ignore": ["after-comment"],
+      "ignoreAtRules": ["else"]
     }],
+    "block-closing-brace-newline-after": ["always", {
+      "ignoreAtRules": ["if", "else"]
+    }],
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": [
+        "mixin",
+        "define-mixin",
+        "include",
+        "content",
+        "rules",
+        "at-root",
+        "if",
+        "else"
+      ]
+    }],
+    # "at-rule-no-unknown": [true, {
+    #   "ignoreAtRules": ["at-root"]
+    # }],
   }
 }
