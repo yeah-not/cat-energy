@@ -70,12 +70,11 @@
   }
 
   &__title {
+    @include heading(1);
     margin: 0 0 28px;
 
-    font-size: $font-size--page-h1;
     line-height: 1;
-    font-family: $font-family--headings;
-    font-weight: normal;
+    color: inherit;
   }
 
   &__slogan {
@@ -139,7 +138,6 @@
 
     &__title {
       margin-bottom: 44px;
-      font-size: $font-size--page-h1-md;
     }
 
     &__slogan {

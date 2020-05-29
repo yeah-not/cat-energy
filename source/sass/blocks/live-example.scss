@@ -29,12 +29,7 @@
   }
 
   &__title {
-    font-size: $font-size--page-h1;
-    line-height: 1.67;
-    font-family: $font-family--headings;
-    font-weight: normal;
-    color: $text-color--headings;
-
+    @include heading(1);
     margin: 0 0 20px;
   }
 
@@ -166,9 +161,6 @@
 
     &__title {
       margin-bottom: 63px;
-
-      font-size: $font-size--page-h1-md;
-      line-height: 1;
     }
 
     &__desc {

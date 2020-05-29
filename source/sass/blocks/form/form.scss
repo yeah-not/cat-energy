@@ -18,14 +18,10 @@
   }
 
   &__legend {
+    @include heading(2);
+
     width: 100%;
     margin: 0 0 35px;
-
-    font-size: $font-size--page-h2;
-    line-height: 1;
-    font-family: $font-family--headings;
-    font-weight: normal;
-    color: $text-color--headings;
 
     span {
       @include heading-with-stripes;

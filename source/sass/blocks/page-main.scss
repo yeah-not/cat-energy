@@ -3,37 +3,27 @@
   flex-grow: 1;
 
   &__title {
-    @include container;
     // @include outline(1); /* TODO: Сетка */
-
-    font-size: $font-size--page-h1;
-    line-height: 1.67;
-    font-family: $font-family--headings;
-    font-weight: normal;
-    color: $text-color--headings;
+    @include container;
+    @include heading(1);
 
     margin-top: 15px;
     margin-bottom: 27px;
   }
 
   &__intro {
-    @include container;
     // @include outline(1); /* TODO: Сетка */
-
-    font-family: $font-family--custom;
-    text-transform: uppercase;
-    color: $gray--darkest;
+    @include container;
+    @include heading;
 
     margin-bottom: 37px;
+    text-transform: uppercase;
   }
 
   @media (min-width: $screen-md) {
     &__title {
       margin-top: 44px;
       margin-bottom: 55px;
-
-      font-size: $font-size--page-h1-md;
-      line-height: 1;
 
       &--page-catalog {
         margin-bottom: 84px;

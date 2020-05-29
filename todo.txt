@@ -1,9 +1,3 @@
-color: $gray--darkest; > $text-color--headings
-line-height: 1 > $line-height--headings;
-line-height: 1.5 > пусто ($line-height--md)
-$font-family--custom >> $font-family--headings для заголовков
-@mixin heading(0/1/2);
-
 Категории
 Состояния ссылок
 
@@ -12,17 +6,10 @@ Footer Social, Copyright
 supplements__offer
 
 
-Убрать user-scalable=no - hardfix
-
-1440 > 13**
-В css и html (pics)
-
-Карта + маркер
-Маркер SVG из логотипа
-
 Шрифты
-проверить имя шрифта в системе
+Проверить имя шрифта в системе
 Относительные пути
+Подбор похожих шрифтов
 
 Критерии
 $screen-xs?

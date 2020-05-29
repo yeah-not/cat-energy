@@ -48,25 +48,30 @@
   margin: 0 (-$container-gap-xl);
 }
 
-// Разное
-@mixin visually-hidden {
-  position: absolute;
+// Заголовки
 
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
+@mixin heading($level: 0) {
+  font-family: $font-family--headings;
+  font-weight: normal;
+  color: $text-color--headings;
 
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
+  @if $level == 1 {
+    font-size: $font-size--page-h1;
+    line-height: 1.67;
+  } @else if $level == 2 {
+    font-size: $font-size--page-h2;
+    line-height: 1;
+  }
 
-@mixin reset-list {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
+  @media (min-width: $screen-md) {
+    @if $level == 1 {
+      font-size: $font-size--page-h1-md;
+      line-height: 1;
+    } @else if $level == 2 {
+      font-size: $font-size--page-h2-md;
+      line-height: 1;
+    }
+  }
 }
 
 @mixin heading-with-stripes {
@@ -122,6 +127,27 @@
       width: 140px;
     }
   }
+}
+
+// Разное
+@mixin visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
 @mixin outline($color-num: 1, $hide-content: 0) {
