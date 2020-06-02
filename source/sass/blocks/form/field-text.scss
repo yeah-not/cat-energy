@@ -27,7 +27,7 @@
 
   &__label {
     margin-right: 13px;
-    color: $gray--darkest-2;
+    color: $text-color--accent;
 
     &--required::after {
       content: "*";

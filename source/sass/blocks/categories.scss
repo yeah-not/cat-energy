@@ -78,14 +78,11 @@
   }
 
   &__heading {
+    @include heading(2);
     order: 2;
 
-    font-size: $font-size--page-h2;
     line-height: 1.54;
-    font-family: $font-family--custom;
-    font-weight: normal;
     text-transform: uppercase;
-    color: $text-color--headings;
   }
 
   &__desc {
@@ -176,11 +173,6 @@
     &__title {
       display: block;
       margin-bottom: 20px;
-    }
-
-    &__heading {
-      font-size: $font-size--page-h2-md;
-      line-height: 1.03;
     }
 
     &__icon {

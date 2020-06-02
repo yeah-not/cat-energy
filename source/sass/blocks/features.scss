@@ -9,14 +9,8 @@
 
   &__title {
     // @include outline(2); /* TODO: Сетка */
-
+    @include heading(1);
     margin: 0 0 26px;
-
-    font-size: $font-size--page-h1;
-    line-height: 1.67;
-    font-family: $font-family--headings;
-    font-weight: normal;
-    color: $text-color--headings;
   }
 
   &__list {
@@ -147,9 +141,6 @@
 
     &__title {
       margin: 0 0 73px;
-
-      font-size: $font-size--page-h1-md;
-      line-height: 1;
     }
 
     &__list {

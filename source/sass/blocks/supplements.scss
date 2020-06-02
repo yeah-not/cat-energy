@@ -9,16 +9,11 @@
   &__title {
     // @include outline(2); /* TODO: Сетка */
     @include row;
+    @include heading(2);
     @include heading-with-stripes;
 
     margin-bottom: 34px;
     padding: 0 $container-gap-sm;
-
-    font-size: $font-size--page-h2;
-    line-height: 1;
-    font-family: $font-family--headings;
-    font-weight: normal;
-    color: $text-color--headings;
   }
 
   &__content {
@@ -111,8 +106,6 @@
     &__title {
       margin-bottom: 79px;
       padding: 0;
-
-      font-size: $font-size--page-h2-md;
     }
 
     &__list {
