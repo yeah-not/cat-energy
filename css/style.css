@@ -1036,8 +1036,7 @@ h1 {
     margin: 0 -21px 0;
     position: relative;
     border: 1px solid #e6e6e6;
-    border-top: none;
-    border-bottom: none; }
+    border-top: none; }
   .page-header__logo {
     display: -webkit-box;
     display: -ms-flexbox;
