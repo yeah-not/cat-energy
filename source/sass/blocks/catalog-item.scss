@@ -106,8 +106,7 @@
       height: 30px;
       margin: 4px auto 24px;
 
-      // background: url(../img/icon-plus-mobile.svg) 0 0 no-repeat;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpolygon fill='%23231F20' points='30,14 16,14 16,0 14,0 14,14 0,14 0,16 14,16 14,30 16,30 16,16 30,16 '/%3E%3C/svg%3E") 0 0 no-repeat;
+      background: svg-load("../img/icon-plus-mobile.svg") 0 0 no-repeat;
       opacity: 0.2;
     }
 
@@ -213,8 +212,7 @@
         height: 60px;
         margin-bottom: 50px;
 
-        // background-image: url(../img/icon-plus.svg);
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpolygon fill='%23231F20' class='st0' points='60,29.5 30.5,29.5 30.5,0 29.5,0 29.5,29.5 0,29.5 0,30.5 29.5,30.5 29.5,60 30.5,60 30.5,30.5 60,30.5 '/%3E%3C/svg%3E%0A");
+        background-image: svg-load("../img/icon-plus.svg");
       }
 
       #{$block}__title {

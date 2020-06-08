@@ -23,6 +23,8 @@
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-pngquant": "^9.0.0",
     "node-sass": "^4.14.1",
+    "postcss-inline-svg": "^4.1.0",
+    "postcss-svgo": "^4.0.2",
     "posthtml-include": "^1.4.3",
     "stylelint": "^13.6.0",
     "stylelint-config-htmlacademy": "^0.1.4"

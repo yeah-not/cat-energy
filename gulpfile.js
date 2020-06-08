@@ -8,6 +8,8 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+var inlineSvg = require('postcss-inline-svg');
+var svgo = require('postcss-svgo');
 var csso = require('gulp-csso');
 var uglify = require('gulp-uglify');
 
@@ -45,7 +47,9 @@ gulp.task('style', function () {
     .pipe(plumber())
     .pipe(sass())
     .pipe(postcss([
-      autoprefixer()
+      autoprefixer(),
+      inlineSvg(),
+      svgo()
     ]))
     .pipe(gulp.dest('build/css'))
     .pipe(csso())
