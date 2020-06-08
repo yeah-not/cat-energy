@@ -13,6 +13,7 @@ var uglify = require('gulp-uglify');
 
 var imagemin = require('gulp-imagemin');
 var imageminJpegtran = require('imagemin-jpegtran');
+var imageminPngquant = require('imagemin-pngquant');
 var webp = require('gulp-webp');
 var svgstore = require('gulp-svgstore');
 
@@ -56,8 +57,9 @@ gulp.task('style', function () {
 gulp.task('images', function () {
   return gulp.src('source/img/*.{jpg,png,svg}')
     .pipe(imagemin([
-      imagemin.optipng({optimizationLevel: 3}),
+      // imagemin.optipng({optimizationLevel: 3}),
       // imagemin.mozjpeg({quality: 85, progressive: true}),
+      imageminPngquant({quality: [0.7, 1]}),
       imageminJpegtran({progressive: true}),
       imagemin.svgo(),
     ]))
