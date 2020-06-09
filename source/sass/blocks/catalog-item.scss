@@ -106,7 +106,7 @@
       height: 30px;
       margin: 4px auto 24px;
 
-      background: svg-load("../img/icon-plus-mobile.svg") 0 0 no-repeat;
+      background: svg-load("../img/svg-bg/icon-plus-mobile.svg") 0 0 no-repeat;
       opacity: 0.2;
     }
 
@@ -212,7 +212,7 @@
         height: 60px;
         margin-bottom: 50px;
 
-        background-image: svg-load("../img/icon-plus.svg");
+        background-image: svg-load("../img/svg-bg/icon-plus.svg");
       }
 
       #{$block}__title {

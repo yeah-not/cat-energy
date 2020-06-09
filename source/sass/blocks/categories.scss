@@ -29,7 +29,7 @@
         &::after {
           width: 35px;
           height: 49px;
-          background-image: svg-load("../img/icon-cat-slim.svg");
+          background-image: svg-load("../img/svg-bg/icon-cat-slim.svg");
         }
       }
     }
@@ -39,7 +39,7 @@
         &::after {
           width: 67px;
           height: 28px;
-          background-image: svg-load("../img/icon-cat-pro.svg");
+          background-image: svg-load("../img/svg-bg/icon-cat-pro.svg");
         }
       }
     }
@@ -113,7 +113,7 @@
       height: 11px;
       margin-left: 12px;
 
-      background: svg-load("../img/icon-right-arrow-long.svg") 0 0 no-repeat;
+      background: svg-load("../img/svg-bg/icon-right-arrow-long.svg") 0 0 no-repeat;
     }
 
     &,

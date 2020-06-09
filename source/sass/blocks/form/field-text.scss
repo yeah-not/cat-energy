@@ -62,12 +62,12 @@
         width: $width;
         height: 13px;
 
-        background-image: svg-load("../img/icon-mail.svg");
+        background-image: svg-load("../img/svg-bg/icon-mail.svg");
       }
 
       #{$block}__input:active ~ #{$block}__icon,
       #{$block}__input:focus ~ #{$block}__icon {
-        background-image: svg-load("../img/icon-mail.svg", fill= $color-main);
+        background-image: svg-load("../img/svg-bg/icon-mail.svg", fill= $color-main);
       }
     }
 
@@ -79,12 +79,12 @@
         width: $width;
         height: $width;
 
-        background-image: svg-load("../img/icon-phone.svg");
+        background-image: svg-load("../img/svg-bg/icon-phone.svg");
       }
 
       #{$block}__input:active ~ #{$block}__icon,
       #{$block}__input:focus ~ #{$block}__icon {
-        background-image: svg-load("../img/icon-phone.svg", fill= $color-main);
+        background-image: svg-load("../img/svg-bg/icon-phone.svg", fill= $color-main);
       }
     }
 
@@ -102,13 +102,13 @@
 
       &#{$block}__element--email {
         #{$block}__icon {
-          background-image: svg-load("../img/icon-mail.svg", fill= $color-danger);
+          background-image: svg-load("../img/svg-bg/icon-mail.svg", fill= $color-danger);
         }
       }
 
       &#{$block}__element--phone {
         #{$block}__icon {
-          background-image: svg-load("../img/icon-phone.svg", fill= $color-danger);
+          background-image: svg-load("../img/svg-bg/icon-phone.svg", fill= $color-danger);
         }
       }
     }
