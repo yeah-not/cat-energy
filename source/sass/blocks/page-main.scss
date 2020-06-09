@@ -2,6 +2,9 @@
   $block: &;
   flex-grow: 1;
 
+  position: relative;
+  z-index: 1;
+
   &__title {
     // @include outline(1); /* TODO: Сетка */
     @include container;
@@ -21,6 +24,8 @@
   }
 
   @media (min-width: $screen-md) {
+    z-index: auto;
+
     &__title {
       margin-top: 44px;
       margin-bottom: 55px;

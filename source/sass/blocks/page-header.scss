@@ -4,13 +4,13 @@
   @include container;
   // @include outline; /* TODO: Сетка */
 
-
   &__wrapper {
-    margin: 0 (-$container-gap-sm - 1) 0;
+    margin: 0 (-$container-gap-sm);
 
     position: relative;
-    border: 1px solid $gray--lightest-4;
-    border-top: none;
+    // border: 1px solid $gray--lightest-4;
+    // border-top: none;
+    outline: 1px solid $gray--lightest-4;
   }
 
   &__logo {
@@ -44,7 +44,7 @@
       padding-top: 24px;
       padding-bottom: 15px;
 
-      border: none;
+      outline: none;
     }
 
     &__logo {

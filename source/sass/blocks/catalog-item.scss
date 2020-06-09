@@ -7,8 +7,11 @@
 
   padding: 0 $container-gap-sm 24px;
 
-  border: $catalog-item-border;
-  border-top: none;
+  border-bottom: $catalog-item-border;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   &__picture,
   &__info {
@@ -123,7 +126,11 @@
     padding: 0 $padding-x 38px;
 
     background: $bg-light-gray;
-    border: 1px solid $bg-light-gray;
+
+    &,
+    &:last-child {
+      border: 1px solid $bg-light-gray;
+    }
 
     &__picture {
       flex-direction: column;
@@ -205,7 +212,11 @@
       padding-top: 53px;
 
       background-color: transparent;
-      border-color: rgba($border-color, 0.5);
+
+      &,
+      &:last-child {
+        border-color: rgba($border-color, 0.5);
+      }
 
       &::before {
         width: 60px;
