@@ -3,18 +3,13 @@
 
   @include container;
   // @include outline; /* TODO: Сетка */
-
-  &__wrapper {
-    margin: 0 (-$container-gap-sm);
-
-    position: relative;
-    // border: 1px solid $gray--lightest-4;
-    // border-top: none;
-    outline: 1px solid $gray--lightest-4;
-  }
+  position: relative;
+  outline: 1px solid $gray--lightest-4;
 
   &__logo {
     // @include outline(2); /* TODO: Сетка */
+    @include row--sm;
+
     display: flex;
 
     padding: 12px $container-gap-sm 15px;
@@ -36,19 +31,17 @@
   }
 
   @media (min-width: $screen-md) {
-    &__wrapper {
-      display: flex;
-      justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 
-      margin: 0;
-      padding-top: 24px;
-      padding-bottom: 15px;
+    padding-top: 24px;
+    padding-bottom: 15px;
 
-      outline: none;
-    }
+    outline: none;
 
     &__logo {
       max-width: 192px;
+      margin: 0;
       padding: 0;
       padding-right: 10px;
     }
@@ -60,15 +53,8 @@
   }
 
   @media (min-width: $screen-xl) {
-    width: auto;
-    margin: 0;
-    padding: 0;
-
-    &__wrapper {
-      @include container--xl;
-      padding-top: 54px;
-      padding-bottom: 15px;
-    }
+    padding-top: 54px;
+    padding-bottom: 15px;
 
     &__logo {
       max-width: 245px;

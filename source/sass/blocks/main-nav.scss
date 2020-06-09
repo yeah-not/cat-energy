@@ -2,6 +2,7 @@
   $block: &;
   $link-padding-horiz: $container-gap-sm;
   // @include outline(2); /* TODO: Сетка */
+  @include row--sm;
 
   color: $gray--darkest;
   // background: $white;
@@ -118,6 +119,7 @@
     flex-grow: 1;
 
     width: 516px;
+    margin: 0;
     padding-left: 10px;
 
     &__list {
