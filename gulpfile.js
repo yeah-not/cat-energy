@@ -36,6 +36,7 @@ gulp.task('copy', function () {
       // 'source/img/*.{jpg,png,svg}',
       'source/js/**/*.min.js',
       'source/fonts/**/*.{woff,woff2}',
+      'source/*.png',
     ], {
       base: 'source/'
     })
