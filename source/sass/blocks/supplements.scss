@@ -8,12 +8,10 @@
 
   &__title {
     // @include outline(2); /* TODO: Сетка */
-    @include row;
     @include heading(2);
     @include heading-with-stripes;
 
     margin-bottom: 34px;
-    padding: 0 $container-gap-sm;
   }
 
   &__content {
@@ -104,7 +102,6 @@
 
     &__title {
       margin-bottom: 79px;
-      padding: 0;
     }
 
     &__list {
