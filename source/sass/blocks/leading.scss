@@ -3,45 +3,32 @@
   position: relative;
   margin: 0 0 22px;
 
-  &::before {
+  &::before,
+  &::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    z-index: -1;
 
     height: 305px;
+  }
 
+  &::before {
+    z-index: -2;
     background: linear-gradient(to right, $color-main--dark-3 50%, $color-main--dark-2 50%);
   }
 
-  &__wrapper {
-    @include container;
-    // @include outline; /* TODO: Сетка */
+  &::after {
+    z-index: -1;
 
-    position: relative;
-
-    padding-top: 25px;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: -1;
-
-      height: 305px;
-
-      background-position: 50% 0;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 320px auto;
   }
 
   @at-root .webp {
-    #{$block}__wrapper::before {
+    #{$block}::after {
       background-image: url("../img/index-background-mobile@1x.webp");
 
       @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
@@ -51,7 +38,7 @@
   }
 
   @at-root .no-webp, .no-js {
-    #{$block}__wrapper::before {
+    #{$block}::after {
       background-image: url("../img/index-background-mobile@1x.jpg");
 
       @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
@@ -59,6 +46,14 @@
       }
     }
   }
+
+  &__wrapper {
+    // @include outline; /* TODO: Сетка */
+    @include container;
+    position: relative;
+    padding-top: 25px;
+  }
+
 
   &__content {
     // @include outline(2); /* TODO: Сетка */
@@ -111,16 +106,13 @@
   @media (min-width: $screen-md) {
     margin-bottom: 0;
 
-    &::before {
+    &::before,
+    &::after {
       display: none;
     }
 
     &__wrapper {
       padding-top: 42px;
-
-      &::before {
-        display: none;
-      }
     }
 
     &__content {
@@ -174,39 +166,24 @@
   @media (min-width: $screen-xl) {
     margin-bottom: 80px;
 
-    &::before {
+    &::before,
+    &::after {
       display: block;
 
-      top: -128px;
+      top: -130px;
       bottom: 0;
       left: 50%;
 
       height: auto;
     }
 
-    &__wrapper {
-      display: flex;
-      justify-content: space-between;
-
-      padding-top: 94px;
-      padding-bottom: 59px;
-
-      &::before {
-        display: block;
-
-        top: -130px;
-        bottom: 0;
-        left: 50%;
-
-        height: auto;
-
-        background-position: 100% 100%;
-        background-size: cover;
-      }
+    &::after {
+      background-position: 100% 100%;
+      background-size: 720px auto;
     }
 
     @at-root .webp {
-      #{$block}__wrapper::before {
+      #{$block}::after {
         background-image: url("../img/index-background-desktop@1x.webp");
 
         @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
@@ -216,13 +193,21 @@
     }
 
     @at-root .no-webp, .no-js {
-      #{$block}__wrapper::before {
+      #{$block}::after {
         background-image: url("../img/index-background-desktop@1x.jpg");
 
         @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
           background-image: url("../img/index-background-desktop@2x.jpg");
         }
       }
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      padding-top: 94px;
+      padding-bottom: 59px;
     }
 
     &__content {

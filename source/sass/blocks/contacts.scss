@@ -9,9 +9,12 @@
     background: $bg-light-gray;
   }
 
+  &__wrapper {
+    @include container;
+  }
+
   &__info {
     // @include outline(2); /* TODO: Сетка */
-    @include container;
 
     display: flex;
     justify-content: space-between;
@@ -126,26 +129,27 @@
       height: 106px;
       margin-left: -60px;
     }
-
-    &__map-image {
-      width: 768px;
-      height: auto;
-    }
   }
 
   @media (min-width: $screen-xl) {
-    $width: 570px;
     position: relative;
+
+    &__wrapper {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
 
     &__info {
       position: absolute;
       z-index: 3;
       top: 50%;
-      left: 50%;
+      left: $container-gap-xl;
       transform: translateY(-50%);
 
-      width: $width;
-      margin-left: (-$width - $grid-gutter-2);
+      width: 570px;
       padding: 66px 75px 60px;
 
       color: $text-color;
@@ -161,13 +165,24 @@
       text-align: left;
     }
 
-    &__map::before {
-      top: 150px;
-      margin-left: 275px;
+    &__map {
+      overflow-x: hidden;
+
+      &::before {
+        top: 150px;
+        margin-left: 275px;
+      }
     }
 
+
     &__map-image {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+
       width: 1440px;
+      max-width: none;
+      margin: 0;
     }
   }
 }
