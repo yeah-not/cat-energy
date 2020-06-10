@@ -11,9 +11,9 @@
     display: flex;
     flex-direction: column;
 
-    margin: 0 (-$container-gap-sm - 1);
+    margin: 0 (-$container-gap-sm);
 
-    border-top: $catalog-item-border;
+    outline: $catalog-item-border;
   }
 
   &__item {
@@ -32,7 +32,7 @@
       margin: 0 (-$item-margin-horiz) (-$item-margin-bottom);
       padding-top: 80px;
 
-      border: none;
+      outline: none;
     }
 
     &__item {

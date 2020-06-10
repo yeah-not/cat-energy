@@ -8,11 +8,14 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+var inlineSvg = require('postcss-inline-svg');
+var svgo = require('postcss-svgo');
 var csso = require('gulp-csso');
 var uglify = require('gulp-uglify');
 
 var imagemin = require('gulp-imagemin');
 var imageminJpegtran = require('imagemin-jpegtran');
+var imageminPngquant = require('imagemin-pngquant');
 var webp = require('gulp-webp');
 var svgstore = require('gulp-svgstore');
 
@@ -33,6 +36,7 @@ gulp.task('copy', function () {
       // 'source/img/*.{jpg,png,svg}',
       'source/js/**/*.min.js',
       'source/fonts/**/*.{woff,woff2}',
+      'source/*.png',
     ], {
       base: 'source/'
     })
@@ -44,7 +48,9 @@ gulp.task('style', function () {
     .pipe(plumber())
     .pipe(sass())
     .pipe(postcss([
-      autoprefixer()
+      autoprefixer(),
+      inlineSvg(),
+      svgo()
     ]))
     .pipe(gulp.dest('build/css'))
     .pipe(csso())
@@ -56,8 +62,9 @@ gulp.task('style', function () {
 gulp.task('images', function () {
   return gulp.src('source/img/*.{jpg,png,svg}')
     .pipe(imagemin([
-      imagemin.optipng({optimizationLevel: 3}),
+      // imagemin.optipng({optimizationLevel: 3}),
       // imagemin.mozjpeg({quality: 85, progressive: true}),
+      imageminPngquant({quality: [0.7, 1]}),
       imageminJpegtran({progressive: true}),
       imagemin.svgo(),
     ]))
@@ -71,10 +78,11 @@ gulp.task('webp', function () {
 });
 
 gulp.task('sprite', function () {
-  return gulp.src('source/img/sprite/*.svg')
+  return gulp.src('source/img/svg-sprite/*.svg')
     .pipe(imagemin([imagemin.svgo()]))
     .pipe(rename({prefix: 'svg-'}))
     .pipe(svgstore({inlineSvg: true}))
+    .pipe(rename("sprite.svg"))
     .pipe(gulp.dest('build/img'))
 });
 
