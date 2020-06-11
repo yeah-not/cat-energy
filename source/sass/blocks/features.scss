@@ -5,7 +5,7 @@
   // @include outline; /* TODO: Сетка */
   @include container;
 
-  margin-bottom: 43px;
+  margin-bottom: 40px;
 
   &__title {
     // @include outline(2); /* TODO: Сетка */
@@ -27,6 +27,7 @@
     // @include outline(3); /* TODO: Сетка */
 
     display: flex;
+    align-items: center;
 
     margin: 0 0 $item-margin-bottom;
     padding: 3px 0;
@@ -155,6 +156,7 @@
 
     &__item {
       flex-direction: column;
+      align-items: stretch;
 
       position: relative;
 
