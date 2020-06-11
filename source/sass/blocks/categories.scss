@@ -19,7 +19,7 @@
   &__item {
     // @include outline(2); /* TODO: Сетка */
 
-    padding: 24px 20px 22px;
+    padding: 23px 20px 21px;
     margin: 0 0 $item-margin-bottom;
 
     background: $bg-light-gray;
@@ -53,6 +53,7 @@
   }
 
   &__icon {
+    flex-shrink: 0;
     order: 1;
 
     position: relative;
@@ -91,7 +92,7 @@
     display: flex;
 
     margin: 0;
-    padding: 20px 0 0;
+    padding: 18px 0 0;
 
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
@@ -101,7 +102,6 @@
     align-items: center;
 
     font-size: $font-size--large;
-    line-height: 1;
     font-family: $font-family--custom;
     text-transform: uppercase;
     text-decoration: none;
@@ -141,7 +141,7 @@
     &__item {
       position: relative;
 
-      padding: 78px 0 60px;
+      padding: 78px 0 55px;
       padding-left: 52px;
       padding-right: 280px;
       margin-bottom: $item-margin-bottom;
@@ -184,7 +184,7 @@
     }
 
     &__desc {
-      margin-bottom: 56px;
+      margin-bottom: 53px;
 
       font-size: $font-size--large;
     }
@@ -214,8 +214,11 @@
     }
 
     &__item {
+      display: flex;
+      flex-direction: column;
+
       width: 570px;
-      padding-top: 47px;
+      padding-top: 45px;
       padding-right: 52px;
       margin: 0;
 
@@ -255,7 +258,11 @@
     }
 
     &__desc {
-      margin-bottom: 32px;
+      margin-bottom: 27px;
+    }
+
+    &__actions {
+      margin-top: auto;
     }
   }
 }
