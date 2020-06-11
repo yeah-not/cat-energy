@@ -36,11 +36,11 @@
 
     display: inline-block;
 
-    padding: 22px $link-padding-horiz 23px;
+    padding: 18px $link-padding-horiz 19px;
 
     font-family: $font-family--custom;
     font-size: 20px;
-    line-height: 1;
+    line-height: 1.2;
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
@@ -120,19 +120,22 @@
 
     width: 516px;
     margin: 0;
-    padding-left: 10px;
 
     &__list {
       display: flex;
       justify-content: flex-end;
+      flex-wrap: wrap;
 
       padding: 13px 0 0;
+      margin-right: -$link-padding;
     }
 
     &__item {
       position: relative;
 
-      margin-left: 31px;
+      margin-left: 25px;
+      margin-bottom: 10px;
+
 
       text-align: left;
 
@@ -162,16 +165,10 @@
 
   @media (min-width: $screen-xl) {
     flex-grow: 0;
-
     width: 50%;
-    padding-left: 15px;
 
     &__list {
-      padding-top: 0;
-    }
-
-    &__item {
-      padding-top: 20px;
+      padding-top: 15px;
     }
 
     &__link {
