@@ -1,37 +1,42 @@
 .live-example {
   $block: &;
-  $padding-top-xl: 57px;
-  $picture-padding-bottom-md: 116px;
-  $picture-bg-md-gap: 170px;
-  $picture-bg-xl-gap: 190px;
-  $picture-bg-md: linear-gradient(to bottom, $white $picture-bg-md-gap, $bg-light-gray $picture-bg-md-gap);
-  $picture-bg-md--overlap: linear-gradient(to bottom, $white $picture-bg-md-gap, $gray--lightest-2 $picture-bg-md-gap);
-  $picture-bg-xl: linear-gradient(to bottom, $white $picture-bg-xl-gap, $bg-light-gray $picture-bg-xl-gap);
-  $picture-bg-xl--overlap: linear-gradient(to bottom, $white $picture-bg-xl-gap, $gray--lightest-2 $picture-bg-xl-gap);
+  $results-item-padding: 5px;
+  $controls-height-md: 116px;
+  $controls-height-xl: 130px;
+  $pictures-gap-md: 170px;
+  $pictures-gap-xl: 190px;
+  $overlap-bg: $gray--lightest-2;
   // @include outline; /* TODO: Сетка */
 
+  padding-top: 20px;
   background: $bg-light-gray;
+
+  &__title {
+    @include container;
+    @include heading(1);
+
+    margin-bottom: 22px;
+
+    span {
+      // display: block;
+    }
+  }
 
   &__wrapper {
     // @include outline(2); /* TODO: Сетка */
+    @include container--sm;
+  }
 
-    display: flex;
-    flex-direction: column;
+  &__inner {
+    // @include outline(); /* TODO: Сетка */
   }
 
   // Информация
   &__info {
     // @include outline(3);
-    @include container;
-
-    padding-top: 20px;
     margin-bottom: 33px;
   }
 
-  &__title {
-    @include heading(1);
-    margin: 0 0 20px;
-  }
 
   &__desc {
     margin: 0 0 25px;
@@ -44,25 +49,28 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+
+      margin: 0 (-$results-item-padding);
     }
   }
 
   &__result {
-    display: block;
+    display: flex;
+    flex-direction: column;
+
     position: relative;
 
+    padding: 0 $results-item-padding;
     margin: 0 0 30px;
   }
 
   &__field {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    order: 1;
 
     width: 87px;
-    padding: 0 5px;
+    margin: 0 auto;
     margin-top: -10px;
+    padding: 0 5px;
 
     font-size: $font-size--small;
     line-height: 1;
@@ -70,8 +78,8 @@
     text-align: center;
     text-transform: lowercase;
 
-    background: $bg-light-gray;
     border-radius: 10px;
+    background: $bg-light-gray;
   }
 
   &__value {
@@ -93,7 +101,9 @@
 
   &__cost {
     display: block;
+
     width: 100%;
+    padding: 0 $results-item-padding;
 
     font-size: $font-size;
     line-height: 1.43;
@@ -105,7 +115,7 @@
   }
 
   &__cost-field {
-    display: inline;
+    display: inline-block;
     font-weight: normal;
 
     &::after {
@@ -114,23 +124,18 @@
   }
 
   &__cost-value {
-    display: inline;
+    display: inline-block;
   }
 
   // Слайдер с нахлестом
   &__pictures {
     // @include outline(3); /* TODO: Сетка */
+    @include row--sm;
     padding: 0 0 36px;
   }
 
   &__pictures-wrapper {
-    @include container;
-
     margin-bottom: 33px;
-  }
-
-  &__pictures-inner {
-    @include row--sm;
   }
 
   &__picture {
@@ -142,25 +147,30 @@
     flex-shrink: 0;
   }
 
-  &__controls {
-    @include container;
-  }
-
   @media (min-width: $screen-md) {
-    overflow: hidden;
+    $result-margin-bottom: 10px;
+    padding-top: 43px;
     background-color: transparent;
 
     &__wrapper {
-      padding-top: 25px;
+      @include container-reset;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
     }
 
     // Информация
     &__info {
-      margin-bottom: 85px;
+      @include container--md;
+      margin-bottom: 85px + $pictures-gap-md;
     }
 
     &__title {
-      margin-bottom: 63px;
+      margin-bottom: 65px;
     }
 
     &__desc {
@@ -171,12 +181,13 @@
     }
 
     &__results tbody {
-      align-items: center;
+      flex-wrap: nowrap;
+      margin-bottom: -$result-margin-bottom;
     }
 
     &__result {
       margin-right: 42px;
-      margin-bottom: 0;
+      margin-bottom: $result-margin-bottom;
     }
 
     &__field {
@@ -185,7 +196,6 @@
       padding: 0 8px;
 
       font-size: 14px;
-      white-space: nowrap;
 
       background-color: $white;
     }
@@ -201,10 +211,13 @@
     &__cost {
       display: flex;
       flex-direction: column;
+      flex-shrink: 0;
 
       width: auto;
-      max-width: 192px;
+      max-width: 192px + $results-item-padding;
       margin-left: auto;
+      margin-top: 10px;
+      margin-bottom: $result-margin-bottom;
 
       text-align: right;
     }
@@ -221,89 +234,128 @@
 
     // Слайдер с нахлестом
     &__pictures {
-      padding-bottom: 0;
-      background: $picture-bg-md;
-    }
-
-    &__pictures-wrapper {
       position: relative;
-      margin-bottom: 0;
+
+      padding-bottom: 0;
+      margin: 0;
+
+      background: $bg-light-gray;
 
       &::after {
         content: "";
         position: absolute;
         top: 0;
         bottom: 0;
-        left: calc(100% - #{$container-gap-md});
+        right: 0;
 
-        width: 100vw;
+        width: calc((100% - #{$container-md}) / 2 + #{$container-gap-md});
 
-        background: $picture-bg-md--overlap;
+        background: $overlap-bg;
       }
     }
 
-    &__pictures-inner {
-      margin: 0;
+    &__pictures-wrapper {
+      @include container--md;
+
+      position: relative;
+
+      margin-top: -$pictures-gap-md;
+      margin-bottom: 0;
     }
 
     &__picture {
-      padding-bottom: $picture-padding-bottom-md;
+      padding-bottom: $controls-height-md;
 
       &--overlap {
-        background: $picture-bg-md--overlap;
+        background: none;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          z-index: 0;
+        }
+
+        &::before {
+          top: 0;
+          height: $pictures-gap-md;
+
+          background: $white;
+        }
+
+        &::after {
+          top: $pictures-gap-md;
+          bottom: 0;
+
+          background: $overlap-bg;
+        }
       }
     }
 
     &__image {
+      position: relative;
+      z-index: 1;
+
       width: auto;
       height: auto;
     }
 
     &__controls {
+      @include container--md;
+
       position: relative;
 
-      margin-top: -$picture-padding-bottom-md;
+      margin-top: -$controls-height-md;
       padding-top: 21px;
       padding-bottom: 75px;
     }
   }
 
   @media (min-width: $screen-xl) {
-    $picture-padding-bottom-md: 135px;
-    background: $picture-bg-xl;
+    padding-top: 58px;
 
-    // Информация
+    &__title {
+      margin-bottom: 75px;
+      padding-right: 650px + $container-gap-xl;
+    }
+
     &__wrapper {
-      @include container--xl;
-
-      flex-direction: row;
       position: relative;
-      padding-top: $padding-top-xl;
+      background: $bg-light-gray;
 
       &::after {
         content: "";
         position: absolute;
         top: 0;
         bottom: 0;
-        left: calc(100% - #{$container-gap-xl});
+        right: 0;
 
-        width: 100vw;
+        width: calc((100% - #{$container-xl}) / 2});
 
-        background: $picture-bg-xl--overlap;
+        background: $overlap-bg;
       }
     }
 
-    &__info {
-      width: 570px;
-      margin: 0;
-      padding: 0;
-      padding-right: 135px;
-      padding-bottom: 50px;
+    &__inner {
+      @include container--xl;
+      flex-direction: row;
+      padding-right: 0;
     }
 
-    &__title {
-      margin-bottom: 146px;
+    // Информация
+    &__info {
+      @include container-reset;
+
+      flex-shrink: 0;
+
+      width: 570px;
+      margin: 0;
+      padding: 70px 0 50px;
+      padding-right: 135px;
     }
+
 
     &__desc {
       margin-bottom: 67px;
@@ -311,6 +363,10 @@
 
     &__results {
       width: 366px;
+
+      tbody {
+        flex-wrap: wrap;
+      }
     }
 
     &__result {
@@ -323,6 +379,7 @@
 
     &__cost {
       flex-direction: row;
+      align-items: center;
 
       width: 100%;
       max-width: none;
@@ -330,9 +387,11 @@
     }
 
     &__cost-field {
-      text-align: left;
       width: 190px;
+      margin-bottom: 0;
       margin-right: 10px;
+
+      text-align: left;
     }
 
     &__cost-value {
@@ -342,18 +401,10 @@
 
     // Слайдер с нахлестом
     &__pictures {
+      display: flex;
+      flex-direction: column;
+
       width: 690px;
-      margin: 0;
-      margin-top: -$padding-top-xl;
-      margin-right: -$grid-gutter-2;
-
-      background: none;
-    }
-
-    &__pictures-wrapper {
-      width: auto;
-      margin: 0;
-      padding: 0;
 
       background: none;
 
@@ -362,19 +413,34 @@
       }
     }
 
+    &__pictures-wrapper {
+      @include container-reset;
+      display: flex;
+      flex-grow: 1;
+      margin-top: -$pictures-gap-xl;
+    }
+
     &__picture {
-      padding-bottom: $picture-padding-bottom-md;
+      padding-bottom: $controls-height-xl;
 
       &--overlap {
-        background: $picture-bg-xl--overlap;
+        &::before {
+          height: $pictures-gap-xl;
+        }
+
+        &::after {
+          top: $pictures-gap-xl;
+          bottom: 0;
+          background: $overlap-bg;
+        }
       }
     }
 
     &__controls {
-      width: auto;
-      margin-top: -$picture-padding-bottom-md;
-      padding: 43px 0 72px;
-      // padding-left: 37px;
+      @include container-reset;
+
+      margin-top: -$controls-height-xl;
+      padding: 40px 0 70px;
     }
   }
 }
