@@ -36,7 +36,7 @@
 
     display: inline-block;
 
-    padding: 18px $link-padding-horiz 19px;
+    padding: 20px $link-padding-horiz 21px;
 
     font-family: $font-family--custom;
     font-size: 20px;
@@ -62,7 +62,10 @@
   @media (max-width: $screen-md - 1) {
     &__toggle {
       position: absolute;
+      top: 23px;
+
       padding: 0;
+
       border: none;
 
       &:hover {
@@ -80,7 +83,6 @@
       }
 
       #{$block}__toggle {
-        top: 20px;
         right: 20px;
 
         width: 24px;
@@ -92,7 +94,6 @@
 
     &--opened {
       #{$block}__toggle {
-        top: 23px;
         right: 23px;
 
         width: 18px;
