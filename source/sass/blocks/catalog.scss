@@ -21,9 +21,9 @@
   }
 
   @media (min-width: $screen-md) {
-    $item-margin-bottom: 141px;
+    $item-margin-bottom: 140px;
     $item-margin-horiz: $grid-gutter;
-    margin-bottom: 69px;
+    margin-bottom: 68px;
 
     &__list {
       flex-direction: row;
@@ -42,20 +42,19 @@
   }
 
   @media (min-width: $screen-xl) {
+    $item-margin-bottom: 142px;
     $item-margin-horiz: $grid-gutter-2;
-    margin-bottom: 79px;
+    margin-bottom: 77px;
 
     &__list {
-      margin-left: -$item-margin-horiz;
-      margin-right: -$item-margin-horiz;
+      margin: 0 (-$item-margin-horiz) (-$item-margin-bottom);
     }
 
     &__item {
       // min-height: 431px; /* TODO: Сетка */
 
       width: 245px;
-      margin-left: $item-margin-horiz;
-      margin-right: $item-margin-horiz;
+      margin: 0 $item-margin-horiz $item-margin-bottom;
     }
   }
 }
