@@ -1,18 +1,21 @@
 .social {
   $block: &;
+  $item-margin: 19px;
 
   &__list {
     @include reset-list;
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
-    margin-left: -10px;
+    margin: 0 (-$item-margin) (-$item-margin);
   }
 
   &__item {
-    margin: 0 19px;
+    flex-shrink: 0;
+    margin: 0 $item-margin $item-margin;
   }
 
   &__link {
@@ -37,12 +40,14 @@
   }
 
   @media (min-width: $screen-md) {
+    $item-margin: 14px;
+
     &__list {
-      margin-left: -19px;
+      margin: 0 (-$item-margin) (-$item-margin);
     }
 
     &__item {
-      margin: 0 14px;
+      margin: 0 $item-margin $item-margin;
     }
 
     &__icon--vk {
