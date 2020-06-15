@@ -154,11 +154,15 @@
   }
 
   @media (min-width: $screen-xl) {
-    margin-bottom: 85px;
+    margin-bottom: 86px;
 
     &__content {
       flex-direction: row;
       justify-content: space-between;
+    }
+
+    &__title {
+      margin-bottom: 79px;
     }
 
     &__list {

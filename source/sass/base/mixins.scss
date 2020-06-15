@@ -108,7 +108,7 @@
   &::before,
   &::after {
     box-sizing: content-box;
-    transform: translateY(-7px);
+    transform: translateY(-6px);
 
     width: $container-gap-sm;
     height: 3px;
@@ -130,6 +130,7 @@
     &::after {
       content: "";
       width: $container-gap-md;
+      transform: translateY(-9px);
     }
 
     &::before {
