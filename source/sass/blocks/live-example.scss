@@ -34,7 +34,7 @@
   // Информация
   &__info {
     // @include outline(3);
-    margin-bottom: 33px;
+    margin-bottom: 35px;
   }
 
 
@@ -69,7 +69,7 @@
 
     width: 87px;
     margin: 0 auto;
-    margin-top: -7px;
+    margin-top: -9px;
     padding: 0 5px;
 
     font-size: $font-size--small;
@@ -194,6 +194,7 @@
       width: auto;
       max-width: 150px;
       padding: 0 8px;
+      margin-top: -7px;
 
       font-size: 14px;
 
@@ -358,7 +359,7 @@
 
 
     &__desc {
-      margin-bottom: 67px;
+      margin-bottom: 70px;
     }
 
     &__results {
