@@ -1504,7 +1504,7 @@ h1 {
       .leading::before, .leading::after {
         display: none; }
       .leading__wrapper {
-        padding-top: 44px; }
+        padding-top: 43px; }
       .leading__content {
         position: relative;
         z-index: 1;
@@ -1725,7 +1725,7 @@ h1 {
         height: 200px;
         margin: 0; }
       .categories__desc {
-        margin-bottom: 53px;
+        margin-bottom: 52px;
         font-size: 16px; }
       .categories__actions {
         padding-top: 0;
