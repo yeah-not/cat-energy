@@ -1300,6 +1300,8 @@ h1 {
   @media (min-width: 1300px) {
     .page-main__title {
       margin-top: 59px; }
+      .page-main__title--page-catalog {
+        margin-bottom: 86px; }
     .page-main__intro--page-program {
       padding-left: 40px; } }
 
@@ -1563,12 +1565,12 @@ h1 {
             -ms-flex-pack: justify;
                 justify-content: space-between;
         padding-top: 94px;
-        padding-bottom: 59px; }
+        padding-bottom: 55px; }
       .leading__content {
         width: 50%;
         padding: 0 80px; }
       .leading__slogan {
-        margin-bottom: 45px; }
+        margin-bottom: 46px; }
       .leading__picture {
         width: 50%;
         margin: 0; }
@@ -1576,7 +1578,7 @@ h1 {
         width: 552px;
         height: 499px;
         margin: 0;
-        margin-top: -84px;
+        margin-top: -80px;
         margin-left: -159px; } }
 
 .categories {
@@ -2580,6 +2582,7 @@ h1 {
         .catalog-item--show-all::before {
           width: 60px;
           height: 60px;
+          margin-top: 0;
           margin-bottom: 50px;
           background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath fill='%23231F20' class='st0' d='M60 29.5H30.5V0h-1v29.5H0v1h29.5V60h1V30.5H60z'/%3E%3C/svg%3E"); }
         .catalog-item--show-all .catalog-item__title {
@@ -2612,7 +2615,7 @@ h1 {
     outline: 1px solid #ededed; }
   @media (min-width: 768px) {
     .catalog {
-      margin-bottom: 68px; }
+      margin-bottom: 67px; }
       .catalog__list {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
@@ -2986,7 +2989,7 @@ h1 {
 
 @media (min-width: 1300px) {
   .program__pet {
-    margin-bottom: 67px; }
+    margin-bottom: 70px; }
   .program__pet-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3012,6 +3015,8 @@ h1 {
   .program__owner-element {
     width: 50%;
     padding: 0 40px; }
+  .program__supplements-title {
+    margin-bottom: 57px; }
   .program__supplements-list {
     margin-left: -40px;
     margin-right: -40px; }
