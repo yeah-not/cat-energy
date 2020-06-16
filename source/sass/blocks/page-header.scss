@@ -34,8 +34,8 @@
     display: flex;
     justify-content: space-between;
 
-    padding-top: 24px;
-    padding-bottom: 15px;
+    padding-top: 25px;
+    padding-bottom: 14px;
 
     outline: none;
 
@@ -43,7 +43,6 @@
       max-width: 192px;
       margin: 0;
       padding: 0;
-      padding-right: 10px;
     }
 
     &__logo-image {
@@ -54,7 +53,6 @@
 
   @media (min-width: $screen-xl) {
     padding-top: 54px;
-    padding-bottom: 15px;
 
     &__logo {
       max-width: 245px;

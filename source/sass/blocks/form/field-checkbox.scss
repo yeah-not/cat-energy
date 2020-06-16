@@ -42,6 +42,8 @@
       content: "";
       display: inline-block;
       vertical-align: middle;
+      align-self: flex-start;
+      flex-shrink: 0;
 
       width: $input-radius * 2;
       height: $input-radius * 2;
@@ -56,7 +58,7 @@
       content: "";
 
       position: absolute;
-      top: 50%;
+      top: $input-radius;
       left: $input-radius;
       transform: translate(-50%, -50%);
 
@@ -103,6 +105,7 @@
       }
 
       &::after {
+        top: $input-radius;
         left: $input-radius;
 
         width: 21px;

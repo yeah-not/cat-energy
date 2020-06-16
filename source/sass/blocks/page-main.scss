@@ -12,6 +12,10 @@
 
     margin-top: 15px;
     margin-bottom: 27px;
+
+    &--page-catalog {
+      margin-bottom: 30px;
+    }
   }
 
   &__intro {
@@ -19,7 +23,7 @@
     @include container;
     @include heading;
 
-    margin-bottom: 37px;
+    margin-bottom: 38px;
     text-transform: uppercase;
   }
 
@@ -36,7 +40,7 @@
     }
 
     &__intro {
-      margin-bottom: 66px;
+      margin-bottom: 65px;
 
       font-size: $font-size--xxlarge;
       line-height: 1.5;

@@ -3,14 +3,14 @@
   display: flex;
   flex-wrap: wrap;
 
-  padding: 13px 0 16px;
+  padding: 11px 0 16px;
 
   &__name {
     width: 100%;
-    margin: 0 0 15px;
+    margin: 0 0 9px;
 
     font-size: $font-size--large;
-    line-height: 1;
+    line-height: 1.25;
     font-family: $font-family--custom;
     font-weight: normal;
     text-transform: uppercase;
@@ -21,8 +21,6 @@
   &__price {
     width: 50%;
     margin: 0 0 14px;
-
-    line-height: 1;
   }
 
   &__amount {
@@ -40,11 +38,11 @@
 
   @media (min-width: $screen-md) {
     align-items: baseline;
-    padding: 26px 38px;
+    padding: 25px 38px;
 
     &__name {
       width: 315px;
-      margin-bottom: 26px;
+      margin-bottom: 23px;
 
       font-size: $font-size--xxlarge;
     }
@@ -70,7 +68,7 @@
   }
 
   @media (min-width: $screen-xl) {
-    padding: 16px 0 15px;
+    padding: 17px 0 14px;
 
     &__name {
       width: 285px;

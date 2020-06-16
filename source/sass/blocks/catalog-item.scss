@@ -74,11 +74,17 @@
   }
 
   &__param {
+    width: 50%;
+
     font-weight: normal;
+    vertical-align: baseline;
   }
 
   &__value {
+    width: 50%;
+
     text-align: right;
+    vertical-align: baseline;
   }
 
   &__text {
@@ -123,7 +129,7 @@
     $padding-x: 38px;
     flex-direction: column;
 
-    padding: 0 $padding-x 38px;
+    padding: 0 $padding-x 40px;
 
     background: $bg-light-gray;
 
@@ -138,7 +144,7 @@
 
       width: auto;
       height: 208px;
-      margin: -82px (-$padding-x) 38px;
+      margin: -83px (-$padding-x) 38px;
     }
 
     &__info {
