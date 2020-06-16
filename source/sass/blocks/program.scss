@@ -73,7 +73,7 @@
 
   @media (min-width: $screen-xl) {
     &__pet {
-      margin-bottom: 67px;
+      margin-bottom: 70px;
     }
 
     &__pet-wrapper {
@@ -98,6 +98,10 @@
     &__owner-element {
       width: 50%;
       padding: 0 $grid-gutter-2;
+    }
+
+    &__supplements-title {
+      margin-bottom: 57px;
     }
 
     &__supplements-list {
