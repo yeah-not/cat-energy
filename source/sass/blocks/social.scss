@@ -1,6 +1,7 @@
 .social {
   $block: &;
-  $item-margin: 19px;
+  $item-margin: 15px;
+  position: relative;
 
   &__list {
     @include reset-list;
@@ -19,7 +20,12 @@
   }
 
   &__link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 25px;
+    min-height: 25px;
 
     &:hover {
       #{$block}__icon {
@@ -40,7 +46,7 @@
   }
 
   @media (min-width: $screen-md) {
-    $item-margin: 14px;
+    $item-margin: 12px;
 
     &__list {
       margin: 0 (-$item-margin) (-$item-margin);
@@ -48,6 +54,13 @@
 
     &__item {
       margin: 0 $item-margin $item-margin;
+    }
+
+    &__link {
+      min-width: 30px;
+      min-height: 30px;
+
+      // background-color: red;
     }
 
     &__icon--vk {
@@ -63,6 +76,7 @@
     &__icon--fb {
       width: 14px;
       height: auto;
+      margin-left: -10px;
     }
   }
 }

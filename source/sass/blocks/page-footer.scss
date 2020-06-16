@@ -20,7 +20,7 @@
     justify-content: center;
 
     margin: 0;
-    padding: 40px 0 32px;
+    padding: 40px 0 30px;
   }
 
   &__logo-link {
@@ -41,14 +41,14 @@
 
   &__social {
     // @include outline(3); /* TODO: Сетка */
-    padding: 22px 0;
+    padding: 19px 0;
     border-top: $separator-sm;
   }
 
   &__copyright {
     // @include outline(3); /* TODO: Сетка */
     margin: 0;
-    padding: 19px 0;
+    padding: 20px 0;
 
     border-top: $separator-sm;
   }
@@ -85,7 +85,6 @@
 
   &__copyright-icon {
     flex-shrink: 0;
-    margin-right: -5px;
   }
 
   @media (min-width: $screen-md) {
@@ -94,8 +93,8 @@
       align-items: center;
       justify-content: space-between;
 
-      padding-top: 53px;
-      padding-bottom: 53px;
+      padding-top: 58px;
+      padding-bottom: 58px;
     }
 
     &__logo {
@@ -125,7 +124,7 @@
     }
 
     &__copyright-icon {
-      margin-left: 10px;
+      margin-left: 23px;
     }
   }
 

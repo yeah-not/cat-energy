@@ -20,7 +20,7 @@
     justify-content: space-between;
 
     padding-top: 29px;
-    padding-bottom: 24px;
+    padding-bottom: 26px;
   }
 
   &__title {
@@ -99,7 +99,7 @@
 
   @media (min-width: $screen-md) {
     &__info {
-      padding: 65px ($container-gap-md + $grid-gutter-2) 55px;
+      padding: 65px $grid-gutter-2 52px;
     }
 
     &__title {
@@ -150,7 +150,9 @@
       transform: translateY(-50%);
 
       width: 570px;
-      padding: 66px 75px 60px;
+      // padding: 65px 75px 55px;
+      padding: 60px 75px 50px;
+      // margin-top: -5px;
 
       color: $text-color;
       background: $body-bg;
