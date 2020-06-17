@@ -64,9 +64,22 @@ $font-size--page-h2:          24px;
 $font-size--page-h2-md:       36px;
 
 $font-size--md:               $font-size--large;
-$line-height:                 1.29;
+$line-height:                 1.286;
 $line-height--md:             1.5;
-$line-height--headings:       1;
+
+// Интерлиньяж для справки
+// Подогнаны значения, чтобы height = line-height в Chrome/Firefox
+// $line-height:              1.125;
+// $line-height:              1.143;
+// $line-height:              1.1875;
+// $line-height:              1.2333;
+// $line-height:              1.3125;
+// $line-height:              1.334;
+// $line-height:              1.429;
+// $line-height:              1.542;
+// $line-height:              1.6667;
+// $line-height:              1.389;
+
 
 $font-family:                 "Arial", sans-serif;
 $font-family--custom:         "Oswald", "Arial Narrow", "Arial", sans-serif;

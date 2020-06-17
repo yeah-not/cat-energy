@@ -11,7 +11,7 @@
   margin: 0 0 (-$item-margin-bottom);
 
   font-size: $font-size--large;
-  line-height: 1.13;
+  line-height: 1.125;
   font-family: $font-family--custom;
   font-weight: normal;
   text-transform: uppercase;
@@ -91,8 +91,7 @@
     }
 
     &--area {
-      // line-height: 1.29;
-      line-height: 1.32;
+      line-height: 1.3125;
       word-spacing: -1px;
     }
 
@@ -155,7 +154,9 @@
     $icon-right: 38px;
     $icon-space: 45px;
     margin-bottom: -$item-margin-bottom;
+
     font-size: 20px;
+    line-height: 1.1;
 
     &__item {
       margin-bottom: $item-margin-bottom;

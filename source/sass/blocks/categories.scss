@@ -80,7 +80,7 @@
     @include heading(2);
     order: 2;
 
-    line-height: 1.54;
+    line-height: 1.542;
     text-transform: uppercase;
   }
 
@@ -92,7 +92,7 @@
     display: flex;
 
     margin: 0;
-    padding: 18px 0 0;
+    padding: 17px 0 0;
 
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
@@ -102,6 +102,7 @@
     align-items: center;
 
     font-size: $font-size--large;
+    line-height: 1.25;
     font-family: $font-family--custom;
     text-transform: uppercase;
     text-decoration: none;
