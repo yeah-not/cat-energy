@@ -1,7 +1,7 @@
 .live-example {
   $block: &;
   $results-item-padding: 5px;
-  $controls-height-md: 116px;
+  $controls-height-md: 114px;
   $controls-height-xl: 135px;
   $pictures-gap-md: 170px;
   $pictures-gap-xl: 190px;
@@ -309,7 +309,7 @@
       position: relative;
 
       margin-top: -$controls-height-md;
-      padding-top: 21px;
+      padding-top: 19px;
       padding-bottom: 75px;
     }
   }
@@ -359,7 +359,7 @@
 
 
     &__desc {
-      margin-bottom: 70px;
+      margin-bottom: 67px;
     }
 
     &__results {
