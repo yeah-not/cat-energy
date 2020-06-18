@@ -19,6 +19,7 @@
 
   &__legend {
     @include heading(2);
+    display: block;
 
     width: 100%;
     margin: 0 0 35px;
