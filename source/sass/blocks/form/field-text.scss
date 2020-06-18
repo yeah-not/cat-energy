@@ -45,10 +45,12 @@
   }
 
   &__element {
+    position: relative;
+
+    display: block;
     flex-grow: 1;
     flex-shrink: 0;
 
-    position: relative;
 
     &--email,
     &--phone {
@@ -94,6 +96,10 @@
     &--area {
       line-height: 1.3125;
       word-spacing: -1px;
+
+      #{$block}__input {
+        display: block;
+      }
     }
 
     &--error {
@@ -146,7 +152,6 @@
   }
 
   &--single {
-    overflow: visible;
     margin-bottom: 0;
   }
 
