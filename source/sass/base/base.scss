@@ -9,10 +9,13 @@ html {
   overflow-x: hidden;
 }
 
-img,
-svg {
+img {
   max-width: 100%;
   height: auto;
+}
+
+svg {
+  max-width: 100%;
 }
 
 a {
