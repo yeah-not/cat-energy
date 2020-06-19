@@ -15,7 +15,9 @@
   }
 
   &__item {
+    display: flex;
     flex-shrink: 0;
+
     margin: 0 $item-margin $item-margin;
   }
 
@@ -59,8 +61,6 @@
     &__link {
       min-width: 30px;
       min-height: 30px;
-
-      // background-color: red;
     }
 
     &__icon--vk {
