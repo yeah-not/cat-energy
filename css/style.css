@@ -355,10 +355,12 @@ html {
           box-sizing: border-box;
   overflow-x: hidden; }
 
-img,
-svg {
+img {
   max-width: 100%;
   height: auto; }
+
+svg {
+  max-width: 100%; }
 
 a {
   color: #68b738; }
@@ -1007,6 +1009,9 @@ h1 {
             align-items: center;
     margin: 0 -15px -15px; }
   .social__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -ms-flex-negative: 0;
         flex-shrink: 0;
     margin: 0 15px 15px; }
@@ -1039,13 +1044,13 @@ h1 {
       min-height: 30px; }
     .social__icon--vk {
       width: 30px;
-      height: auto; }
+      height: 16px; }
     .social__icon--insta {
       width: 23px;
-      height: auto; }
+      height: 23px; }
     .social__icon--fb {
       width: 14px;
-      height: auto;
+      height: 27px;
       margin-left: -10px; } }
 
 .page {
@@ -1101,7 +1106,9 @@ h1 {
   .page-header__logo-link[href]:active {
     opacity: 0.6; }
   .page-header__logo-image {
-    display: block; }
+    display: block;
+    width: 191px;
+    height: 38px; }
   @media (min-width: 768px) {
     .page-header {
       display: -webkit-box;
@@ -1119,14 +1126,15 @@ h1 {
         padding: 0; }
       .page-header__logo-image {
         width: 173px;
-        height: auto; } }
+        height: 57px; } }
   @media (min-width: 1300px) {
     .page-header {
       padding-top: 53px; }
       .page-header__logo {
         max-width: 245px; }
       .page-header__logo-image {
-        width: 202px; } }
+        width: 202px;
+        height: 60px; } }
 
 .main-nav {
   margin: 0 -20px;
@@ -2013,11 +2021,16 @@ h1 {
     padding: 0 5px;
     margin: 0 0 18px; }
   .live-example__field {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
+    position: relative;
+    z-index: 1;
+    display: block;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    -ms-flex-item-align: center;
+        align-self: center;
     width: 87px;
-    margin: 0 auto;
+    margin: 0;
     margin-top: -9px;
     padding: 0 5px;
     font-size: 12px;
@@ -2029,6 +2042,9 @@ h1 {
     background: #f2f2f2; }
   .live-example__value {
     display: block;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
     min-width: 124px;
     padding: 15px;
     font-size: 24px;
@@ -2849,6 +2865,8 @@ h1 {
       .no-webp .supplements__offer, .no-js .supplements__offer {
         background-image: url("../img/gift-photo-mobile@2x.jpg"); } }
   .supplements__offer-link {
+    display: block;
+    max-width: 100%;
     color: inherit;
     text-decoration: none; }
     .supplements__offer-link:hover {
