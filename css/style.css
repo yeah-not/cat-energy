@@ -353,7 +353,9 @@ template {
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  -ms-touch-action: pan-y pinch-zoom;
+      touch-action: pan-y pinch-zoom; }
 
 img {
   max-width: 100%;
@@ -1061,8 +1063,12 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   overflow-x: hidden;
   width: 100%;
+  min-width: 320px;
   min-height: 100vh;
   padding: 0;
   margin: 0;
