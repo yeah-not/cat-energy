@@ -79,7 +79,7 @@
 
   @if $level == 1 {
     font-size: $font-size--page-h1;
-    line-height: 1.67;
+    line-height: 1.6667;
   } @else if $level == 2 {
     font-size: $font-size--page-h2;
     line-height: 1;

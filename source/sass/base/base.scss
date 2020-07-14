@@ -6,12 +6,17 @@
 
 html {
   box-sizing: border-box;
+  overflow-x: hidden;
+  touch-action: pan-y pinch-zoom;
 }
 
-img,
-svg {
+img {
   max-width: 100%;
   height: auto;
+}
+
+svg {
+  max-width: 100%;
 }
 
 a {

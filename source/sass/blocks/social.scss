@@ -15,7 +15,9 @@
   }
 
   &__item {
+    display: flex;
     flex-shrink: 0;
+
     margin: 0 $item-margin $item-margin;
   }
 
@@ -59,23 +61,21 @@
     &__link {
       min-width: 30px;
       min-height: 30px;
-
-      // background-color: red;
     }
 
     &__icon--vk {
       width: 30px;
-      height: auto;
+      height: 16px;
     }
 
     &__icon--insta {
       width: 23px;
-      height: auto;
+      height: 23px;
     }
 
     &__icon--fb {
       width: 14px;
-      height: auto;
+      height: 27px;
       margin-left: -10px;
     }
   }

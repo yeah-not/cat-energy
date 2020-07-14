@@ -19,6 +19,7 @@
 
   &__legend {
     @include heading(2);
+    display: block;
 
     width: 100%;
     margin: 0 0 35px;
@@ -39,7 +40,7 @@
 
   &__notice {
     font-size: $font-size;
-    line-height: 1.14;
+    line-height: 1.143;
   }
 
   @media (min-width: $screen-md) {
@@ -82,7 +83,7 @@
 
     &__notice {
       font-size: $font-size--large;
-      line-height: 1;
+      line-height: 1.125;
     }
   }
 

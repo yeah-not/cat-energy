@@ -20,7 +20,7 @@
     justify-content: space-between;
 
     padding-top: 29px;
-    padding-bottom: 26px;
+    padding-bottom: 25px;
   }
 
   &__title {
@@ -39,7 +39,7 @@
     width: 50%;
     margin: 0;
 
-    line-height: 1.43;
+    line-height: 1.429;
 
     br {
       display: none;
@@ -118,7 +118,7 @@
       text-align: right;
 
       br {
-        display: block;
+        display: inline;
       }
     }
 

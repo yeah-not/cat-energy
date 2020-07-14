@@ -80,19 +80,19 @@
     @include heading(2);
     order: 2;
 
-    line-height: 1.54;
+    line-height: 1.542;
     text-transform: uppercase;
   }
 
   &__desc {
-    margin: 0 0 21px;
+    margin: 0 0 22px;
   }
 
   &__actions {
     display: flex;
 
     margin: 0;
-    padding: 18px 0 0;
+    padding: 17px 0 0;
 
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
@@ -102,6 +102,7 @@
     align-items: center;
 
     font-size: $font-size--large;
+    line-height: 1.25;
     font-family: $font-family--custom;
     text-transform: uppercase;
     text-decoration: none;
@@ -132,7 +133,7 @@
 
   @media (min-width: $screen-md) {
     $item-margin-bottom: 29px;
-    margin-bottom: 45px;
+    margin-bottom: 43px;
 
     &__list {
       margin-bottom: -$item-margin-bottom;
@@ -141,7 +142,7 @@
     &__item {
       position: relative;
 
-      padding: 78px 0 55px;
+      padding: 77px 0 61px;
       padding-left: 52px;
       padding-right: 280px;
       margin-bottom: $item-margin-bottom;
@@ -258,7 +259,7 @@
     }
 
     &__desc {
-      margin-bottom: 27px;
+      margin-bottom: 28px;
     }
 
     &__actions {

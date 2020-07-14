@@ -53,7 +53,7 @@
 
   @media (min-width: $screen-xl) {
     &__title {
-      margin-top: 59px;
+      margin-top: 60px;
 
       &--page-catalog {
         margin-bottom: 86px;
@@ -63,6 +63,7 @@
     &__intro {
       &--page-program {
         padding-left: $container-gap-xl;
+        margin-bottom: 67px;
       }
     }
   }

@@ -40,7 +40,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    margin: 0 0 14px;
+    margin: 0 0 13px;
 
     font-size: $font-size--large;
     line-height: 1.25;
@@ -69,7 +69,7 @@
     margin: 0 0 15px;
 
     font-size: $font-size--small;
-    line-height: 1.33;
+    line-height: 1.1667;
     text-align: left;
   }
 
@@ -88,10 +88,10 @@
   }
 
   &__text {
-    margin: 0 0 10px;
+    margin: 0 0 12px;
 
     font-size: $font-size--small;
-    line-height: 1.33;
+    line-height: 1.334;
 
     br {
       display: none;
@@ -113,7 +113,7 @@
 
       width: 30px;
       height: 30px;
-      margin: 4px auto 24px;
+      margin: 5px auto 24px;
 
       background: svg-load("../img/svg-bg/icon-plus-mobile.svg") 0 0 no-repeat;
       opacity: 0.2;
@@ -121,7 +121,7 @@
 
     #{$block}__title {
       display: block;
-      margin-bottom: 11px;
+      margin-bottom: 7px;
     }
   }
 
@@ -201,7 +201,7 @@
 
     &__text {
       font-size: $font-size--large;
-      line-height: 1.2;
+      line-height: 1.1875;
       margin: 0 0 15px;
 
       br {

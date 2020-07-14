@@ -28,6 +28,9 @@
 
   &__logo-image {
     display: block;
+
+    width: 191px;
+    height: 38px;
   }
 
   @media (min-width: $screen-md) {
@@ -47,12 +50,12 @@
 
     &__logo-image {
       width: 173px;
-      height: auto;
+      height: 57px;
     }
   }
 
   @media (min-width: $screen-xl) {
-    padding-top: 54px;
+    padding-top: 53px;
 
     &__logo {
       max-width: 245px;
@@ -60,6 +63,7 @@
 
     &__logo-image {
       width: 202px;
+      height: 60px;
     }
   }
 }

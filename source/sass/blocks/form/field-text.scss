@@ -11,7 +11,7 @@
   margin: 0 0 (-$item-margin-bottom);
 
   font-size: $font-size--large;
-  line-height: 1.13;
+  line-height: 1.125;
   font-family: $font-family--custom;
   font-weight: normal;
   text-transform: uppercase;
@@ -27,6 +27,7 @@
 
   &__label {
     margin-right: 13px;
+    word-break: break-word;
     color: $text-color--accent;
 
     &--required::after {
@@ -44,10 +45,12 @@
   }
 
   &__element {
+    position: relative;
+
+    display: block;
     flex-grow: 1;
     flex-shrink: 0;
 
-    position: relative;
 
     &--email,
     &--phone {
@@ -91,9 +94,12 @@
     }
 
     &--area {
-      // line-height: 1.29;
-      line-height: 1.32;
+      line-height: 1.3125;
       word-spacing: -1px;
+
+      #{$block}__input {
+        display: block;
+      }
     }
 
     &--error {
@@ -117,7 +123,7 @@
   }
 
   &__input {
-    display: block;
+    display: inline-flex;
 
     width: 100%;
     padding: 12.5px 15px;
@@ -146,7 +152,6 @@
   }
 
   &--single {
-    overflow: visible;
     margin-bottom: 0;
   }
 
@@ -155,7 +160,9 @@
     $icon-right: 38px;
     $icon-space: 45px;
     margin-bottom: -$item-margin-bottom;
+
     font-size: 20px;
+    line-height: 1.1;
 
     &__item {
       margin-bottom: $item-margin-bottom;
