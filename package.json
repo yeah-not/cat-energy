@@ -7,9 +7,13 @@
     "browser-sync": "^2.26.13",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "node-sass": "^5.0.0",
     "stylelint": "^13.6.0",
     "stylelint-config-htmlacademy": "^0.1.4"
@@ -21,6 +25,10 @@
     "build": "gulp build",
     "start": "gulp watch"
   },
+  "browserslist": [
+    "> 0.1%",
+    "IE 11"
+  ],
   "editorconfig-cli": [
     "*.json",
     "*.js",

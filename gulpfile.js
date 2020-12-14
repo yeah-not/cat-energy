@@ -4,10 +4,15 @@ const gulp = require('gulp');
 const {series, parallel} = require('gulp');
 const plumber = require('gulp-plumber');
 const del = require('del');
+const rename = require("gulp-rename");
 const browserSync = require('browser-sync').create();
 
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const gcmq = require('gulp-group-css-media-queries');
+const cleanCSS = require('gulp-clean-css');
 
 // Functions
 // ---------------
@@ -24,7 +29,14 @@ function html() {
 function styles() {
   return gulp.src('./source/sass/style.scss')
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(sass())
+    .pipe(autoprefixer({cascade: false}))
+    .pipe(gcmq())
+    .pipe(gulp.dest('./build/css'))
+    .pipe(cleanCSS({level: 2}))
+    .pipe(rename('style.min.css'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/css'))
     .pipe(browserSync.stream());
 }
