@@ -10,8 +10,11 @@ const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const autoprefixer = require('gulp-autoprefixer');
 const gcmq = require('gulp-group-css-media-queries');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const inlineSvg = require('postcss-inline-svg');
+const svgo = require('postcss-svgo');
 const cleanCSS = require('gulp-clean-css');
 
 // Functions
@@ -31,8 +34,15 @@ function styles() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(autoprefixer({cascade: false}))
     .pipe(gcmq())
+    .pipe(postcss([
+      autoprefixer({
+        overrideBrowserslist: [ "> 0.1%", "IE 11" ],
+        cascade: false
+      }),
+      inlineSvg(),
+      svgo()
+    ]))
     .pipe(gulp.dest('./build/css'))
     .pipe(cleanCSS({level: 2}))
     .pipe(rename('style.min.css'))
