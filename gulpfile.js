@@ -16,6 +16,7 @@ const autoprefixer = require('autoprefixer');
 const inlineSvg = require('postcss-inline-svg');
 const svgo = require('postcss-svgo');
 const cleanCSS = require('gulp-clean-css');
+const terser = require('gulp-terser');
 
 // Functions
 // ---------------
@@ -52,7 +53,12 @@ function styles() {
 }
 
 function scripts() {
-  return gulp.src('source/js/*.js')
+  return gulp.src(['source/js/**/*.js', '!source/js/**/*.min.js'])
+    .pipe(sourcemaps.init())
+    .pipe(terser())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.src('source/js/*.min.js'))
     .pipe(gulp.dest('./build/js'))
     .pipe(browserSync.stream());
 }
