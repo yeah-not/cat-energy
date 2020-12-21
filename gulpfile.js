@@ -11,9 +11,9 @@ const ghpages = require('gh-pages');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const gcmq = require('gulp-group-css-media-queries');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
+const sortmq = require('postcss-sort-media-queries')
 const inlineSvg = require('postcss-inline-svg');
 const svgo = require('postcss-svgo');
 const cleanCSS = require('gulp-clean-css');
@@ -39,11 +39,13 @@ function styles() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(gcmq())
     .pipe(postcss([
       autoprefixer({
         overrideBrowserslist: [ "> 0.1%", "IE 11" ],
         cascade: false
+      }),
+      sortmq({
+        sort: 'mobile-first' // default
       }),
       inlineSvg(),
       svgo()
