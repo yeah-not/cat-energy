@@ -6,6 +6,7 @@ const plumber = require('gulp-plumber');
 const del = require('del');
 const rename = require("gulp-rename");
 const browserSync = require('browser-sync').create();
+const ghpages = require('gh-pages');
 
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
@@ -124,6 +125,11 @@ function watch() {
   gulp.watch('./source/js/*.js', scripts);
 }
 
+function deploy(done) {
+  ghpages.publish('build');
+  done();
+}
+
 
 // Tasks
 // ---------------
@@ -133,3 +139,4 @@ gulp.task('build',
       series(sprite, html)
 )));
 gulp.task('watch', series('build', watch));
+gulp.task('deploy', deploy);
