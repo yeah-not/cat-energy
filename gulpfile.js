@@ -22,17 +22,15 @@ const imagemin = require('gulp-imagemin');
 const imageminJpegtran = require('imagemin-jpegtran');
 const imageminPngquant = require('imagemin-pngquant');
 const gwebp = require('gulp-webp');
+const svgstore = require('gulp-svgstore');
+
+const posthtml = require('gulp-posthtml');
+const include = require('posthtml-include');
 
 // Functions
 // ---------------
 function clean() {
   return del('./build');
-}
-
-function html() {
-  return gulp.src('./source/*.html')
-    .pipe(gulp.dest('./build'))
-    .pipe(browserSync.stream());
 }
 
 function styles() {
@@ -93,14 +91,25 @@ function webp() {
     .pipe(gulp.dest('./build/img'))
 }
 
-function sprite() {
-  return gulp.src('./source/img/svg-sprite/*.svg')
-    .pipe(gulp.dest('./build/img'));
-}
-
 function fonts() {
   return gulp.src('./source/fonts/*.{woff,woff2}')
     .pipe(gulp.dest('./build/fonts'));
+}
+
+function sprite() {
+  return gulp.src('./source/img/svg-sprite/*.svg')
+    .pipe(imagemin([imagemin.svgo()]))
+    .pipe(rename({prefix: 'svg-'}))
+    .pipe(svgstore({inlineSvg: true}))
+    .pipe(rename('sprite.svg'))
+    .pipe(gulp.dest('./build/img'));
+}
+
+function html() {
+  return gulp.src('./source/*.html')
+    .pipe(posthtml([include()]))
+    .pipe(gulp.dest('./build'))
+    .pipe(browserSync.stream());
 }
 
 function watch() {
@@ -118,6 +127,9 @@ function watch() {
 
 // Tasks
 // ---------------
-gulp.task('build', series(clean,
-                   parallel(html, styles, scripts, images, webp, sprite, fonts)));
+gulp.task('build',
+  series(clean,
+    parallel(styles, scripts, images, webp, fonts,
+      series(sprite, html)
+)));
 gulp.task('watch', series('build', watch));
