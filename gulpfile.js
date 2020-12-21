@@ -18,6 +18,11 @@ const svgo = require('postcss-svgo');
 const cleanCSS = require('gulp-clean-css');
 const terser = require('gulp-terser');
 
+const imagemin = require('gulp-imagemin');
+const imageminJpegtran = require('imagemin-jpegtran');
+const imageminPngquant = require('imagemin-pngquant');
+const gwebp = require('gulp-webp');
+
 // Functions
 // ---------------
 function clean() {
@@ -70,7 +75,22 @@ function images() {
     ], {
       base: './source'
     })
+    .pipe(imagemin([
+      // imagemin.optipng({optimizationLevel: 3}),
+      // imagemin.mozjpeg({quality: 85, progressive: true}),
+      imageminPngquant({quality: [0.7, 1]}),
+      imageminJpegtran({progressive: true}),
+      imagemin.svgo()
+    ],{
+      // verbose: true
+    }))
     .pipe(gulp.dest('./build'));
+}
+
+function webp() {
+  return gulp.src('./source/img/*.{jpg,png}')
+    .pipe(gwebp({quality: 90}))
+    .pipe(gulp.dest('./build/img'))
 }
 
 function sprite() {
@@ -99,5 +119,5 @@ function watch() {
 // Tasks
 // ---------------
 gulp.task('build', series(clean,
-                   parallel(html, styles, scripts, images, sprite, fonts)));
+                   parallel(html, styles, scripts, images, webp, sprite, fonts)));
 gulp.task('watch', series('build', watch));
