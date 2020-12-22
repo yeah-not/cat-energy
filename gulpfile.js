@@ -10,14 +10,13 @@ const gulpif = require('gulp-if');
 
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
-const sourcemaps = require('gulp-sourcemaps');
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const sortmq = require('postcss-sort-media-queries')
-const inlineSvg = require('postcss-inline-svg');
-const svgo = require('postcss-svgo');
 const cleanCSS = require('gulp-clean-css');
 const terser = require('gulp-terser');
+const postcss = require('gulp-postcss');
+const sortmq = require('postcss-sort-media-queries')
+const autoprefixer = require('autoprefixer');
+const inlineSvg = require('postcss-inline-svg');
+const svgo = require('postcss-svgo');
 
 const imagemin = require('gulp-imagemin');
 const imageminJpegtran = require('imagemin-jpegtran');
@@ -37,17 +36,14 @@ function clean() {
 }
 
 function styles() {
-  return src('source/sass/style.scss')
+  return src('source/sass/style.scss', {sourcemaps: isDev})
     .pipe(plumber())
-    .pipe(gulpif(isDev, sourcemaps.init()))
     .pipe(sass())
+    .pipe(postcss([sortmq()]))
     .pipe(postcss([
       autoprefixer({
         overrideBrowserslist: [ '> 0.1%', 'IE 11' ],
         cascade: false
-      }),
-      sortmq({
-        sort: 'mobile-first' // default
       }),
       inlineSvg(),
       svgo()
@@ -55,19 +51,17 @@ function styles() {
     .pipe(gulpif(isDev, dest('build/css')))
     .pipe(cleanCSS({level: 2}))
     .pipe(rename('style.min.css'))
-    .pipe(gulpif(isDev, sourcemaps.write()))
-    .pipe(dest('build/css'))
+    .pipe(dest('build/css', {sourcemaps: isDev}))
     .pipe(browserSync.stream());
 }
 
 function scripts() {
-  return src(['source/js/**/*.js', '!source/js/**/*.min.js'])
-    .pipe(gulpif(isDev, sourcemaps.init()))
+  return src(['source/js/**/*.js', '!source/js/**/*.min.js'], {sourcemaps: isDev})
+    .pipe(gulpif(isDev, dest('build/js')))
     .pipe(terser())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulpif(isDev, sourcemaps.write()))
     .pipe(src('source/js/*.min.js'))
-    .pipe(dest('build/js'))
+    .pipe(dest('build/js', {sourcemaps: isDev}))
     .pipe(browserSync.stream());
 }
 
