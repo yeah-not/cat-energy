@@ -1,10 +1,9 @@
 'use strict';
 
-const gulp = require('gulp');
-const {series, parallel} = require('gulp');
+const {src, dest, series, parallel, watch} = require('gulp');
 const plumber = require('gulp-plumber');
 const del = require('del');
-const rename = require("gulp-rename");
+const rename = require('gulp-rename');
 const browserSync = require('browser-sync').create();
 const ghpages = require('gh-pages');
 const gulpif = require('gulp-if');
@@ -34,17 +33,17 @@ const isDev = (process.argv.indexOf('--dev') !== -1);
 // Functions
 // ---------------
 function clean() {
-  return del('./build');
+  return del('build');
 }
 
 function styles() {
-  return gulp.src('./source/sass/style.scss')
+  return src('source/sass/style.scss')
     .pipe(plumber())
     .pipe(gulpif(isDev, sourcemaps.init()))
     .pipe(sass())
     .pipe(postcss([
       autoprefixer({
-        overrideBrowserslist: [ "> 0.1%", "IE 11" ],
+        overrideBrowserslist: [ '> 0.1%', 'IE 11' ],
         cascade: false
       }),
       sortmq({
@@ -53,31 +52,31 @@ function styles() {
       inlineSvg(),
       svgo()
     ]))
-    .pipe(gulpif(isDev, gulp.dest('./build/css')))
+    .pipe(gulpif(isDev, dest('build/css')))
     .pipe(cleanCSS({level: 2}))
     .pipe(rename('style.min.css'))
     .pipe(gulpif(isDev, sourcemaps.write()))
-    .pipe(gulp.dest('./build/css'))
+    .pipe(dest('build/css'))
     .pipe(browserSync.stream());
 }
 
 function scripts() {
-  return gulp.src(['source/js/**/*.js', '!source/js/**/*.min.js'])
+  return src(['source/js/**/*.js', '!source/js/**/*.min.js'])
     .pipe(gulpif(isDev, sourcemaps.init()))
     .pipe(terser())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulpif(isDev, sourcemaps.write()))
-    .pipe(gulp.src('source/js/*.min.js'))
-    .pipe(gulp.dest('./build/js'))
+    .pipe(src('source/js/*.min.js'))
+    .pipe(dest('build/js'))
     .pipe(browserSync.stream());
 }
 
 function images() {
-  return gulp.src([
-      './source/img/*.{jpg,png,svg}',
-      './source/*.png'
+  return src([
+      'source/img/*.{jpg,png,svg}',
+      'source/*.png'
     ], {
-      base: './source'
+      base: 'source'
     })
     .pipe(imagemin([
       // imagemin.optipng({optimizationLevel: 3}),
@@ -88,46 +87,46 @@ function images() {
     ],{
       // verbose: true
     }))
-    .pipe(gulp.dest('./build'));
+    .pipe(dest('build'));
 }
 
 function webp() {
-  return gulp.src('./source/img/*.{jpg,png}')
+  return src('source/img/*.{jpg,png}')
     .pipe(gwebp({quality: 90}))
-    .pipe(gulp.dest('./build/img'))
+    .pipe(dest('build/img'))
 }
 
 function fonts() {
-  return gulp.src('./source/fonts/*.{woff,woff2}')
-    .pipe(gulp.dest('./build/fonts'));
+  return src('source/fonts/*.{woff,woff2}')
+    .pipe(dest('build/fonts'));
 }
 
 function sprite() {
-  return gulp.src('./source/img/svg-sprite/*.svg')
+  return src('source/img/svg-sprite/*.svg')
     .pipe(imagemin([imagemin.svgo()]))
     .pipe(rename({prefix: 'svg-'}))
     .pipe(svgstore({inlineSvg: true}))
     .pipe(rename('sprite.svg'))
-    .pipe(gulp.dest('./build/img'));
+    .pipe(dest('build/img'));
 }
 
 function html() {
-  return gulp.src('./source/*.html')
+  return src('source/*.html')
     .pipe(posthtml([include()]))
-    .pipe(gulp.dest('./build'))
+    .pipe(dest('build'))
     .pipe(browserSync.stream());
 }
 
-function watch() {
+function server() {
   browserSync.init({
     server: {
-      baseDir: "./build/"
+      baseDir: 'build'
     }
   });
 
-  gulp.watch('./source/*.html', html);
-  gulp.watch('./source/sass/**/*.scss', styles);
-  gulp.watch('./source/js/*.js', scripts);
+  watch('source/*.html', html);
+  watch('source/sass/**/*.scss', styles);
+  watch('source/js/*.js', scripts);
 }
 
 function deploy(done) {
@@ -147,5 +146,5 @@ let build = series(clean,
                 series(sprite, html)
             ));
 
-gulp.task('build', series(build, deploy));
-gulp.task('watch', series('build', watch));
+exports.build = series(build, deploy);
+exports.watch = server;
