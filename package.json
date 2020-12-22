@@ -8,7 +8,7 @@
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build",
-    "start": "gulp watch"
+    "start": "gulp watch --dev"
   },
   "repository": {
     "type": "git",
@@ -37,7 +37,7 @@
     "gh-pages": "^3.1.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
-    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-if": "^3.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.0",

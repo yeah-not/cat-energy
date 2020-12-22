@@ -7,6 +7,7 @@ const del = require('del');
 const rename = require("gulp-rename");
 const browserSync = require('browser-sync').create();
 const ghpages = require('gh-pages');
+const gulpif = require('gulp-if');
 
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
@@ -28,6 +29,8 @@ const svgstore = require('gulp-svgstore');
 const posthtml = require('gulp-posthtml');
 const include = require('posthtml-include');
 
+const isDev = (process.argv.indexOf('--dev') !== -1);
+
 // Functions
 // ---------------
 function clean() {
@@ -37,7 +40,7 @@ function clean() {
 function styles() {
   return gulp.src('./source/sass/style.scss')
     .pipe(plumber())
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(isDev, sourcemaps.init()))
     .pipe(sass())
     .pipe(postcss([
       autoprefixer({
@@ -50,20 +53,20 @@ function styles() {
       inlineSvg(),
       svgo()
     ]))
-    .pipe(gulp.dest('./build/css'))
+    .pipe(gulpif(isDev, gulp.dest('./build/css')))
     .pipe(cleanCSS({level: 2}))
     .pipe(rename('style.min.css'))
-    .pipe(sourcemaps.write())
+    .pipe(gulpif(isDev, sourcemaps.write()))
     .pipe(gulp.dest('./build/css'))
     .pipe(browserSync.stream());
 }
 
 function scripts() {
   return gulp.src(['source/js/**/*.js', '!source/js/**/*.min.js'])
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(isDev, sourcemaps.init()))
     .pipe(terser())
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write())
+    .pipe(gulpif(isDev, sourcemaps.write()))
     .pipe(gulp.src('source/js/*.min.js'))
     .pipe(gulp.dest('./build/js'))
     .pipe(browserSync.stream());
@@ -128,17 +131,21 @@ function watch() {
 }
 
 function deploy(done) {
-  ghpages.publish('build');
+  if (!isDev) {
+    console.log('Deploying...');
+    ghpages.publish('build');
+  } else {
+    console.log('Not available in dev build');
+  }
   done();
 }
 
-
 // Tasks
 // ---------------
-gulp.task('build',
-  series(clean,
-    parallel(styles, scripts, images, webp, fonts,
-      series(sprite, html)
-)));
+let build = series(clean,
+              parallel(styles, scripts, images, webp, fonts,
+                series(sprite, html)
+            ));
+
+gulp.task('build', series(build, deploy));
 gulp.task('watch', series('build', watch));
-gulp.task('deploy', deploy);
