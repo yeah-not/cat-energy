@@ -1,135 +1,144 @@
 'use strict';
 
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var del = require('del');
-var rename = require('gulp-rename');
+const {src, dest, series, parallel, watch} = require('gulp');
+const plumber = require('gulp-plumber');
+const del = require('del');
+const rename = require('gulp-rename');
+const browserSync = require('browser-sync').create();
+const ghpages = require('gh-pages');
+const gulpif = require('gulp-if');
 
-var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var inlineSvg = require('postcss-inline-svg');
-var svgo = require('postcss-svgo');
-var csso = require('gulp-csso');
-var uglify = require('gulp-uglify');
-
-var imagemin = require('gulp-imagemin');
-var imageminJpegtran = require('imagemin-jpegtran');
-var imageminPngquant = require('imagemin-pngquant');
-var webp = require('gulp-webp');
-var svgstore = require('gulp-svgstore');
-
-var posthtml = require('gulp-posthtml');
-var include = require('posthtml-include');
-
-var server = require('browser-sync').create();
-var ghPages = require('gh-pages');
-
+const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
+const cleanCSS = require('gulp-clean-css');
+const terser = require('gulp-terser');
+const postcss = require('gulp-postcss');
+const sortmq = require('postcss-sort-media-queries')
+const autoprefixer = require('autoprefixer');
+const inlineSvg = require('postcss-inline-svg');
+const svgo = require('postcss-svgo');
 
-gulp.task('clean', function () {
+const imagemin = require('gulp-imagemin');
+const imageminJpegtran = require('imagemin-jpegtran');
+const imageminPngquant = require('imagemin-pngquant');
+const gwebp = require('gulp-webp');
+const svgstore = require('gulp-svgstore');
+
+const posthtml = require('gulp-posthtml');
+const include = require('posthtml-include');
+
+const isDev = (process.argv.indexOf('--dev') !== -1);
+
+// Functions
+// ---------------
+function clean() {
   return del('build');
-});
+}
 
-gulp.task('copy', function () {
-  return gulp.src([
-      // 'source/img/*.{jpg,png,svg}',
-      'source/js/**/*.min.js',
-      'source/fonts/**/*.{woff,woff2}',
-      'source/*.png',
-    ], {
-      base: 'source/'
-    })
-    .pipe(gulp.dest('build'));
-});
-
-gulp.task('style', function () {
-  return gulp.src('source/sass/style.scss')
+function styles() {
+  return src('source/sass/style.scss', {sourcemaps: isDev})
     .pipe(plumber())
     .pipe(sass())
+    .pipe(postcss([sortmq()]))
     .pipe(postcss([
-      autoprefixer(),
+      autoprefixer({
+        overrideBrowserslist: [ '> 0.1%', 'IE 11' ],
+        cascade: false
+      }),
       inlineSvg(),
       svgo()
     ]))
-    .pipe(gulp.dest('build/css'))
-    .pipe(csso())
+    .pipe(gulpif(isDev, dest('build/css')))
+    .pipe(cleanCSS({level: 2}))
     .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('build/css'))
-    .pipe(server.stream());
-});
+    .pipe(dest('build/css', {sourcemaps: isDev}))
+    .pipe(browserSync.stream());
+}
 
-gulp.task('images', function () {
-  return gulp.src('source/img/*.{jpg,png,svg}')
+function scripts() {
+  return src(['source/js/**/*.js', '!source/js/**/*.min.js'], {sourcemaps: isDev})
+    .pipe(gulpif(isDev, dest('build/js')))
+    .pipe(terser())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(src('source/js/*.min.js'))
+    .pipe(dest('build/js', {sourcemaps: isDev}))
+    .pipe(browserSync.stream());
+}
+
+function images() {
+  return src([
+      'source/img/*.{jpg,png,svg}',
+      'source/*.png'
+    ], {
+      base: 'source'
+    })
     .pipe(imagemin([
       // imagemin.optipng({optimizationLevel: 3}),
       // imagemin.mozjpeg({quality: 85, progressive: true}),
       imageminPngquant({quality: [0.7, 1]}),
       imageminJpegtran({progressive: true}),
-      imagemin.svgo(),
-    ]))
-    .pipe(gulp.dest('build/img'))
-});
+      imagemin.svgo()
+    ],{
+      // verbose: true
+    }))
+    .pipe(dest('build'));
+}
 
-gulp.task('webp', function () {
-  return gulp.src('source/img/*.{png,jpg}')
-    .pipe(webp({quality: 90}))
-    .pipe(gulp.dest('build/img'))
-});
+function webp() {
+  return src('source/img/*.{jpg,png}')
+    .pipe(gwebp({quality: 90}))
+    .pipe(dest('build/img'))
+}
 
-gulp.task('sprite', function () {
-  return gulp.src('source/img/svg-sprite/*.svg')
+function fonts() {
+  return src('source/fonts/*.{woff,woff2}')
+    .pipe(dest('build/fonts'));
+}
+
+function sprite() {
+  return src('source/img/svg-sprite/*.svg')
     .pipe(imagemin([imagemin.svgo()]))
     .pipe(rename({prefix: 'svg-'}))
     .pipe(svgstore({inlineSvg: true}))
-    .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest('build/img'))
-});
+    .pipe(rename('sprite.svg'))
+    .pipe(dest('build/img'));
+}
 
-gulp.task('html', function () {
-  return gulp.src('source/*.html')
+function html() {
+  return src('source/*.html')
     .pipe(posthtml([include()]))
-    .pipe(gulp.dest('build'));
-});
+    .pipe(dest('build'))
+    .pipe(browserSync.stream());
+}
 
-gulp.task('script', function () {
-  return gulp.src(['source/js/**/*.js', '!source/js/**/*.min.js'])
-    .pipe(uglify())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('build/js'));
-});
-
-gulp.task('build', gulp.series(
-  'clean',
-  gulp.parallel(
-    'copy',
-    'style',
-    'script',
-    'webp',
-    'images',
-    gulp.series(
-      'sprite',
-      'html',
-    ),
-  ),
-));
-
-gulp.task('reload', function (done) {
-  server.reload();
-  done();
-});
-
-gulp.task('serve', function () {
-  server.init({
-    server: 'build/',
-    notify: false,
+function server() {
+  browserSync.init({
+    server: {
+      baseDir: 'build'
+    }
   });
 
-  gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('style'));
-  gulp.watch('source/js/**/*.js', gulp.series('script', 'reload'));
-  gulp.watch('source/*.html', gulp.series('html', 'reload'));
-});
+  watch('source/*.html', html);
+  watch('source/sass/**/*.scss', styles);
+  watch('source/js/*.js', scripts);
+}
 
-gulp.task('deploy', function() {
-  return ghPages.publish('build');
-});
+function deploy(done) {
+  if (!isDev) {
+    console.log('Deploying...');
+    ghpages.publish('build');
+  } else {
+    console.log('Not available in dev build');
+  }
+  done();
+}
+
+// Tasks
+// ---------------
+let build = series(clean,
+              parallel(styles, scripts, images, webp, fonts,
+                series(sprite, html)
+            ));
+
+exports.build = series(build, deploy);
+exports.watch = server;
